@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moshavit.REST", "Moshavit.REST\Moshavit.REST.csproj", "{D522758A-B44A-48F3-A798-D4D7B9582415}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "REST", "REST", "{348E3805-C68A-4955-8382-B27AF70B7031}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8F0EA4B0-FB7E-4B58-8AC9-DCB6F4437B24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moshavit.Castel", "Moshavit.Castel\Moshavit.Castel.csproj", "{38C8DAA4-18A4-4F12-8DEB-DD1B6AE10603}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moshavit.Entity", "Moshavit.Entity\Moshavit.Entity.csproj", "{6413B4BF-0F34-4675-961D-B4A6E6662D19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moshavit.DataBase", "Moshavit.DataBase\Moshavit.DataBase.csproj", "{F921762C-3B84-47B1-B8E1-A772EA9F111B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moshavit.Service", "Moshavit.Service\Moshavit.Service.csproj", "{D3DE5125-D5A2-4538-B8D3-FCA3EB8877D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{2CC3FCEE-8532-47E7-B425-06C5F1F14B91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moshavit.Exceptions", "Moshavit.Exceptions\Moshavit.Exceptions.csproj", "{106C1494-2141-4093-828C-AFA399C637CE}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://moshavittfs.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Moshavit.REST\\Moshavit.REST.csproj
+		SccProjectTopLevelParentUniqueName1 = MoshavitProject.sln
+		SccProjectName1 = Moshavit.REST
+		SccLocalPath1 = Moshavit.REST
+		SccProjectUniqueName2 = Moshavit.Castel\\Moshavit.Castel.csproj
+		SccProjectTopLevelParentUniqueName2 = MoshavitProject.sln
+		SccProjectName2 = Moshavit.Castel
+		SccLocalPath2 = Moshavit.Castel
+		SccProjectUniqueName3 = Moshavit.Entity\\Moshavit.Entity.csproj
+		SccProjectTopLevelParentUniqueName3 = MoshavitProject.sln
+		SccProjectName3 = Moshavit.Entity
+		SccLocalPath3 = Moshavit.Entity
+		SccProjectUniqueName4 = Moshavit.DataBase\\Moshavit.DataBase.csproj
+		SccProjectTopLevelParentUniqueName4 = MoshavitProject.sln
+		SccProjectName4 = Moshavit.DataBase/Moshavit.DataBase
+		SccLocalPath4 = Moshavit.DataBase
+		SccProjectUniqueName5 = Moshavit.Service\\Moshavit.Service.csproj
+		SccProjectTopLevelParentUniqueName5 = MoshavitProject.sln
+		SccProjectName5 = Moshavit.Service
+		SccLocalPath5 = Moshavit.Service
+		SccProjectUniqueName6 = Moshavit.Exceptions\\Moshavit.Exceptions.csproj
+		SccProjectTopLevelParentUniqueName6 = MoshavitProject.sln
+		SccProjectName6 = Moshavit.Exceptions
+		SccLocalPath6 = Moshavit.Exceptions
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D522758A-B44A-48F3-A798-D4D7B9582415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D522758A-B44A-48F3-A798-D4D7B9582415}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D522758A-B44A-48F3-A798-D4D7B9582415}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D522758A-B44A-48F3-A798-D4D7B9582415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C8DAA4-18A4-4F12-8DEB-DD1B6AE10603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C8DAA4-18A4-4F12-8DEB-DD1B6AE10603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C8DAA4-18A4-4F12-8DEB-DD1B6AE10603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C8DAA4-18A4-4F12-8DEB-DD1B6AE10603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6413B4BF-0F34-4675-961D-B4A6E6662D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6413B4BF-0F34-4675-961D-B4A6E6662D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6413B4BF-0F34-4675-961D-B4A6E6662D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6413B4BF-0F34-4675-961D-B4A6E6662D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F921762C-3B84-47B1-B8E1-A772EA9F111B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F921762C-3B84-47B1-B8E1-A772EA9F111B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F921762C-3B84-47B1-B8E1-A772EA9F111B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F921762C-3B84-47B1-B8E1-A772EA9F111B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3DE5125-D5A2-4538-B8D3-FCA3EB8877D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3DE5125-D5A2-4538-B8D3-FCA3EB8877D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3DE5125-D5A2-4538-B8D3-FCA3EB8877D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3DE5125-D5A2-4538-B8D3-FCA3EB8877D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{106C1494-2141-4093-828C-AFA399C637CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{106C1494-2141-4093-828C-AFA399C637CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{106C1494-2141-4093-828C-AFA399C637CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{106C1494-2141-4093-828C-AFA399C637CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D522758A-B44A-48F3-A798-D4D7B9582415} = {348E3805-C68A-4955-8382-B27AF70B7031}
+		{38C8DAA4-18A4-4F12-8DEB-DD1B6AE10603} = {8F0EA4B0-FB7E-4B58-8AC9-DCB6F4437B24}
+		{6413B4BF-0F34-4675-961D-B4A6E6662D19} = {8F0EA4B0-FB7E-4B58-8AC9-DCB6F4437B24}
+		{F921762C-3B84-47B1-B8E1-A772EA9F111B} = {8F0EA4B0-FB7E-4B58-8AC9-DCB6F4437B24}
+		{D3DE5125-D5A2-4538-B8D3-FCA3EB8877D3} = {8F0EA4B0-FB7E-4B58-8AC9-DCB6F4437B24}
+		{106C1494-2141-4093-828C-AFA399C637CE} = {2CC3FCEE-8532-47E7-B425-06C5F1F14B91}
+	EndGlobalSection
+EndGlobal
