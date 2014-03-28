@@ -50,12 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityDTO\UserLogin.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Interfaces\IDependency.cs" />
     <Compile Include="MessageResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableEntity\UserTable.cs" />
-    <Compile Include="EntityDTO\UserLogin.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
