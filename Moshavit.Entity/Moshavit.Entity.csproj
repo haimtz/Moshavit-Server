@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityDTO\UserLogin.cs" />
+    <Compile Include="EntityTable\Message.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Interfaces\IDependency.cs" />
     <Compile Include="MessageResponse.cs" />
