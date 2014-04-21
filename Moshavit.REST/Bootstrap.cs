@@ -2,6 +2,7 @@
 using System.Web.Http.Dispatcher;
 using Moshavit.Castel;
 using Moshavit.Entity;
+using Moshavit.Entity.TableEntity;
 using Moshavit.REST.Controllers;
 using Moshavit.DataBase;
 using Moshavit.REST.Service.Settings;
@@ -28,7 +29,7 @@ namespace Moshavit.REST
 
             container.Register<IConnection, ConnectionConfig>();
 
-            container.Register<IRepository<User>, Repository<User>>();
+            container.Register<IRepository<UserTable>, Repository<UserTable>>();
 
             container.Register<UserService, UserService>();
 

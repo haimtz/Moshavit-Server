@@ -52,15 +52,6 @@
   <ItemGroup>
     <Compile Include="Context.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="Migrations\201403210800362_InitialCreate.cs" />
-    <Compile Include="Migrations\201403210800362_InitialCreate.Designer.cs">
-      <DependentUpon>201403210800362_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201403221751268_userToken.cs" />
-    <Compile Include="Migrations\201403221751268_userToken.Designer.cs">
-      <DependentUpon>201403221751268_userToken.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
   </ItemGroup>
@@ -73,14 +64,6 @@
       <Project>{6413b4bf-0f34-4675-961d-b4a6e6662d19}</Project>
       <Name>Moshavit.Entity</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201403210800362_InitialCreate.resx">
-      <DependentUpon>201403210800362_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201403221751268_userToken.resx">
-      <DependentUpon>201403221751268_userToken.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

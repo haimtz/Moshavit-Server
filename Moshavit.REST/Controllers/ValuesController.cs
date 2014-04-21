@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Moshavit.DataBase;
-using Moshavit.Entity;
-using Moshavit.REST.Service.Settings;
+using Moshavit.Entity.TableEntity;
 
 namespace Moshavit.REST.Controllers
 {
@@ -20,7 +14,7 @@ namespace Moshavit.REST.Controllers
         // GET api/<controller>
         public string Get()
         {
-            var user = new User { FirstName = "haim", LastName = "tz", Phone = "ioiop"};
+            var user = new UserTable { FirstName = "haim", LastName = "tz", Phone = "ioiop"};
 
             _data.Users.Add(user);
             _data.SaveChanges();

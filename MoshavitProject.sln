@@ -22,36 +22,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moshavit.Exceptions", "Moshavit.Exceptions\Moshavit.Exceptions.csproj", "{106C1494-2141-4093-828C-AFA399C637CE}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 7
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://moshavittfs.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Moshavit.REST\\Moshavit.REST.csproj
-		SccProjectTopLevelParentUniqueName1 = MoshavitProject.sln
-		SccProjectName1 = Moshavit.REST
-		SccLocalPath1 = Moshavit.REST
-		SccProjectUniqueName2 = Moshavit.Castel\\Moshavit.Castel.csproj
-		SccProjectTopLevelParentUniqueName2 = MoshavitProject.sln
-		SccProjectName2 = Moshavit.Castel
-		SccLocalPath2 = Moshavit.Castel
-		SccProjectUniqueName3 = Moshavit.Entity\\Moshavit.Entity.csproj
-		SccProjectTopLevelParentUniqueName3 = MoshavitProject.sln
-		SccProjectName3 = Moshavit.Entity
-		SccLocalPath3 = Moshavit.Entity
-		SccProjectUniqueName4 = Moshavit.DataBase\\Moshavit.DataBase.csproj
-		SccProjectTopLevelParentUniqueName4 = MoshavitProject.sln
-		SccProjectName4 = Moshavit.DataBase/Moshavit.DataBase
-		SccLocalPath4 = Moshavit.DataBase
-		SccProjectUniqueName5 = Moshavit.Service\\Moshavit.Service.csproj
-		SccProjectTopLevelParentUniqueName5 = MoshavitProject.sln
-		SccProjectName5 = Moshavit.Service
-		SccLocalPath5 = Moshavit.Service
-		SccProjectUniqueName6 = Moshavit.Exceptions\\Moshavit.Exceptions.csproj
-		SccProjectTopLevelParentUniqueName6 = MoshavitProject.sln
-		SccProjectName6 = Moshavit.Exceptions
-		SccLocalPath6 = Moshavit.Exceptions
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

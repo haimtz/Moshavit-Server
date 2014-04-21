@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Helpers;
 using System.Web.Http;
-using Moshavit.Entity;
+using Moshavit.Entity.TableEntity;
 using Moshavit.Exceptions;
 using Moshavit.Service;
 
@@ -23,7 +23,7 @@ namespace Moshavit.REST.Controllers
 
         #region REST Method
         [HttpPost]
-        public HttpResponseMessage Post([FromBody]User user)
+        public HttpResponseMessage Post([FromBody]UserTable user)
         {
             try
             {

@@ -9,6 +9,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using Moshavit.DataBase;
 using Moshavit.Entity;
+using Moshavit.Entity.EntityDTO;
 using Moshavit.Service;
 using Newtonsoft.Json;
 

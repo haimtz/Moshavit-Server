@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using Moshavit.Entity;
+using Moshavit.Entity.TableEntity;
 
 namespace Moshavit.DataBase
 {
@@ -7,9 +8,9 @@ namespace Moshavit.DataBase
     {
         public Context()
         {
-            Database.SetInitializer(new CreateDatabaseIfNotExists<Context>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
         }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<UserTable> Users { get; set; }
     }
 }

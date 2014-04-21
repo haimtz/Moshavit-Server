@@ -7,9 +7,15 @@ namespace Moshavit.Entity.TableEntity
     [Table("Users")]
     public class UserTable
     {
+        /// <summary>
+        /// unique User Id
+        /// </summary>
         [Key]
         public int Id { get; set; }
 
+        /// <summary>
+        /// User password' entry to the system
+        /// </summary>
         [Required]
         public string Password { get; set; }
 

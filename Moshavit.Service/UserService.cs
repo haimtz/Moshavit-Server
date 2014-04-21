@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Moshavit.Entity;
+using Moshavit.Entity.TableEntity;
 using Moshavit.Exceptions;
 
 namespace Moshavit.Service
@@ -9,11 +10,11 @@ namespace Moshavit.Service
     public class UserService
     {
         #region Members
-        private readonly IRepository<User> _repository;
+        private readonly IRepository<UserTable> _repository;
         #endregion
 
         #region Constructor
-        public UserService(IRepository<User> repository)
+        public UserService(IRepository<UserTable> repository)
         {
             _repository = repository;
         }
@@ -44,7 +45,7 @@ namespace Moshavit.Service
         /// </summary>
         /// <param name="user">New user</param>
         /// <returns>true if succeed</returns>
-        public bool Register(User user)
+        public bool Register(UserTable user)
         {
             try
             {
@@ -61,7 +62,7 @@ namespace Moshavit.Service
         #endregion
 
         #region Private Method
-        private bool IsEmailExist(User user)
+        private bool IsEmailExist(UserTable user)
         {
             var result = _repository.FindBy(x => x.Email == user.Email);
 
@@ -71,7 +72,7 @@ namespace Moshavit.Service
             return false;
         }
 
-        private string GenerateToken(User user)
+        private string GenerateToken(UserTable user)
         {
             // create token
             var token = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
