@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Moshavit.Entity;
 using Moshavit.Entity.TableEntity;
@@ -32,10 +33,11 @@ namespace Moshavit.Service
             //TODO:  if false throw exception
             var result = _repository.FindBy(x => x.Email == username && x.Password == password);
 
-            if (!result.Any())
+            var userTables = result as IList<UserTable> ?? result.ToList();
+            if (!userTables.Any())
                 throw new LoginException("Invalid user name or password");
 
-            var user = result.First();
+            var user = userTables.First();
 
             return GenerateToken(user);
         }

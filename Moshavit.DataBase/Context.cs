@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using Moshavit.Entity;
+using Moshavit.Entity.EntityTable;
 using Moshavit.Entity.TableEntity;
 
 namespace Moshavit.DataBase
@@ -12,5 +13,6 @@ namespace Moshavit.DataBase
         }
 
         public DbSet<UserTable> Users { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }

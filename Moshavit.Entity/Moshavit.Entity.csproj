@@ -51,6 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityDTO\UserLogin.cs" />
+    <Compile Include="EntityTable\BabySitter.cs" />
+    <Compile Include="EntityTable\CarPull.cs" />
+    <Compile Include="EntityTable\GiveAndTakeMessage.cs" />
     <Compile Include="EntityTable\Message.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Interfaces\IDependency.cs" />
