@@ -9,41 +9,35 @@ namespace Moshavit.DataBase
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private Context DbContext
+        private Context DbContext()
         {
-            get { return new Context(); }
+            return new Context(); 
         }
 
-        public virtual bool Add(T entity)
+        public virtual void Add(T entity)
         {
-            using (var ctx = DbContext)
+            using (var ctx = DbContext())
             {
                 ctx.Set<T>().Add(entity);
                 ctx.SaveChanges();
             }
-
-            return true;
         }
 
-        public virtual bool Update(T entity)
+        public virtual void Update(T entity)
         {
-            using (var ctx = DbContext)
+            using (var ctx = DbContext())
             {
                 ctx.Entry(entity).State = EntityState.Modified;
                 ctx.SaveChanges();
             }
-
-            return true;
         }
 
-        public virtual bool Delete(T entity)
+        public virtual void Delete(T entity)
         {
-            using (var ctx = DbContext)
+            using (var ctx = DbContext())
             {
                 ctx.Set<T>().Remove(entity);
             }
-
-            return true;
         }
 
         public T GetById(int id)
@@ -53,7 +47,7 @@ namespace Moshavit.DataBase
 
         public IQueryable<T> GetAll()
         {
-            using (var ctx = DbContext)
+            using (var ctx = DbContext())
             {
                 var query = ctx.Set<T>();
                 return query;
@@ -64,7 +58,7 @@ namespace Moshavit.DataBase
         {
             List<T> result;
 
-            using (var ctx = DbContext)
+            using (var ctx = DbContext())
             {
                 var query = ctx.Set<T>().Where(predicate);
                 result = query.ToList();
