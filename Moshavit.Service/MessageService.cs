@@ -70,6 +70,18 @@ namespace Moshavit.Service
             return true;
         }
 
+        /// <summary>
+        /// Get all messages for database
+        /// </summary>
+        /// <returns>List Messages</returns>
+        public IEnumerable<Message> GetAllMessages()
+        {
+            return _repository.GetAll().ToList();
+        }
 
+        public IEnumerable<TK> GetMessagesByType<TK>() where TK : Message
+        {
+            return _repository.GetAllByType<TK>().ToList();
+        }
     }
 }

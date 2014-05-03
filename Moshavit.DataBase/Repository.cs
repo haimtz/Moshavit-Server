@@ -54,6 +54,15 @@ namespace Moshavit.DataBase
             }
         }
 
+        public IQueryable<TK> GetAllByType<TK>()
+        {
+            using (var ctx = DbContext())
+            {
+                var query = ctx.Set<T>().OfType<TK>();
+                return query;
+            }
+        }
+
         public IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate)
         {
             List<T> result;
@@ -61,6 +70,19 @@ namespace Moshavit.DataBase
             using (var ctx = DbContext())
             {
                 var query = ctx.Set<T>().Where(predicate);
+                result = query.ToList();
+            }
+
+            return result;
+        }
+
+        public IEnumerable<TK> FindByType<TK>(Expression<Func<TK, bool>> predicate)
+        {
+            List<TK> result;
+
+            using (var ctx = DbContext())
+            {
+                var query = ctx.Set<T>().OfType<TK>().Where(predicate);
                 result = query.ToList();
             }
 
