@@ -10,18 +10,21 @@ namespace Moshavit.Service
 {
     class MessageService
     {
-        private readonly IRepository<Message> _repository;
+        private readonly IRepository<MessageTable> _repository;
 
-        public MessageService(IRepository<Message> repository)
+        #region Constructor
+        public MessageService(IRepository<MessageTable> repository)
         {
             _repository = repository;
         }
+        #endregion
 
+        #region Public method
         /// <summary>
         /// Add new message to database
         /// </summary>
         /// <param name="message">New Message</param>
-        public bool AddNewMessage(Message message)
+        public bool AddNewMessage(MessageTable message)
         {
             try
             {
@@ -38,7 +41,7 @@ namespace Moshavit.Service
         /// Update Message Service
         /// </summary>
         /// <param name="message">Exist Message</param>
-        public bool UpdateMessage(Message message)
+        public bool UpdateMessage(MessageTable message)
         {
             try
             {
@@ -56,7 +59,7 @@ namespace Moshavit.Service
         /// Delete Existing message 
         /// </summary>
         /// <param name="message"></param>
-        public bool DeleteMessage(Message message)
+        public bool DeleteMessage(MessageTable message)
         {
             try
             {
@@ -74,14 +77,15 @@ namespace Moshavit.Service
         /// Get all messages for database
         /// </summary>
         /// <returns>List Messages</returns>
-        public IEnumerable<Message> GetAllMessages()
+        public IEnumerable<MessageTable> GetAllMessages()
         {
             return _repository.GetAll().ToList();
         }
 
-        public IEnumerable<TK> GetMessagesByType<TK>() where TK : Message
+        public IEnumerable<TK> GetMessagesByType<TK>() where TK : MessageTable
         {
             return _repository.GetAllByType<TK>().ToList();
         }
+        #endregion
     }
 }

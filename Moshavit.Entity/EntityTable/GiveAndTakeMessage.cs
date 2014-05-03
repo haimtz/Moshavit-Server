@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Moshavit.Entity.EntityTable
 {
-    class GiveAndTakeMessage : Message
+    [Table("GiveAndTake")]
+    public class GiveAndTakeMessageTable : MessageTable
     {
         public string Description { get; set; }
 

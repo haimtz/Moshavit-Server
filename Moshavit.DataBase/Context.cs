@@ -13,6 +13,6 @@ namespace Moshavit.DataBase
         }
 
         public DbSet<UserTable> Users { get; set; }
-        public DbSet<Message> Messages { get; set; }
+        public DbSet<MessageTable> Messages { get; set; }
     }
 }

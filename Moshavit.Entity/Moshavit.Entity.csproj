@@ -54,7 +54,7 @@
     <Compile Include="EntityTable\BabySitter.cs" />
     <Compile Include="EntityTable\CarPull.cs" />
     <Compile Include="EntityTable\GiveAndTakeMessage.cs" />
-    <Compile Include="EntityTable\Message.cs" />
+    <Compile Include="EntityTable\MessageTable.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Interfaces\IDependency.cs" />
     <Compile Include="MessageResponse.cs" />
