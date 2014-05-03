@@ -54,7 +54,7 @@ namespace Moshavit.DataBase
             }
         }
 
-        public IQueryable<TK> GetAllByType<TK>()
+        public IQueryable<TK> GetAllByType<TK>() where TK : T
         {
             using (var ctx = DbContext())
             {
@@ -76,7 +76,7 @@ namespace Moshavit.DataBase
             return result;
         }
 
-        public IEnumerable<TK> FindByType<TK>(Expression<Func<TK, bool>> predicate)
+        public IEnumerable<TK> FindByType<TK>(Expression<Func<TK, bool>> predicate) where TK : T
         {
             List<TK> result;
 
