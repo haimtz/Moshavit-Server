@@ -1,23 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Helpers;
 using System.Web.Http;
-using System.Web.Mvc;
-using Moshavit.DataBase;
-using Moshavit.Entity;
 using Moshavit.Entity.EntityDTO;
 using Moshavit.Service;
-using Newtonsoft.Json;
 
 namespace Moshavit.REST.Controllers
 {
     public class LoginController : ApiController
     {
-        private UserService _userRepository;
+        private readonly UserService _userRepository;
 
         public LoginController(UserService userRepository)
         {

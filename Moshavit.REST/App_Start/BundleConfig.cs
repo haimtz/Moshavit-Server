@@ -18,8 +18,12 @@ namespace Moshavit.REST.App_Start
                 .Include("~/scripts/knockout-{version}.js"));
 
             bundles.Add(new StyleBundle("~/Content/css")
-                .Include("~/Content/ie10mobile.css")); // Must be first. IE10 mobile viewport fix
-                
+                .Include("~/Content/ie10mobile.css")
+                .Include("~/Content/bootstrap.min.css")
+                //.Include("~/Content/bootstrap-theme.min.css")
+                .Include("~/Content/font-awesome.min.css.css")
+                ); // Must be first. IE10 mobile viewport fix
+
 
             var lessBundel = new Bundle("~/Assets/Style");
             lessBundel.Include("~/Assets/style.less");
