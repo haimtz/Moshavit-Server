@@ -20,9 +20,8 @@ namespace Moshavit.REST.App_Start
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include("~/Content/ie10mobile.css")
                 .Include("~/Content/bootstrap.min.css")
-                //.Include("~/Content/bootstrap-theme.min.css")
-                .Include("~/Content/font-awesome.min.css.css")
-                ); // Must be first. IE10 mobile viewport fix
+                .Include("~/Content/bootstrap-theme.min.css")
+                .Include("~/Content/css/font-awesome.css")); // Must be first. IE10 mobile viewport fix
 
 
             var lessBundel = new Bundle("~/Assets/Style");
