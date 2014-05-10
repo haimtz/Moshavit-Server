@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Moshavit.Entity.EntityTable;
 
 namespace Moshavit.Entity.TableEntity
 {
@@ -11,7 +14,7 @@ namespace Moshavit.Entity.TableEntity
         /// unique User Id
         /// </summary>
         [Key]
-        public int Id { get; set; }
+        public int IdUser { get; set; }
 
         /// <summary>
         /// User password' entry to the system
@@ -40,5 +43,7 @@ namespace Moshavit.Entity.TableEntity
         public string Token { get; set; }
 
         public bool IsActive { get; set; }
+
+        public virtual ICollection<MessageTable> Messages { get; set; }
     }
 }

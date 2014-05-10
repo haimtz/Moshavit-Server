@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Moshavit.Entity.EntityTable
 {
-    [Table("BabySiter")]
-    class BabySitter : MessageTable
+    [Table("BabySitter")]
+    public class BabySitterTable : MessageTable
     {
         public double Rate { get; set; }
         public DateTime StartTime { get; set; }
-        public DateTime EstimateTime { get; set; }
+        public DateTime EndTime { get; set; }
     }
 }

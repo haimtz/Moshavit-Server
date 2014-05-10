@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Moshavit.Entity;
 using Moshavit.Entity.EntityTable;
+using Moshavit.Entity.Interfaces;
 
 namespace Moshavit.Service
 {
-    class MessageService
+    public class MessageService : IMessageService
     {
         private readonly IRepository<MessageTable> _repository;
 
@@ -79,12 +80,13 @@ namespace Moshavit.Service
         /// <returns>List Messages</returns>
         public IEnumerable<MessageTable> GetAllMessages()
         {
-            return _repository.GetAll().ToList();
+            return _repository.GetAll();
         }
 
         public IEnumerable<TK> GetMessagesByType<TK>() where TK : MessageTable
         {
-            return _repository.GetAllByType<TK>().ToList();
+            var list = _repository.GetAllByType<TK>();
+            return list;
         }
         #endregion
     }

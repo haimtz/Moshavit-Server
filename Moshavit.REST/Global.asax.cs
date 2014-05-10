@@ -25,7 +25,6 @@ namespace Moshavit.REST
             BundleConfig.RegisterBundels(BundleTable.Bundles);
 
             GlobalConfiguration.Configuration.MessageHandlers.Add(new CustomAuthenticationMessageHandler());
-
             Bootstrap.Initialized();
         }
     }

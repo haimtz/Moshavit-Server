@@ -45,22 +45,28 @@ namespace Moshavit.DataBase
             throw new NotImplementedException();
         }
 
-        public IQueryable<T> GetAll()
+        public IEnumerable<T> GetAll()
         {
+            List<T> result;
             using (var ctx = DbContext())
             {
                 var query = ctx.Set<T>();
-                return query;
+                result = query.ToList();
             }
+
+            return result;
         }
 
-        public IQueryable<TK> GetAllByType<TK>() where TK : T
+        public IEnumerable<TK> GetAllByType<TK>() where TK : T
         {
+            List<TK> result;
             using (var ctx = DbContext())
             {
                 var query = ctx.Set<T>().OfType<TK>();
-                return query;
+                result = query.ToList();
             }
+
+            return result;
         }
 
         public IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate)

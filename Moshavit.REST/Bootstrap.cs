@@ -2,6 +2,8 @@
 using System.Web.Http.Dispatcher;
 using Moshavit.Castel;
 using Moshavit.Entity;
+using Moshavit.Entity.EntityTable;
+using Moshavit.Entity.Interfaces;
 using Moshavit.Entity.TableEntity;
 using Moshavit.REST.Controllers;
 using Moshavit.DataBase;
@@ -25,17 +27,26 @@ namespace Moshavit.REST
 
         public static void Register(IDependency container)
         {
+            #region Settings
             container.Register<IHttpControllerActivator, WindsorCompositionRoot>();
-
             container.Register<IConnection, ConnectionConfig>();
+            #endregion
 
-            container.Register<IRepository<UserTable>, Repository<UserTable>>();
-
+            #region Services
             container.Register<UserService, UserService>();
+            container.Register<IMessageService, MessageService>();
+            #endregion
 
+            #region Repositories
+            container.Register<IRepository<UserTable>, Repository<UserTable>>();
+            container.Register<IRepository<MessageTable>, Repository<MessageTable>>();
+            #endregion
+
+            #region Controllers
             container.Register<LoginController, LoginController>();
-
             container.Register<RegisterController, RegisterController>();
+            container.Register<MessageController, MessageController>();
+            #endregion
         }
     }
 }

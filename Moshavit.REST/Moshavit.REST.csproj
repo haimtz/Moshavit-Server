@@ -136,11 +136,11 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Bootstrap.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\CustomAuthenticationMessageHandler.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WindsorCompositionRoot.cs">
       <SubType>Code</SubType>
     </Compile>

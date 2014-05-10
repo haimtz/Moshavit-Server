@@ -37,14 +37,14 @@ namespace Moshavit.Entity
         /// Get all T
         /// </summary>
         /// <returns>IQueryable</returns>
-        IQueryable<T> GetAll();
+        IEnumerable<T> GetAll();
 
         /// <summary>
         /// Get all TK, implement T
         /// </summary>
         /// <typeparam name="TK">TK</typeparam>
         /// <returns>IQueryable</returns>
-        IQueryable<TK> GetAllByType<TK>() where TK : T;
+        IEnumerable<TK> GetAllByType<TK>() where TK : T;
 
         /// <summary>
         /// Get all T 
