@@ -1,0 +1,5 @@
+Entity Frame work
+
+http://www.entityframeworktutorial.net/EntityFramework4.3/lazy-loading-with-dbcontext.aspx
+
+http://www.entityframeworktutorial.net/lazyloading-in-entity-framework.aspx
