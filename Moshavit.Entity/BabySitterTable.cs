@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Moshavit.Entity.EntityTable;
 
-namespace Moshavit.Entity.EntityTable
+namespace Moshavit.Entity
 {
     [Table("BabySitter")]
     public class BabySitterTable : MessageTable

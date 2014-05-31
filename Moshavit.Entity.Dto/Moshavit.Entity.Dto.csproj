@@ -4,17 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6413B4BF-0F34-4675-961D-B4A6E6662D19}</ProjectGuid>
+    <ProjectGuid>{B681B2B3-E4A6-496C-94D8-841766EF63BC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Moshavit.Entity</RootNamespace>
-    <AssemblyName>Moshavit.Entity</AssemblyName>
+    <RootNamespace>Moshavit.Entity.Dto</RootNamespace>
+    <AssemblyName>Moshavit.Entity.Dto</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,14 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,22 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityDTO\UserLogin.cs" />
-    <Compile Include="EntityDTO\UserRegister.cs" />
-    <Compile Include="EntityTable\BabySitterTable.cs" />
-    <Compile Include="EntityTable\CarPullTable.cs" />
-    <Compile Include="EntityTable\GiveAndTakeMessageTable.cs" />
-    <Compile Include="EntityTable\MessageTable.cs" />
-    <Compile Include="Interfaces\IConnection.cs" />
-    <Compile Include="Interfaces\IDependency.cs" />
-    <Compile Include="Interfaces\IMessageService.cs" />
-    <Compile Include="MessageResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EntityTable\UserTable.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <Compile Include="UserLogin.cs" />
+    <Compile Include="UserRegister.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

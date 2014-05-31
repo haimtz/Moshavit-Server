@@ -60,9 +60,9 @@
       <Project>{f921762c-3b84-47b1-b8e1-a772ea9f111b}</Project>
       <Name>Moshavit.DataBase</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Moshavit.Entity\Moshavit.Entity.csproj">
+    <ProjectReference Include="..\Moshavit.Entity\Moshavit.Entity.Table.csproj">
       <Project>{6413b4bf-0f34-4675-961d-b4a6e6662d19}</Project>
-      <Name>Moshavit.Entity</Name>
+      <Name>Moshavit.Entity.Table</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

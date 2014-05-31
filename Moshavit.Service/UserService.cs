@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Moshavit.Entity;
 using Moshavit.Entity.TableEntity;
-using Moshavit.Exceptions;
 
 namespace Moshavit.Service
 {
@@ -11,11 +10,11 @@ namespace Moshavit.Service
     public class UserService
     {
         #region Members
-        private readonly IRepository<UserTable> _repository;
+        private readonly IDataBase<UserTable> _repository;
         #endregion
 
         #region Constructor
-        public UserService(IRepository<UserTable> repository)
+        public UserService(IDataBase<UserTable> repository)
         {
             _repository = repository;
         }

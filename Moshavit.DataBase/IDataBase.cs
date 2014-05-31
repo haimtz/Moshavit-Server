@@ -6,7 +6,7 @@ using Moshavit.DataBase;
 
 namespace Moshavit.Entity
 {
-    public interface IRepository<T> where T : class
+    public interface IDataBase<T> where T : class
     {
         /// <summary>
         /// Add Entity to database
@@ -40,25 +40,10 @@ namespace Moshavit.Entity
         IEnumerable<T> GetAll();
 
         /// <summary>
-        /// Get all TK, implement T
-        /// </summary>
-        /// <typeparam name="TK">TK</typeparam>
-        /// <returns>IQueryable</returns>
-        IEnumerable<TK> GetAllByType<TK>() where TK : T;
-
-        /// <summary>
         /// Get all T 
         /// </summary>
         /// <param name="predicate">query</param>
         /// <returns></returns>
         IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate);
-
-        /// <summary>
-        /// Get all TK, implement T
-        /// </summary>
-        /// <typeparam name="TK">TK</typeparam>
-        /// <param name="predicate">query</param>
-        /// <returns></returns>
-        IEnumerable<TK> FindByType<TK>(Expression<Func<TK, bool>> predicate) where TK : T;
     }
 }

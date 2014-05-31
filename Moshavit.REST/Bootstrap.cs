@@ -38,8 +38,8 @@ namespace Moshavit.REST
             #endregion
 
             #region Repositories
-            container.Register<IRepository<UserTable>, Repository<UserTable>>();
-            container.Register<IRepository<MessageTable>, Repository<MessageTable>>();
+            container.Register<IDataBase<UserTable>, DataBase<UserTable>>();
+            container.Register<IDataBase<MessageTable>, DataBase<MessageTable>>();
             #endregion
 
             #region Controllers

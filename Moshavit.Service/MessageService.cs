@@ -11,10 +11,10 @@ namespace Moshavit.Service
 {
     public class MessageService : IMessageService
     {
-        private readonly IRepository<MessageTable> _repository;
+        private readonly IDataBase<MessageTable> _repository;
 
         #region Constructor
-        public MessageService(IRepository<MessageTable> repository)
+        public MessageService(IDataBase<MessageTable> repository)
         {
             _repository = repository;
         }
@@ -85,8 +85,7 @@ namespace Moshavit.Service
 
         public IEnumerable<TK> GetMessagesByType<TK>() where TK : MessageTable
         {
-            var list = _repository.GetAllByType<TK>();
-            return list;
+            throw new Exception("not Implement yet");
         }
         #endregion
     }

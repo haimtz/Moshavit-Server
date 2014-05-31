@@ -4,7 +4,8 @@ using System.Data.Entity.Validation;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Moshavit.Entity.EntityDTO;
+using Moshavit.Entity.Dto;
+using Moshavit.Entity.Dto;
 using Moshavit.Service;
 
 namespace Moshavit.REST.Controllers

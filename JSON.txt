@@ -1,0 +1,168 @@
+הרשמה
+    {
+        "FirstName": "Erez",
+      "LastName": "dsfd",
+      "Password":"2w3e4r",
+      "Email":"erez83@gmail.com",
+      "Address":"gatiz3 rogh",
+      "Phone":"9876543",
+      "IsResident": true
+
+    }
+
+כניסה
+{
+"Email":"erez83@gmail.com",
+"Password":"2w2w2w"
+}
+מקבל
+{
+"Token":"as345de6rftgh",
+"IdUser":23456
+}
+
+ספר טלפונים
+[{
+"IdUser": 1234,
+"FirstName": "Erez",
+"LastName": "dsfd",
+"Email":"erez83@gmail.com",
+"Address":"gatiz3 rogh",
+"Phone":"9876543",
+"IsResident": true
+},
+{
+"IdUser": 1234,
+"FirstName": "Erez",
+"LastName": "dsfd",
+"Email":"erez83@gmail.com",
+"Address":"gatiz3 rogh",
+"Phone":"9876543",
+"IsResident": true
+}]
+
+סוגי הודעות
+{
+"BabySiter","CarPull","GiveAndTake","Survey"
+}
+
+BabySiter
+{
+"IdUser":12345,
+"Title":"kjdfkjsdhfkjsdhfkjhfkj",
+"Content":"kjdfhksjdfhkjsdjk",
+"Rate": 1234.234,
+"StartTime":"yyyy-mm-dd hh:ii",
+"EndTime":"yyyy-mm-dd hh:ii"
+}
+
+
+[{
+"IdMessage":234,
+"FirstName":"jhgjhgjhg",
+"LastName": "dsfd",
+"Email":"erez83@gmail.com",
+"Address":"gatiz3 rogh",
+"Phone":"9876543",
+"Title":"kjdfkjsdhfkjsdhfkjhfkj",
+"Content":"kjdfhksjdfhkjsdjk",
+"Rate": 1234.234,
+"StartTime":"yyyy-mm-dd hh:ii",
+"EndTime":"yyyy-mm-dd hh:ii"
+},
+{
+"IdMessage":234,
+"FirstName":"jhgjhgjhg",
+"LastName": "dsfd",
+"Email":"erez83@gmail.com",
+"Address":"gatiz3 rogh",
+"Phone":"9876543",
+"Title":"kjdfkjsdhfkjsdhfkjhfkj",
+"Content":"kjdfhksjdfhkjsdjk",
+"Rate": 1234.234,
+"StartTime":"yyyy-mm-dd hh:ii",
+"EndTime":"yyyy-mm-dd hh:ii"
+}]
+
+
+CarPull
+{
+"IdUser":12345,
+"Title":"kjdfkjsdhfkjsdhfkjhfkj",
+"Content":"kjdfhksjdfhkjsdjk",
+"From":"rosh hahahaa",
+"To":"telaviv",
+"PickUp":"yyyy-mm-dd hh:ii",
+"ReturnTime":"yyyy-mm-dd hh:ii"
+}
+
+
+[{
+"FirstName":"jhgjhgjhg",
+"LastName": "dsfd",
+"Email":"erez83@gmail.com",
+"Address":"gatiz3 rogh",
+"Phone":"9876543",
+"Title":"kjdfkjsdhfkjsdhfkjhfkj",
+"Content":"kjdfhksjdfhkjsdjk",
+"From":"rosh hahahaa",
+"To":"telaviv",
+"PickUp":"yyyy-mm-dd hh:ii",
+"ReturnTime":"yyyy-mm-dd hh:ii"
+},
+{
+"FirstName":"jhgjhgjhg",
+"LastName": "dsfd",
+"Email":"erez83@gmail.com",
+"Address":"gatiz3 rogh",
+"Phone":"9876543",
+"Title":"kjdfkjsdhfkjsdhfkjhfkj",
+"Content":"kjdfhksjdfhkjsdjk",
+"From":"rosh hahahaa",
+"To":"telaviv",
+"PickUp":"yyyy-mm-dd hh:ii",
+"ReturnTime":"yyyy-mm-dd hh:ii"
+}]
+
+
+
+GiveAndTake
+{
+"IdUser":12345,
+"Title":"kjdfkjsdhfkjsdhfkjhfkj",
+"Content":"kjdfhksjdfhkjsdjk",
+"Description":"dsfsdfdfsfdsfsfds",
+"Image1": Base64,
+"Image2": Base64,
+"Image3": Base64
+}
+
+
+הודעות GiveAndTake
+
+[{
+"FirstName":"jhgjhgjhg",
+"LastName": "dsfd",
+"Email":"erez83@gmail.com",
+"Address":"gatiz3 rogh",
+"Phone":"9876543",
+"Title":"kjdfkjsdhfkjsdhfkjhfkj",
+"Content":"kjdfhksjdfhkjsdjk",
+"Description":"dsfsdfdfsfdsfsfds",
+"Image1": url,
+"Image2": url,
+"Image3": url
+},
+{
+"FirstName":"jhgjhgjhg",
+"LastName": "dsfd",
+"Email":"erez83@gmail.com",
+"Address":"gatiz3 rogh",
+"Phone":"9876543",
+"Title":"kjdfkjsdhfkjsdhfkjhfkj",
+"Content":"kjdfhksjdfhkjsdjk",
+"Description":"dsfsdfdfsfdsfsfds",
+"Image1": url,
+"Image2": url,
+"Image3": url
+}]

@@ -1,4 +1,4 @@
-﻿namespace Moshavit.Entity.EntityDTO
+﻿namespace Moshavit.Entity.Dto
 {
     public class UserLogin
     {

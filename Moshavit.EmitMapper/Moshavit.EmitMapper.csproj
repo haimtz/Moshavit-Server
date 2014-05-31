@@ -4,17 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D3DE5125-D5A2-4538-B8D3-FCA3EB8877D3}</ProjectGuid>
+    <ProjectGuid>{64ACE622-37BC-4D56-A79B-460B433D17A0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Moshavit.Service</RootNamespace>
-    <AssemblyName>Moshavit.Service</AssemblyName>
+    <RootNamespace>Moshavit.EmitMapper</RootNamespace>
+    <AssemblyName>Moshavit.EmitMapper</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,14 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,27 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MessageService.cs" />
+    <Compile Include="EmitMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Moshavit.DataBase\Moshavit.DataBase.csproj">
-      <Project>{f921762c-3b84-47b1-b8e1-a772ea9f111b}</Project>
-      <Name>Moshavit.DataBase</Name>
+    <ProjectReference Include="..\Moshavit.Entity.Dto\Moshavit.Entity.Dto.csproj">
+      <Project>{b681b2b3-e4a6-496c-94d8-841766ef63bc}</Project>
+      <Name>Moshavit.Entity.Dto</Name>
     </ProjectReference>
     <ProjectReference Include="..\Moshavit.Entity\Moshavit.Entity.Table.csproj">
       <Project>{6413b4bf-0f34-4675-961d-b4a6e6662d19}</Project>
       <Name>Moshavit.Entity.Table</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Moshavit.Exceptions\Moshavit.Exceptions.csproj">
-      <Project>{106c1494-2141-4093-828c-afa399c637ce}</Project>
-      <Name>Moshavit.Exceptions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

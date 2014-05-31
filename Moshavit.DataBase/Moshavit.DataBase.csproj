@@ -50,19 +50,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseRepository.cs" />
     <Compile Include="Context.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="IDataBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository.cs" />
+    <Compile Include="DataBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Moshavit.Entity\Moshavit.Entity.csproj">
+    <ProjectReference Include="..\Moshavit.Entity\Moshavit.Entity.Table.csproj">
       <Project>{6413b4bf-0f34-4675-961d-b4a6e6662d19}</Project>
-      <Name>Moshavit.Entity</Name>
+      <Name>Moshavit.Entity.Table</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
