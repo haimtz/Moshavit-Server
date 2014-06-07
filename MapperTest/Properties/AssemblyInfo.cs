@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Moshavit.Emit")]
+[assembly: AssemblyTitle("MapperTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Moshavit.Emit")]
+[assembly: AssemblyProduct("MapperTest")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d5a9dc5e-809c-4ce1-9515-c3178fac5431")]
+[assembly: Guid("742975ea-a615-42e5-81f2-884897404298")]
 
 // Version information for an assembly consists of the following four values:
 //

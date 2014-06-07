@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B5FEDD1E-DB46-486D-89F8-BBCB767D9735}</ProjectGuid>
+    <ProjectGuid>{7C1D8755-2C8F-43B4-A7C4-5870D063D12B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Moshavit.Emit</RootNamespace>
-    <AssemblyName>Moshavit.Emit</AssemblyName>
+    <RootNamespace>Moshavit.Mapper</RootNamespace>
+    <AssemblyName>Moshavit.Mapper</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Emit.cs" />
+    <Compile Include="IMapper.cs" />
+    <Compile Include="Mapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

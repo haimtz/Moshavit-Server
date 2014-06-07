@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3F8F87D-751C-4308-9B0A-B2023B63CF1A}</ProjectGuid>
+    <ProjectGuid>{0E820402-C13C-4AB1-990B-3BA669AE9242}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BaseRepositoryTest</RootNamespace>
-    <AssemblyName>BaseRepositoryTest</AssemblyName>
+    <RootNamespace>MapperTest</RootNamespace>
+    <AssemblyName>MapperTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,9 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Rhino.Mocks">
-      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -53,20 +50,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="SelectTest.cs" />
+    <Compile Include="Dummy_A.cs" />
+    <Compile Include="MapperGetMapTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Moshavit.DataBase\Moshavit.DataBase.csproj">
-      <Project>{f921762c-3b84-47b1-b8e1-a772ea9f111b}</Project>
-      <Name>Moshavit.DataBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Moshavit.Entity\Moshavit.Entity.Table.csproj">
-      <Project>{6413b4bf-0f34-4675-961d-b4a6e6662d19}</Project>
-      <Name>Moshavit.Entity.Table</Name>
+    <ProjectReference Include="..\Moshavit.Mapper\Moshavit.Mapper.csproj">
+      <Project>{7c1d8755-2c8f-43b4-a7c4-5870d063d12b}</Project>
+      <Name>Moshavit.Mapper</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

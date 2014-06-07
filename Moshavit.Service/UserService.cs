@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Moshavit.Entity;
 using Moshavit.Entity.TableEntity;
+using Moshavit.Exceptions;
 
 namespace Moshavit.Service
 {

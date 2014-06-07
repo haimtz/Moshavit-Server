@@ -1,33 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using Moshavit.Entity;
+using Moshavit.Mapper;
 
 namespace Moshavit.DataBase
 {
-    public class BaseRepository<TTable,TDto> where TTable : class
+    public class BaseRepository<TTable,TDto> where TTable : class where TDto : class
     {
         private readonly IDataBase<TTable> _dataBase;
-
+        private readonly IMapper _mapper;
         #region Constructor
-        public BaseRepository(IDataBase<TTable> dataBase)
+        public BaseRepository(IDataBase<TTable> dataBase, IMapper mapper)
         {
             _dataBase = dataBase;
+            _mapper = mapper;
         }
         #endregion
 
         #region Public/Protected method
-        protected void Add(TDto entity)
+        protected void Add(TTable entity)
         {
-            throw new Exception("Not Implement yet");
+            _dataBase.Add(entity);
         }
 
-        protected void Update(int id)
+        protected void Update(TDto entity)
         {
-            throw new Exception("Not Implement yet");
+            var mapper = _mapper.Map<TDto, TTable>(entity);
+            _dataBase.Update(mapper);
         }
 
         protected void Delete(int id)
