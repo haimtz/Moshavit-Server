@@ -51,13 +51,20 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Dummy_A.cs" />
-    <Compile Include="MapperGetMapTest.cs" />
+    <Compile Include="MapperGetMapTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MapperIEnumerableTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Moshavit.Mapper\Moshavit.Mapper.csproj">
       <Project>{7c1d8755-2c8f-43b4-a7c4-5870d063d12b}</Project>
       <Name>Moshavit.Mapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReflectionTest\ReflectionTest.csproj">
+      <Project>{a3994b08-1351-4594-b280-643a4fba0d94}</Project>
+      <Name>ReflectionTest</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

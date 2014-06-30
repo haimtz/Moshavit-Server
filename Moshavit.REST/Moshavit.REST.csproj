@@ -249,6 +249,10 @@
       <Project>{106c1494-2141-4093-828c-afa399c637ce}</Project>
       <Name>Moshavit.Exceptions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Moshavit.Mapper\Moshavit.Mapper.csproj">
+      <Project>{7c1d8755-2c8f-43b4-a7c4-5870d063d12b}</Project>
+      <Name>Moshavit.Mapper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Moshavit.Service\Moshavit.Service.csproj">
       <Project>{d3de5125-d5a2-4538-b8d3-fca3eb8877d3}</Project>
       <Name>Moshavit.Service</Name>

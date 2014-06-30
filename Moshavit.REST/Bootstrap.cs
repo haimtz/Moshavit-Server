@@ -5,6 +5,7 @@ using Moshavit.Entity;
 using Moshavit.Entity.EntityTable;
 using Moshavit.Entity.Interfaces;
 using Moshavit.Entity.TableEntity;
+using Moshavit.Mapper;
 using Moshavit.REST.Controllers;
 using Moshavit.DataBase;
 using Moshavit.REST.Service.Settings;
@@ -35,8 +36,9 @@ namespace Moshavit.REST
             #region Services
             container.Register<UserService, UserService>();
             container.Register<IMessageService, MessageService>();
+            container.Register<IMapper, MapperService>();
             #endregion
-
+            
             #region Repositories
             container.Register<IDataBase<UserTable>, DataBase<UserTable>>();
             container.Register<IDataBase<MessageTable>, DataBase<MessageTable>>();

@@ -19,33 +19,34 @@ namespace Moshavit.DataBase
         #endregion
 
         #region Public/Protected method
-        protected void Add(TTable entity)
-        {
-            _dataBase.Add(entity);
-        }
-
-        protected void Update(TDto entity)
+        virtual protected void Add(TDto entity)
         {
             var mapper = _mapper.Map<TDto, TTable>(entity);
+            _dataBase.Add(mapper);
+        }
+
+        virtual protected void Update(TDto entity)
+        {
+            var mapper = _mapper.Map<TDto, TTable>(entity) as TTable;
             _dataBase.Update(mapper);
         }
 
-        protected void Delete(int id)
+        virtual protected void Delete(int id)
         {
             throw new Exception("Not Implement yet");
         }
 
-        protected IEnumerable<TDto> GetAll()
+        virtual protected IEnumerable<TDto> GetAll()
         {
             throw new Exception("Not Implement yet");
         }
 
-        protected IEnumerable<TDto> Were(Expression<Func<TDto,bool>>  predicate)
+        virtual protected IEnumerable<TDto> Were(Expression<Func<TDto,bool>>  predicate)
         {
             throw new Exception("Not Implement yet");
         }
 
-        protected TDto SelectFirst(Expression<Func<TDto, bool>> predicate)
+        virtual protected TDto SelectFirst(Expression<Func<TDto, bool>> predicate)
         {
             throw new Exception("Not Implement yet");
         }
