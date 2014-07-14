@@ -27,7 +27,7 @@ namespace Moshavit.REST.Controllers
         {
             try
             {
-                _db.Register(user);
+                //_db.Register(user);
             }
             catch(DbEntityValidationException dbEx)
             {

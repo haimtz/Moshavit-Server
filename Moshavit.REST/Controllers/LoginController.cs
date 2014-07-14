@@ -25,7 +25,7 @@ namespace Moshavit.REST.Controllers
             string token;
             try
             {
-                token =_userRepository.Login(user.Email, user.Password);
+                throw new Exception("Does not implement");
             }
             catch (Exception ex)
             {

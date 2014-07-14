@@ -8,27 +8,27 @@ namespace Moshavit.DataBase
 {
     public class BaseRepository<TTable,TDto> where TTable : class where TDto : class
     {
-        private readonly IDataBase<TTable> _dataBase;
-        private readonly IMapper _mapper;
+        protected readonly IDataBase<TTable> DataBase;
+        protected readonly IMapper Mapper;
         #region Constructor
         public BaseRepository(IDataBase<TTable> dataBase, IMapper mapper)
         {
-            _dataBase = dataBase;
-            _mapper = mapper;
+            DataBase = dataBase;
+            Mapper = mapper;
         }
         #endregion
 
         #region Public/Protected method
         virtual protected void Add(TDto entity)
         {
-            var mapper = _mapper.Map<TDto, TTable>(entity);
-            _dataBase.Add(mapper);
+            var mapper = Mapper.Map<TDto, TTable>(entity);
+            DataBase.Add(mapper);
         }
 
         virtual protected void Update(TDto entity)
         {
-            var mapper = _mapper.Map<TDto, TTable>(entity) as TTable;
-            _dataBase.Update(mapper);
+            var mapper = Mapper.Map<TDto, TTable>(entity);
+            DataBase.Update(mapper);
         }
 
         virtual protected void Delete(int id)

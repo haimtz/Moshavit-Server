@@ -30,11 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dotless.Core">
+      <HintPath>..\packages\dotless.1.4.0.0\lib\dotless.Core.dll</HintPath>
+    </Reference>
     <Reference Include="EmitMapper">
       <HintPath>..\packages\EmitMapper.1.0.0\lib\EmitMapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,11 +48,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMapper.cs" />
-    <Compile Include="MapperService.cs" />
+    <Compile Include="IMapperRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MapperRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Moshavit.Entity.Dto\Moshavit.Entity.Dto.csproj">
+      <Project>{b681b2b3-e4a6-496c-94d8-841766ef63bc}</Project>
+      <Name>Moshavit.Entity.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moshavit.Entity\Moshavit.Entity.Table.csproj">
+      <Project>{6413b4bf-0f34-4675-961d-b4a6e6662d19}</Project>
+      <Name>Moshavit.Entity.Table</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

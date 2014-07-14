@@ -59,6 +59,10 @@
       <Project>{f921762c-3b84-47b1-b8e1-a772ea9f111b}</Project>
       <Name>Moshavit.DataBase</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Moshavit.Entity.Dto\Moshavit.Entity.Dto.csproj">
+      <Project>{b681b2b3-e4a6-496c-94d8-841766ef63bc}</Project>
+      <Name>Moshavit.Entity.Dto</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Moshavit.Entity\Moshavit.Entity.Table.csproj">
       <Project>{6413b4bf-0f34-4675-961d-b4a6e6662d19}</Project>
       <Name>Moshavit.Entity.Table</Name>
@@ -66,6 +70,10 @@
     <ProjectReference Include="..\Moshavit.Exceptions\Moshavit.Exceptions.csproj">
       <Project>{106c1494-2141-4093-828c-afa399c637ce}</Project>
       <Name>Moshavit.Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moshavit.Mapper\Moshavit.Mapper.csproj">
+      <Project>{7c1d8755-2c8f-43b4-a7c4-5870d063d12b}</Project>
+      <Name>Moshavit.Mapper</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -7,20 +7,22 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moshavit.Mapper;
 using ReflectionTest;
+using Rhino.Mocks;
 
 namespace MapperTest
 {
     [TestClass]
     public class MapperIEnumerableTest
     {
-        private MapperService _mapper;
+        private TypeMapper _mapper;
         private IEnumerable<DummyA> _listDummyA;
         private IEnumerable<DummyB> _listDummyB;
 
         [TestInitialize]
         public void Setup()
         {
-            _mapper = new MapperService();
+            var fakeRepository = MockRepository.GenerateStub<IMapperRepository>();
+            _mapper = new TypeMapper(fakeRepository);
             _listDummyA = new List<DummyA>
             {
                 new DummyA

@@ -2,13 +2,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moshavit.Mapper;
 using ReflectionTest;
+using Rhino.Mocks;
 
 namespace MapperTest
 {
     [TestClass]
     public class MapperGetMapTest
     {
-        private MapperService _mapper;
+        private TypeMapper _mapper;
         private DummyA _dummyA;
         private DummyB _dummyB;
         private DummyC _dummyC;
@@ -16,7 +17,8 @@ namespace MapperTest
         [TestInitialize]
         public void Setup()
         {
-            _mapper = new MapperService();
+            var fakeRepository = MockRepository.GenerateStub<IMapperRepository>();
+            _mapper = new TypeMapper(fakeRepository);
             _dummyA = new DummyA { Name = "dummy A", Family = "family A", Age = 37 };
             _dummyB = new DummyB { Name = "dummy A", Family = "family A", Age = 37 };
             _dummyC = new DummyC { Name = "dummy A", Family = "family A", Address = null };
