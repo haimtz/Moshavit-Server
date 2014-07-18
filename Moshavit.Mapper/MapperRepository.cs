@@ -33,12 +33,6 @@ namespace Moshavit.Mapper
         #endregion
 
         #region Public Method
-        public object GetMapper<TFrom>()
-        {
-
-            return null;
-        }
-
         public Func<T, TK> GetMapperFunction<T, TK>()
         {
             Delegate result;
@@ -76,7 +70,10 @@ namespace Moshavit.Mapper
                 Email = user.Email,
                 Phone = user.Phone,
                 Password = user.Password,
-                IsResident = user.IsResident
+                IsResident = user.IsResident,
+                IsActive = false,
+                StarTime = DateTime.Now,
+                Token = ""
             };
         }
         #endregion

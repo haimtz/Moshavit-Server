@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EmitMapper.Mappers;
 
 namespace Moshavit.Mapper
 {
-    public interface IMapper
+    public interface IMapperType
     {
         /// <summary>
         /// Map object form TFrom to TTo
@@ -25,5 +26,12 @@ namespace Moshavit.Mapper
         /// <param name="from"></param>
         /// <returns></returns>
         IEnumerable<TTo> EnumerableMap<TFrom, TTo>(IEnumerable<TFrom> from);
+
+        /// <summary>
+        /// Returns a mapper implementation instance for specified types
+        /// </summary>
+        /// <typeparam name="TFrom">Type from to convert</typeparam>
+        /// <returns></returns>
+        ObjectsMapperBaseImpl Map<TFrom>();
     }
 }

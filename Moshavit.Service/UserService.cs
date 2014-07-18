@@ -13,7 +13,7 @@ namespace Moshavit.Service
     // TODO: change it to service
     public class UserService : BaseRepository<UserTable, UserRegister>
     {
-        public UserService(IDataBase<UserTable> dataBase, IMapper mapper) 
+        public UserService(IDataBase<UserTable> dataBase, IMapperType mapper) 
             : base(dataBase, mapper)
         {
         }

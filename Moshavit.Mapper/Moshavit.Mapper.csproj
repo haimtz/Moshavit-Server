@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMapper.cs" />
+    <Compile Include="IMapperType.cs" />
     <Compile Include="IMapperRepository.cs">
       <SubType>Code</SubType>
     </Compile>

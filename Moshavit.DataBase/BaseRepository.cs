@@ -9,9 +9,9 @@ namespace Moshavit.DataBase
     public class BaseRepository<TTable,TDto> where TTable : class where TDto : class
     {
         protected readonly IDataBase<TTable> DataBase;
-        protected readonly IMapper Mapper;
+        protected readonly IMapperType Mapper;
         #region Constructor
-        public BaseRepository(IDataBase<TTable> dataBase, IMapper mapper)
+        public BaseRepository(IDataBase<TTable> dataBase, IMapperType mapper)
         {
             DataBase = dataBase;
             Mapper = mapper;

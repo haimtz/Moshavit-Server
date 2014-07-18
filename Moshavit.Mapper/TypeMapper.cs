@@ -4,11 +4,12 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
 using EmitMapper;
+using EmitMapper.Mappers;
 using EmitMapper.MappingConfiguration;
 
 namespace Moshavit.Mapper
 {
-    public class TypeMapper : IMapper
+    public class TypeMapper : IMapperType
     {
         private readonly IMapperRepository _mapperRepository;
 
@@ -33,9 +34,18 @@ namespace Moshavit.Mapper
             return mapper.Map(from);
         }
 
-        public object Map<TFrom>()
+        public object Map<TFrom>(TFrom from)
         {
-            return null;
+            var mapper = Map<TFrom>();
+            return mapper.Map(from);
+        }
+
+        public ObjectsMapperBaseImpl Map<TFrom>()
+        {
+            var typeTo = _mapperRepository.TypeMapper(typeof (TFrom));
+            var mapConfig = GetMApperConfig<TFrom, object>();
+
+            return ObjectMapperManager.DefaultInstance.GetMapperImpl(typeof(TFrom), typeTo, mapConfig);
         }
 
         /// <summary>
@@ -62,6 +72,13 @@ namespace Moshavit.Mapper
         private ObjectsMapper<T, TK> GetMapper<T, TK>()
         {
             return ObjectMapperManager.DefaultInstance.GetMapper<T, TK>();
+        }
+
+        private DefaultMapConfig GetMApperConfig<TFrom, TTo>()
+        {
+            var funcConvert = _mapperRepository.GetMapperFunction<TFrom, TTo>();
+
+            return DefaultMapConfig.Instance.ConvertUsing(funcConvert);
         }
         #endregion
     }
