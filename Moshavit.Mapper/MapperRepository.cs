@@ -23,12 +23,12 @@ namespace Moshavit.Mapper
         #region Private Method
         private void Converts()
         {
-            _mapperRepository.Add(typeof(UserRegister), new Func<UserRegister, UserTable>(ConvertUserRegistration));
+            _mapperRepository.Add(typeof(UserRegistertionData), new Func<UserRegistertionData, UserTable>(ConvertUserRegistration));
         }
 
         private void RegisterTypes()
         {
-            _typeToConverTypes.Add(typeof(UserRegister), typeof(UserTable));
+            _typeToConverTypes.Add(typeof(UserRegistertionData), typeof(UserTable));
         }
         #endregion
 
@@ -60,7 +60,7 @@ namespace Moshavit.Mapper
         #endregion
 
         #region Conversion 
-        private UserTable ConvertUserRegistration(UserRegister user)
+        private UserTable ConvertUserRegistration(UserRegistertionData user)
         {
             return new UserTable
             {
@@ -72,7 +72,7 @@ namespace Moshavit.Mapper
                 Password = user.Password,
                 IsResident = user.IsResident,
                 IsActive = false,
-                StarTime = DateTime.Now,
+                StartTime = user.StartTime,
                 Token = ""
             };
         }

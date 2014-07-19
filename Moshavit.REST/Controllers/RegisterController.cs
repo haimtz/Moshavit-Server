@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Helpers;
 using System.Web.Http;
+using Moshavit.Entity.Dto;
 using Moshavit.Entity.TableEntity;
 using Moshavit.Exceptions;
 using Moshavit.Service;
@@ -12,10 +13,10 @@ namespace Moshavit.REST.Controllers
 {
     public class RegisterController : ApiController
     {
-        private readonly UserService _db;
+        private readonly IUserService _db;
 
         #region Constructor
-        public RegisterController(UserService dbRepository)
+        public RegisterController(IUserService dbRepository)
         {
             _db = dbRepository;
         }
@@ -23,11 +24,11 @@ namespace Moshavit.REST.Controllers
 
         #region REST Method
         [HttpPost]
-        public HttpResponseMessage Post([FromBody]UserTable user)
+        public HttpResponseMessage Post([FromBody]UserRegistertionData user)
         {
             try
             {
-                //_db.Register(user);
+                _db.Register(user);
             }
             catch(DbEntityValidationException dbEx)
             {

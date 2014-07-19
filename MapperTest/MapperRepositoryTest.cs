@@ -20,7 +20,7 @@ namespace MapperTest
         [TestMethod]
         public void TypeMapper_GetType_AndReturnValidAnswer()
         {
-            var actual = _mapper.TypeMapper(typeof (UserRegister));
+            var actual = _mapper.TypeMapper(typeof (UserRegistertionData));
             var expected = new UserTable().GetType();
 
             Assert.IsTrue(actual.Name == expected.Name);
@@ -36,7 +36,7 @@ namespace MapperTest
         [TestMethod]
         public void GetMapperFunction_GetValidType()
         {
-            var actual = _mapper.GetMapperFunction<UserRegister, UserTable>();
+            var actual = _mapper.GetMapperFunction<UserRegistertionData, UserTable>();
             Assert.IsNotNull(actual);
         }
 
@@ -44,7 +44,7 @@ namespace MapperTest
         [ExpectedException(typeof(KeyNotFoundException))]
         public void GetMapperFunction_GetInvalidType_Exception()
         {
-            _mapper.GetMapperFunction<DummyA, UserRegister>();
+            _mapper.GetMapperFunction<DummyA, UserRegistertionData>();
         }
     }
 }

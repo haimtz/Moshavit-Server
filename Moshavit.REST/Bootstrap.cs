@@ -36,7 +36,7 @@ namespace Moshavit.REST
             #region Services
             container.Register<UserService, UserService>();
             container.Register<IMessageService, MessageService>();
-            container.Register<IMapperType, TypeMapper>();
+//            container.Register<IMapperType, TypeMapper>();
             #endregion
             
             #region Repositories

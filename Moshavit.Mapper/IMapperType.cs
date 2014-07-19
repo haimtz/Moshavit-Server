@@ -33,5 +33,13 @@ namespace Moshavit.Mapper
         /// <typeparam name="TFrom">Type from to convert</typeparam>
         /// <returns></returns>
         ObjectsMapperBaseImpl Map<TFrom>();
+
+        /// <summary>
+        /// Returns a mapper implementation instance for specified types
+        /// </summary>
+        /// <typeparam name="TFrom">Type</typeparam>
+        /// <param name="from">instance of type to convert from</param>
+        /// <returns>object of instance</returns>
+        object Map<TFrom>(TFrom from);
     }
 }

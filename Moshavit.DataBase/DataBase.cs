@@ -9,9 +9,12 @@ namespace Moshavit.DataBase
 {
     public class DataBase<T> : IDataBase<T> where T : class
     {
+        
         protected Context DbContext()
         {
-            return new Context(); 
+            var context = new Context();
+            context.Configuration.LazyLoadingEnabled = false;
+            return context;
         }
 
         public virtual void Add(T entity)
@@ -20,6 +23,7 @@ namespace Moshavit.DataBase
             {
                 using (var ctx = DbContext())
                 {
+                    
                     ctx.Set<T>().Add(entity);
                     ctx.SaveChanges();
                 }

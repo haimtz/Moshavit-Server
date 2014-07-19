@@ -38,7 +38,7 @@ namespace Moshavit.Entity.TableEntity
 
         public bool IsResident { get; set; }
 
-        public DateTime StarTime { get; set; }
+        public DateTime StartTime { get; set; }
 
         public string Token { get; set; }
 

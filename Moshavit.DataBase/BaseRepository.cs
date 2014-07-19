@@ -21,13 +21,13 @@ namespace Moshavit.DataBase
         #region Public/Protected method
         virtual protected void Add(TDto entity)
         {
-            var mapper = Mapper.Map<TDto, TTable>(entity);
+            var mapper = Mapper.Map(entity) as TTable;
             DataBase.Add(mapper);
         }
 
         virtual protected void Update(TDto entity)
         {
-            var mapper = Mapper.Map<TDto, TTable>(entity);
+            var mapper = Mapper.Map(entity) as TTable;
             DataBase.Update(mapper);
         }
 

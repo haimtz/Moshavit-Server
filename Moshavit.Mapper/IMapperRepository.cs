@@ -23,7 +23,5 @@ namespace Moshavit.Mapper
         /// <param name="from">Type from to convert</param>
         /// <returns>Type to convert</returns>
         Type TypeMapper(Type from);
-
-        
     }
 }

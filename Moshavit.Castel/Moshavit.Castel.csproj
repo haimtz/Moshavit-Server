@@ -64,6 +64,10 @@
       <Project>{6413b4bf-0f34-4675-961d-b4a6e6662d19}</Project>
       <Name>Moshavit.Entity.Table</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Moshavit.Mapper\Moshavit.Mapper.csproj">
+      <Project>{7c1d8755-2c8f-43b4-a7c4-5870d063d12b}</Project>
+      <Name>Moshavit.Mapper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
