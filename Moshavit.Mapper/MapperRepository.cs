@@ -24,11 +24,13 @@ namespace Moshavit.Mapper
         private void Converts()
         {
             _mapperRepository.Add(typeof(UserRegistertionData), new Func<UserRegistertionData, UserTable>(ConvertUserRegistration));
+            _mapperRepository.Add(typeof(UserTable), new Func<UserTable, UserRegistertionData>(ConvertUserTableToUserRegistration));
         }
 
         private void RegisterTypes()
         {
             _typeToConverTypes.Add(typeof(UserRegistertionData), typeof(UserTable));
+            _typeToConverTypes.Add(typeof(UserTable), typeof(UserRegistertionData));
         }
         #endregion
 
@@ -74,6 +76,19 @@ namespace Moshavit.Mapper
                 IsActive = false,
                 StartTime = user.StartTime,
                 Token = ""
+            };
+        }
+        private UserRegistertionData ConvertUserTableToUserRegistration(UserTable user)
+        {
+            return new UserRegistertionData
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Address = user.Address,
+                Phone = user.Phone,
+                Password = user.Password,
+                StartTime = user.StartTime
             };
         }
         #endregion

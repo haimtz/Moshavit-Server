@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using Moshavit.Entity;
 using Moshavit.Mapper;
 
@@ -19,7 +22,7 @@ namespace Moshavit.DataBase
         #endregion
 
         #region Public/Protected method
-        virtual protected void Add(TDto entity)
+        protected virtual void Add(TDto entity)
         {
             var mapper = Mapper.Map(entity) as TTable;
             DataBase.Add(mapper);
@@ -46,9 +49,12 @@ namespace Moshavit.DataBase
             throw new Exception("Not Implement yet");
         }
 
-        virtual protected TDto SelectFirst(Expression<Func<TDto, bool>> predicate)
+        virtual protected TDto SelectFirst(Expression<Func<TTable, bool>> predicate)
         {
-            throw new Exception("Not Implement yet");
+            var result = DataBase.FindBy(predicate).FirstOrDefault();
+            var mapper = Mapper.Map(result) as TDto;
+
+            return mapper;
         }
         #endregion
     }

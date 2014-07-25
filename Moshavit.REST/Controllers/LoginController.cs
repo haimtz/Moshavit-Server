@@ -19,20 +19,20 @@ namespace Moshavit.REST.Controllers
             _userRepository = userRepository;
         }
         // POST api/<controller>
-        public HttpResponseMessage Post([FromBody]UserLogin user)
+        public HttpResponseMessage Post([FromBody]UserLoginDto user)
         {
             //TODO: need to return the user Id
             string token;
             try
             {
-                throw new Exception("Does not implement");
+                _userRepository.Login(user);
             }
             catch (Exception ex)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK, token);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

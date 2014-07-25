@@ -18,10 +18,12 @@ namespace Moshavit.Service
     // TODO: change it to service
     public class UserService : BaseRepository<UserTable, UserRegistertionData>, IUserService
     {
-        public UserService(IDataBase<UserTable> dataBase, IMapperType mapper) 
+        #region Constructor
+        public UserService(IDataBase<UserTable> dataBase, IMapperType mapper)
             : base(dataBase, mapper)
         {
         }
+        #endregion
 
         /// <summary>
         /// Add new user to database
@@ -32,6 +34,9 @@ namespace Moshavit.Service
         {
             try
             {
+                if (IsRegister(user))
+                    throw new RegistrationException("The user is register");
+
                 user.StartTime = DateTime.Now;
                 base.Add(user);
             }
@@ -42,5 +47,35 @@ namespace Moshavit.Service
 
             return true;
         }
+
+        public UserData Login(UserLoginDto userlogin)
+        {
+            var user = base.SelectFirst(x => x.Email == userlogin.Email
+                && x.Password == userlogin.Password);
+
+            if(user == null)
+                throw new Exception("User don't exist");
+
+            return new UserData
+            {
+                IdUser = user.IdUser,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Address = user.Address,
+                Email = user.Email,
+                Phone = user.Phone
+            };
+        }
+
+        #region Private Method
+        private bool IsRegister(UserRegistertionData user)
+        {
+            var result = base.SelectFirst(x => x.Email == user.Email);
+            if (result != null)
+                return true;
+
+            return false;
+        }
+        #endregion
     }
 }
