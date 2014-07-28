@@ -10,12 +10,6 @@ using Moshavit.Mapper;
 
 namespace Moshavit.Service
 {
-    public interface IUserService
-    {
-        bool Register(UserRegistertionData user);
-    }
-
-    // TODO: change it to service
     public class UserService : BaseRepository<UserTable, UserRegistertionData>, IUserService
     {
         #region Constructor

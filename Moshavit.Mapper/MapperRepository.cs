@@ -82,6 +82,7 @@ namespace Moshavit.Mapper
         {
             return new UserRegistertionData
             {
+                IdUser = user.IdUser,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,

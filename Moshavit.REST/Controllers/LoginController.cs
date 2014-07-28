@@ -12,27 +12,26 @@ namespace Moshavit.REST.Controllers
 {
     public class LoginController : ApiController
     {
-        private readonly UserService _userRepository;
+        private readonly IUserService _userRepository;
 
-        public LoginController(UserService userRepository)
+        public LoginController(IUserService userRepository)
         {
             _userRepository = userRepository;
         }
         // POST api/<controller>
         public HttpResponseMessage Post([FromBody]UserLoginDto user)
         {
-            //TODO: need to return the user Id
-            string token;
+            UserData login;
             try
             {
-                _userRepository.Login(user);
+               login = _userRepository.Login(user);
             }
             catch (Exception ex)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK);
+            return Request.CreateResponse(HttpStatusCode.OK, login);
         }
-    }
+    } 
 }
