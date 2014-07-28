@@ -17,6 +17,11 @@ namespace Moshavit.Service
         /// <returns>true if add succeed</returns>
         bool Register(UserRegistertionData user);
 
+        /// <summary>
+        /// Entrance existing user to system
+        /// </summary>
+        /// <param name="userlogin">entrance details</param>
+        /// <returns>register user</returns>
         UserData Login(UserLoginDto userlogin);
     }
 }
