@@ -47,6 +47,7 @@ namespace Moshavit.REST
             container.Register<LoginController, LoginController>();
             container.Register<RegisterController, RegisterController>();
             container.Register<MessageController, MessageController>();
+            container.Register<UserController, UserController>();
             #endregion
         }
     }

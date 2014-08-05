@@ -61,6 +61,11 @@ namespace Moshavit.Service
             };
         }
 
+        public IEnumerable<UserData> GetAllUsers()
+        {
+            return base.GetAll();
+        }
+
         #region Private Method
         private bool IsRegister(UserRegistertionData user)
         {

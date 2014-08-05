@@ -140,6 +140,7 @@
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WindsorCompositionRoot.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -155,11 +156,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="App\viewmodels\login.js" />
     <Content Include="App\views\login.html" />
-    <Content Include="Content\ie10mobile.css" />
     <Content Include="Global.asax" />
     <Content Include="App\main.js" />
-    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

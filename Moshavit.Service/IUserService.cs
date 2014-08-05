@@ -23,5 +23,7 @@ namespace Moshavit.Service
         /// <param name="userlogin">entrance details</param>
         /// <returns>register user</returns>
         UserData Login(UserLoginDto userlogin);
+
+        IEnumerable<UserData> GetAllUsers();
     }
 }

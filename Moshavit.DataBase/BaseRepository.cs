@@ -41,7 +41,8 @@ namespace Moshavit.DataBase
 
         virtual protected IEnumerable<TDto> GetAll()
         {
-            throw new Exception("Not Implement yet");
+            var list = DataBase.GetAll().ToList();
+            return Mapper.EnumerableMap<TTable, TDto>(list);
         }
 
         virtual protected IEnumerable<TDto> Were(Expression<Func<TDto,bool>>  predicate)
