@@ -42,7 +42,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserData.cs" />
     <Compile Include="UserLoginDto.cs" />
-    <Compile Include="UserRegistertionData.cs" />
+    <Compile Include="UserRegistertionData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
