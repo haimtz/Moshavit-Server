@@ -8,6 +8,7 @@ namespace Moshavit.DataBase
     public class Context : DbContext
     {
         public Context()
+            : base("MoshavitDb")
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
         }

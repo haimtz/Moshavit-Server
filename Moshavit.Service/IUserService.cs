@@ -24,6 +24,6 @@ namespace Moshavit.Service
         /// <returns>register user</returns>
         UserData Login(UserLoginDto userlogin);
 
-        IEnumerable<UserData> GetAllUsers();
+        IEnumerable<UserRegistertionData> GetAllUsers();
     }
 }

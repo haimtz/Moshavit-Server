@@ -19,15 +19,24 @@ namespace Moshavit.DataBase
 
         public virtual void Add(T entity)
         {
-            lock (this)
+            try
             {
-                using (var ctx = DbContext())
+                lock (this)
                 {
-                    
-                    ctx.Set<T>().Add(entity);
-                    ctx.SaveChanges();
+                    using (var ctx = DbContext())
+                    {
+
+                        ctx.Set<T>().Add(entity);
+                        ctx.SaveChanges();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                
+                throw new Exception(ex.Message + " Data base");
+            }
+            
             
         }
 

@@ -31,7 +31,7 @@ namespace Moshavit.Service
             {
                 _repository.Add(message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -48,7 +48,7 @@ namespace Moshavit.Service
             {
                 _repository.Update(message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -66,7 +66,7 @@ namespace Moshavit.Service
             {
                 _repository.Delete(message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

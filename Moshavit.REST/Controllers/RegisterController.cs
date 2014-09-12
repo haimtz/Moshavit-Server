@@ -40,7 +40,7 @@ namespace Moshavit.REST.Controllers
             }
             catch (RegistrationException ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message + " REST");
             }
 
             return Request.CreateResponse(HttpStatusCode.OK);

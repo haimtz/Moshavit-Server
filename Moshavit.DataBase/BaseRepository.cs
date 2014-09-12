@@ -24,8 +24,17 @@ namespace Moshavit.DataBase
         #region Public/Protected method
         protected virtual void Add(TDto entity)
         {
-            var mapper = Mapper.Map(entity) as TTable;
-            DataBase.Add(mapper);
+            try
+            {
+                var mapper = Mapper.Map(entity) as TTable;
+                DataBase.Add(mapper);
+            }
+            catch (Exception ex)
+            {
+                
+                throw new Exception(ex.Message + " BaseRepository" );
+            }
+            
         }
 
         virtual protected void Update(TDto entity)

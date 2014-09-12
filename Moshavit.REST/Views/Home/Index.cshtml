@@ -2,11 +2,63 @@
 <html>
 <head>
     <title>Administrator</title>
+    <style>
+        @@media (max-width: 1024px) {
+            body {
+                background-color: yellowgreen;
+            }
+        }
+         table {
+             border-collapse: collapse;
+         }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 14px;
+        }
+
+        td {
+            max-width: 400px;
+        }
+
+        tbody tr td:first-child {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <div id="applicationHost">
-        Not in use
-    </div>
-    
+    <h1>Base Url moshavit.somee.com</h1>
+    <h2>API</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <td>URL</td>
+                <td>Service</td>
+                <td>Method</td>
+                <td>expected Data</td>
+                <td>Response</td>
+                <td>Comments</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>/api/register</td>
+                <td>Registretion</td>
+                <td>POST</td>
+                <td>
+                    {<br />
+                    "FirstName" : "first name",<br />
+                    "LastName" : "family name",<br />
+                    "Phone" : "00000",<br />
+                    "Password": "1234",<br />
+                    "Email" : "name@domain.com"<br />
+                    }
+                </td>
+                <td> http response code 200 </td>
+                <td>The Email is unique in data base if you try to register with the same email you will get error message</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

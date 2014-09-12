@@ -26,18 +26,11 @@ namespace Moshavit.Service
         /// <returns>true if succeed</returns>
         public bool Register(UserRegistertionData user)
         {
-            try
-            {
-                if (IsRegister(user))
-                    throw new RegistrationException("The user is register");
+            if (IsRegister(user))
+                throw new RegistrationException("The user is register");
 
-                user.StartTime = DateTime.Now;
-                base.Add(user);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            user.StartTime = DateTime.Now;
+            base.Add(user);
 
             return true;
         }
@@ -61,7 +54,7 @@ namespace Moshavit.Service
             };
         }
 
-        public IEnumerable<UserData> GetAllUsers()
+        public IEnumerable<UserRegistertionData> GetAllUsers()
         {
             return base.GetAll();
         }

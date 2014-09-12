@@ -19,7 +19,7 @@ namespace Moshavit.REST.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<UserData> Get()
+        public IEnumerable<UserRegistertionData> Get()
         {
             try
             {
