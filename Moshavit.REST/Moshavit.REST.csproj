@@ -135,7 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap.cs" />
-    <Compile Include="Controllers\BabySitterController.cs" />
+    <Compile Include="Controllers\BabySitterController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\CustomAuthenticationMessageHandler.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />

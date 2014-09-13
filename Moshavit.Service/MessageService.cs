@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Moshavit.Entity;
+using Moshavit.Entity.Dto;
 using Moshavit.Entity.EntityTable;
 using Moshavit.Entity.Interfaces;
 
@@ -13,11 +14,13 @@ namespace Moshavit.Service
     public class MessageService<T> : IMessageService<T> where T : MessageTable
     {
         private readonly IDataBase<T> _repository;
+        private readonly IUserService _userService;
 
         #region Constructor
-        public MessageService(IDataBase<T> repository)
+        public MessageService(IDataBase<T> repository, IUserService userService)
         {
             _repository = repository;
+            _userService = userService;
         }
         #endregion
 

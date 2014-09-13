@@ -54,9 +54,34 @@ namespace Moshavit.Service
             };
         }
 
-        public IEnumerable<UserRegistertionData> GetAllUsers()
+        public UserData GetUser(int id)
         {
-            return base.GetAll();
+            var user = base.SelectFirst(x => x.IdUser == id);
+
+            return new UserData
+            {
+                IdUser = user.IdUser,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Address = user.Address ?? string.Empty,
+                Email = user.Email,
+                Phone = user.Phone
+            };
+        }
+
+        public IEnumerable<UserData> GetAllUsers()
+        {
+            var userList = base.GetAll();
+
+            return userList.Select(user => new UserData
+            {
+                IdUser = user.IdUser, 
+                FirstName = user.FirstName, 
+                LastName = user.LastName, 
+                Address = user.Address ?? string.Empty, 
+                Email = user.Email, 
+                Phone = user.Phone
+            }).ToList();
         }
 
         #region Private Method

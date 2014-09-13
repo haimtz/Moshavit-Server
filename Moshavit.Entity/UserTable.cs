@@ -74,9 +74,9 @@ namespace Moshavit.Entity.TableEntity
         public bool IsActive { get; set; }
 
 
-        /// <summary>
-        /// Messages connection db
-        /// </summary>
-        public virtual ICollection<MessageTable> Messages { get; set; }
+        ///// <summary>
+        ///// Messages connection db
+        ///// </summary>
+        //public virtual ICollection<MessageTable> Messages { get; set; }
     }
 }

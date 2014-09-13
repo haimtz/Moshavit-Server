@@ -18,7 +18,7 @@ namespace Moshavit.Entity.EntityTable
         public string Title { get; set; }
         public string Content { get; set; }
 
-        [ForeignKey("IdUser")]
-        public virtual UserTable User { get; set; }
+        //[ForeignKey("IdUser")]
+        //public virtual UserTable User { get; set; }
     }
 }
