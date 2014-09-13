@@ -30,7 +30,20 @@ namespace Moshavit.Service
         /// <param name="id">id of user</param>
         /// <returns>UserData</returns>
         UserData GetUser(int id);
- 
+
+        /// <summary>
+        /// Update User details and Password
+        /// </summary>
+        /// <param name="user">new user details</param>
+        /// <returns>UserData</returns>
+        UserData UpdateUser(UserRegistertionData user);
+
+        /// <summary>
+        /// Remove user from system change his activity to false
+        /// </summary>
+        /// <param name="id">user identifier</param>
+        void DeleteUser(int id);
+
         /// <summary>
         /// Get all user data
         /// </summary>

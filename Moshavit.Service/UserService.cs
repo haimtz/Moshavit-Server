@@ -19,6 +19,7 @@ namespace Moshavit.Service
         }
         #endregion
 
+        #region Public Method
         /// <summary>
         /// Add new user to database
         /// </summary>
@@ -29,6 +30,7 @@ namespace Moshavit.Service
             if (IsRegister(user))
                 throw new RegistrationException("The user is register");
 
+            user.IsActive = false;
             user.StartTime = DateTime.Now;
             base.Add(user);
 
@@ -40,6 +42,7 @@ namespace Moshavit.Service
             var user = base.SelectFirst(x => x.Email == userlogin.Email
                 && x.Password == userlogin.Password);
 
+            // TODO: Check if user is active
             if(user == null)
                 throw new Exception("User don't exist");
 
@@ -65,7 +68,25 @@ namespace Moshavit.Service
                 LastName = user.LastName,
                 Address = user.Address ?? string.Empty,
                 Email = user.Email,
-                Phone = user.Phone
+                Phone = user.Phone,
+                StartTime = user.StartTime
+            };
+        }
+
+        public UserData UpdateUser(UserRegistertionData user)
+        {
+            base.Update(user);
+            var updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
+
+            return new UserData
+            {
+                IdUser = updateUser.IdUser,
+                FirstName = updateUser.FirstName,
+                LastName = updateUser.LastName,
+                Address = updateUser.Address ?? string.Empty,
+                Email = updateUser.Email,
+                Phone = updateUser.Phone,
+                StartTime = updateUser.StartTime
             };
         }
 
@@ -73,16 +94,27 @@ namespace Moshavit.Service
         {
             var userList = base.GetAll();
 
-            return userList.Select(user => new UserData
+            // TODO: return only active users
+            return userList.Where(x => !x.IsActive).Select(user => new UserData
             {
                 IdUser = user.IdUser, 
                 FirstName = user.FirstName, 
                 LastName = user.LastName, 
                 Address = user.Address ?? string.Empty, 
                 Email = user.Email, 
-                Phone = user.Phone
+                Phone = user.Phone,
+                StartTime = user.StartTime
             }).ToList();
         }
+
+        public void DeleteUser(int id)
+        {
+            var userToDelete = base.SelectFirst(x => x.IdUser == id);
+            
+            userToDelete.IsActive = false;
+            base.Update(userToDelete);
+        }
+        #endregion
 
         #region Private Method
         private bool IsRegister(UserRegistertionData user)

@@ -66,6 +66,7 @@ namespace Moshavit.Mapper
         {
             return new UserTable
             {
+                IdUser = user.IdUser,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Address = user.Address,
@@ -73,7 +74,7 @@ namespace Moshavit.Mapper
                 Phone = user.Phone,
                 Password = user.Password,
                 IsResident = user.IsResident,
-                IsActive = false,
+                IsActive = user.IsActive,
                 StartTime = user.StartTime,
                 Token = ""
             };
@@ -89,7 +90,8 @@ namespace Moshavit.Mapper
                 Address = user.Address,
                 Phone = user.Phone,
                 Password = user.Password,
-                StartTime = user.StartTime
+                StartTime = user.StartTime,
+                IsActive = user.IsActive
             };
         }
         #endregion

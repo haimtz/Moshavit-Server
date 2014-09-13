@@ -48,13 +48,27 @@ namespace Moshavit.REST.Controllers
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public HttpResponseMessage Put([FromBody]UserRegistertionData user)
         {
+            UserData updateUser;
+            try
+            {
+                var oldDetails = _userService.GetUser(user.IdUser);
+                user.StartTime = oldDetails.StartTime;
+                updateUser = _userService.UpdateUser(user);
+            }
+            catch (Exception exception)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, exception.Message);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK, updateUser);
         }
 
         // DELETE api/<controller>/5
-        public void Delete(int id)
+        public HttpResponseMessage Delete(int id)
         {
+            throw new Exception();
         }
     }
 }

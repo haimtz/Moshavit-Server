@@ -69,7 +69,7 @@ namespace Moshavit.Entity.TableEntity
         public string Token { get; set; }
 
         /// <summary>
-        /// if user approved bt the system manager
+        /// if user approved by the system manager
         /// </summary>
         public bool IsActive { get; set; }
 
