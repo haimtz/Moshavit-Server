@@ -135,10 +135,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap.cs" />
-    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\BabySitterController.cs" />
     <Compile Include="Controllers\CustomAuthenticationMessageHandler.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WindsorCompositionRoot.cs">

@@ -24,12 +24,17 @@
         tbody tr td:first-child {
             font-weight: bold;
         }
+
+        tbody tr td span {
+            color: red;
+        }
     </style>
 </head>
 <body>
     <h1>Base Url moshavit.somee.com</h1>
     <h2>API</h2>
-
+    <h3>Because the host is free for now we are limited with the data base space storage
+so it possibly some data erase</h3>
     <table>
         <thead>
             <tr>
@@ -48,15 +53,53 @@
                 <td>POST</td>
                 <td>
                     {<br />
-                    "FirstName" : "first name",<br />
-                    "LastName" : "family name",<br />
-                    "Phone" : "00000",<br />
+                    "FirstName" : "first name",<span>*</span><br />
+                    "LastName" : "family name",<span>*</span><br />
+                    "Phone" : "00000",<span>*</span><br />
+                    "Password": "1234",<span>*</span><br />
+                    "Email" : "name@domain.com",<span>*</span><br />
+                    "Address" : "address"
+                    }<br/>
+                    <br/>
+                    <span>* mandatory</span>
+                </td>
+                <td> http response code 200 </td>
+                <td><ul>
+                        <li>
+                            The Email is unique in data base if you try to register with the same email you will get error message  
+                        </li>
+                        <li>
+                            There is no validation on this point (will be add later)
+                        </li>
+                    </ul>
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td>/api/login</td>
+                <td>login to the system</td>
+                <td>POST</td>
+                <td>
+                    {<br />
                     "Password": "1234",<br />
                     "Email" : "name@domain.com"<br />
                     }
                 </td>
-                <td> http response code 200 </td>
-                <td>The Email is unique in data base if you try to register with the same email you will get error message</td>
+                <td> http response code 200<br/>
+                    {<br/>
+                    "IdUser": 1,<br />
+                    "FirstName": "username",<br />
+                    "LastName": "family name",<br />
+                    "Email": "name@domain.com",<br />
+                    "Phone": "00000",<br />
+                    "Address": ""<br />
+                    }
+                
+                </td>
+                <td><span>error message</span>
+                    { "Message": "User don't exist" }
+                </td>
             </tr>
         </tbody>
     </table>

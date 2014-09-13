@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,84 +10,41 @@ using Moshavit.Entity.Interfaces;
 
 namespace Moshavit.Service
 {
-    public class MessageService : IMessageService
+    public class MessageService<T> : IMessageService<T> where T : MessageTable
     {
-        private readonly IDataBase<MessageTable> _repository;
+        private readonly IDataBase<T> _repository;
 
         #region Constructor
-        public MessageService(IDataBase<MessageTable> repository)
+        public MessageService(IDataBase<T> repository)
         {
             _repository = repository;
         }
         #endregion
 
-        #region Public method
-        /// <summary>
-        /// Add new message to database
-        /// </summary>
-        /// <param name="message">New Message</param>
-        public bool AddNewMessage(MessageTable message)
+
+        public void AddNewMessage(T message)
         {
-            try
-            {
-                _repository.Add(message);
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-            return true;
+            _repository.Add(message);
         }
 
-        /// <summary>
-        /// Update Message Service
-        /// </summary>
-        /// <param name="message">Exist Message</param>
-        public bool UpdateMessage(MessageTable message)
+        public void UpdateMessage(T message)
         {
-            try
-            {
-                _repository.Update(message);
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-            return true;
+            _repository.Update(message);
         }
 
-        /// <summary>
-        /// Delete Existing message 
-        /// </summary>
-        /// <param name="message"></param>
-        public bool DeleteMessage(MessageTable message)
+        public void DeleteMessage(T message)
         {
-            try
-            {
-                _repository.Delete(message);
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-            return true;
+            _repository.Delete(message);
         }
 
-        /// <summary>
-        /// Get all messages for database
-        /// </summary>
-        /// <returns>List Messages</returns>
-        public IEnumerable<MessageTable> GetAllMessages()
+        public T GetMessage(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> GetAllMessages()
         {
             return _repository.GetAll();
         }
-
-        public IEnumerable<TK> GetMessagesByType<TK>() where TK : MessageTable
-        {
-            throw new Exception("not Implement yet");
-        }
-        #endregion
     }
 }

@@ -48,7 +48,7 @@ namespace Moshavit.Service
                 IdUser = user.IdUser,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                Address = user.Address,
+                Address = user.Address ?? string.Empty,
                 Email = user.Email,
                 Phone = user.Phone
             };

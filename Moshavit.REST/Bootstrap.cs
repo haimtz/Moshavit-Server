@@ -35,19 +35,20 @@ namespace Moshavit.REST
 
             #region Services
             container.Register<IUserService, UserService>();
-            container.Register<IMessageService, MessageService>();
+            container.Register<IMessageService<BabySitterTable>, MessageService<BabySitterTable>>();
             #endregion
             
             #region Repositories
             container.Register<IDataBase<UserTable>, DataBase<UserTable>>();
-            container.Register<IDataBase<MessageTable>, DataBase<MessageTable>>();
+            container.Register<IDataBase<BabySitterTable>, DataBase<BabySitterTable>>();
             #endregion
 
             #region Controllers
             container.Register<LoginController, LoginController>();
             container.Register<RegisterController, RegisterController>();
-            container.Register<MessageController, MessageController>();
             container.Register<UserController, UserController>();
+
+            container.Register<BabySitterController, BabySitterController>();
             #endregion
         }
     }

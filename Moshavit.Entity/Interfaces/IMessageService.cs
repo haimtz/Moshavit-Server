@@ -7,16 +7,16 @@ using Moshavit.Entity.EntityTable;
 
 namespace Moshavit.Entity.Interfaces
 {
-    public interface IMessageService
+    public interface IMessageService<T> where T : MessageTable
     {
-        bool AddNewMessage(MessageTable message);
+        void AddNewMessage(T message);
 
-        bool UpdateMessage(MessageTable message);
+        void UpdateMessage(T message);
 
-        bool DeleteMessage(MessageTable message);
+        void DeleteMessage(T message);
 
-        IEnumerable<MessageTable> GetAllMessages();
+        T GetMessage(int id);
 
-        IEnumerable<TK> GetMessagesByType<TK>() where TK : MessageTable;
+        IEnumerable<T> GetAllMessages();
     }
 }
