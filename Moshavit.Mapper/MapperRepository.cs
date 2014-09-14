@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Moshavit.Entity;
 using Moshavit.Entity.Dto;
+using Moshavit.Entity.Dto.messages;
 using Moshavit.Entity.TableEntity;
 
 namespace Moshavit.Mapper
@@ -25,12 +27,45 @@ namespace Moshavit.Mapper
         {
             _mapperRepository.Add(typeof(UserRegistertionData), new Func<UserRegistertionData, UserTable>(ConvertUserRegistration));
             _mapperRepository.Add(typeof(UserTable), new Func<UserTable, UserRegistertionData>(ConvertUserTableToUserRegistration));
+
+            _mapperRepository.Add(typeof(BabySitterTable), new Func<BabySitterTable, BabySitterMessageDto>(ConvertUserBabysiterToDto));
+            _mapperRepository.Add(typeof(BabySitterMessageDto), new Func<BabySitterMessageDto, BabySitterTable>(ConvertUserBabysiterToTable));
+        }
+
+        private BabySitterTable ConvertUserBabysiterToTable(BabySitterMessageDto message)
+        {
+            return new BabySitterTable
+            {
+                IdMessage = message.IdMessage,
+                IdUser = message.IdUser,
+                Title = message.Title,
+                Content = message.Content,
+                StartTime = message.StarTime,
+                EndTime = message.EndTime,
+                Rate = message.Rate
+            };
+        }
+
+        private BabySitterMessageDto ConvertUserBabysiterToDto(BabySitterTable message)
+        {
+            return new BabySitterMessageDto
+            {
+                IdMessage = message.IdMessage,
+                IdUser = message.IdUser,
+                Title = message.Title,
+                Content = message.Content,
+                StarTime = message.StartTime,
+                EndTime = message.EndTime,
+                Rate = message.Rate
+            };
         }
 
         private void RegisterTypes()
         {
             _typeToConverTypes.Add(typeof(UserRegistertionData), typeof(UserTable));
             _typeToConverTypes.Add(typeof(UserTable), typeof(UserRegistertionData));
+
+            _typeToConverTypes.Add(typeof(BabySitterTable), typeof(BabySitterMessageDto));
         }
         #endregion
 

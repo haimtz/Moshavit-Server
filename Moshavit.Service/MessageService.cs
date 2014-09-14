@@ -14,13 +14,11 @@ namespace Moshavit.Service
     public class MessageService<T> : IMessageService<T> where T : MessageTable
     {
         private readonly IDataBase<T> _repository;
-        private readonly IUserService _userService;
 
         #region Constructor
-        public MessageService(IDataBase<T> repository, IUserService userService)
+        public MessageService(IDataBase<T> repository)
         {
             _repository = repository;
-            _userService = userService;
         }
         #endregion
 
@@ -28,6 +26,11 @@ namespace Moshavit.Service
         public void AddNewMessage(T message)
         {
             _repository.Add(message);
+        }
+
+        public T GetMessage(int id)
+        {
+            return _repository.GetById(id);
         }
 
         public void UpdateMessage(T message)
@@ -40,14 +43,10 @@ namespace Moshavit.Service
             _repository.Delete(message);
         }
 
-        public T GetMessage(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<T> GetAllMessages()
         {
             return _repository.GetAll();
         }
+       
     }
 }

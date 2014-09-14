@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 using Moshavit.Entity;
 
 namespace Moshavit.DataBase
@@ -65,7 +66,15 @@ namespace Moshavit.DataBase
 
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+            T result;
+            lock (this)
+            {
+                using (var ctx = DbContext())
+                {
+                    result = ctx.Set<T>().Find(id);
+                }
+            }
+            return result;
         }
 
         public IEnumerable<T> GetAll()

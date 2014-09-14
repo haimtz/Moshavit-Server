@@ -101,6 +101,121 @@ so it possibly some data erase</h3>
                     { "Message": "User don't exist" }
                 </td>
             </tr>
+            
+            <tr>
+                <td>/api/BabySitter</td>
+                <td>add message</td>
+                <td>POST</td>
+                <td>
+                    {<br/>
+                    IdUser: 1,<br />
+                    Title: "title",<br />
+                    Content: "content",<br />
+                    Rate: 1.0,<br />
+                    StartTime: "yyyy-mm-dd hh:MM:ss",<br />
+                    EndTime:  "yyyy-mm-dd hh:MM:ss"<br />
+                    }
+
+                </td>
+                <td>
+                    http response code 200<br />
+                </td>
+                <td>
+                </td>
+            </tr>
+
+            <tr>
+                <td>/api/BabySitter</td>
+                <td>get all babySitter messages</td>
+                <td>GET</td>
+                <td>
+
+                    
+
+                </td>
+                <td>
+                    http response 200<br />
+
+                    [<br/>
+                    {<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 1,<br />
+                    "Title": "babay sitter",<br />
+                    "Content": "need baby siter",<br />
+                    "Rate": 30,<br />
+                    "StarTime": "2014-09-12T18:00:00",<br />
+                    "EndTime": "2014-09-12T18:00:00",<br />
+                    "Name": "bob choen",<br />
+                    "Phone": "11111111"<br />
+                    },{<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 1,<br />
+                    "Title": "babay sitter",<br />
+                    "Content": "need baby siter",<br />
+                    "Rate": 30,<br />
+                    "StarTime": "2014-09-12T18:00:00",<br />
+                    "EndTime": "2014-09-12T18:00:00",<br />
+                    "Name": "bob choen",<br />
+                    "Phone": "11111111"<br />
+                    }
+                    <br/>
+                    ]
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/BabySitter/{ID}</td>
+                <td>get single message</td>
+                <td>GET</td>
+                <td>
+                    
+                    message Id
+
+                </td>
+                <td>
+                    http response 200<br />
+
+                    {<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 1,<br />
+                    "Title": "babay sitter",<br />
+                    "Content": "need baby siter",<br />
+                    "Rate": 30,<br />
+                    "StarTime": "2014-09-12T18:00:00",<br />
+                    "EndTime": "2014-09-12T18:00:00",<br />
+                    "Name": "bob choen",<br />
+                    "Phone": "11111111"<br />
+                    }
+                </td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>/api/BabySitter</td>
+                <td>Update message</td>
+                <td>PUT</td>
+                <td>
+                    {<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 1,<br />
+                    "Title": "babay sitter",<br />
+                    "Content": "need baby siter",<br />
+                    "Rate": 30,<br />
+                    "StarTime": "2014-09-12T18:00:00",<br />
+                    "EndTime": "2014-09-12T18:00:00",<br />
+                    }
+
+                </td>
+                <td>
+                    http response 200<br />
+
+                    
+                   
+                </td>
+                <td></td>
+            </tr>
+
         </tbody>
     </table>
 </body>
