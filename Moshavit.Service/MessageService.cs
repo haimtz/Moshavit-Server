@@ -4,49 +4,68 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Moshavit.DataBase;
 using Moshavit.Entity;
 using Moshavit.Entity.Dto;
+using Moshavit.Entity.Dto.messages;
 using Moshavit.Entity.EntityTable;
 using Moshavit.Entity.Interfaces;
+using Moshavit.Mapper;
 
 namespace Moshavit.Service
 {
-    public class MessageService<T> : IMessageService<T> where T : MessageTable
+    public class MessageService<T, TK> : BaseRepository<T, TK>, IMessageService<T, TK>
+        where T : MessageTable
+        where TK : MessageBaseDto
     {
-        private readonly IDataBase<T> _repository;
 
+        private readonly IUserService _userService;
         #region Constructor
-        public MessageService(IDataBase<T> repository)
+        public MessageService(IDataBase<T> repository, IMapperType mapper, IUserService userService):base(repository, mapper)
         {
-            _repository = repository;
+            _userService = userService;
         }
         #endregion
 
 
-        public void AddNewMessage(T message)
+        public void AddNewMessage(TK message)
         {
-            _repository.Add(message);
+            base.Add(message);
         }
 
-        public T GetMessage(int id)
+        public TK GetMessage(int id)
         {
-            return _repository.GetById(id);
+            var message = base.SelectFirst(x => x.IdMessage == id);
+            var user = _userService.GetUser(message.IdUser);
+
+            message.Name = user.FirstName + " " + user.LastName;
+            message.Phone = user.Phone;
+
+            return message;
         }
 
-        public void UpdateMessage(T message)
+        public void UpdateMessage(TK message)
         {
-            _repository.Update(message);
+            base.Update(message);
         }
 
-        public void DeleteMessage(T message)
+        public void DeleteMessage(int id)
         {
-            _repository.Delete(message);
+            base.Delete(id);
         }
 
-        public IEnumerable<T> GetAllMessages()
+        public IEnumerable<TK> GetAllMessages()
         {
-            return _repository.GetAll();
+            var list = base.GetAll().ToList();
+
+            foreach (var message in list)
+            {
+                var user = _userService.GetUser(message.IdUser);
+                message.Name = user.FirstName + " " + user.LastName;
+                message.Phone = user.Phone;
+            }
+
+            return list;
         }
-       
     }
 }

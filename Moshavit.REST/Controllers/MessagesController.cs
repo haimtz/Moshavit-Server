@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Moshavit.Entity;
+using Moshavit.Entity.Dto.messages;
 using Moshavit.Entity.EntityTable;
 using Moshavit.Entity.Interfaces;
-using Moshavit.Service;
 
 namespace Moshavit.REST.Controllers
 {
@@ -14,18 +13,19 @@ namespace Moshavit.REST.Controllers
     /// Message rest service for messages from type T
     /// </summary>
     /// <typeparam name="T">inherit from MessageTable</typeparam>
-    public abstract class MessagesController<T> : ApiController where T : MessageTable
+    /// <typeparam name="TK">Dto</typeparam>
+    public class MessagesController<T, TK> : ApiController
+        where T : MessageTable
+        where TK : MessageBaseDto
     {
         #region Members
-        protected readonly IMessageService<T> Service;
-        protected readonly IUserService UserService;
+        protected readonly IMessageService<T, TK> Service;
         #endregion
 
         #region Constractur
-        protected MessagesController(IMessageService<T> service, IUserService userService)
+        public MessagesController(IMessageService<T, TK> service)
         {
             Service = service;
-            UserService = userService;
         }
         #endregion
 
@@ -34,14 +34,28 @@ namespace Moshavit.REST.Controllers
         /// Get all messages from type T
         /// </summary>
         /// <returns></returns>
-        public virtual IEnumerable<T> Get()
+        public virtual IEnumerable<TK> Get()
         {
             return Service.GetAllMessages();
         }
 
-        protected virtual T Get(int id)
+        /// <summary>
+        /// Get single message
+        /// </summary>
+        /// <param name="id">message id</param>
+        /// <returns>babysitter message HttpStatus code 200</returns>
+        public HttpResponseMessage Get(int id)
         {
-            return Service.GetMessage(id);
+            try
+            {
+                var result = Service.GetMessage(id);
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+
         }
 
         // POST api/<controller>
@@ -50,7 +64,7 @@ namespace Moshavit.REST.Controllers
         /// </summary>
         /// <param name="message">new message</param>
         /// <returns>Http response 200</returns>
-        public virtual HttpResponseMessage Post(T message)
+        public virtual HttpResponseMessage Post(TK message)
         {
             try
             {
@@ -69,7 +83,7 @@ namespace Moshavit.REST.Controllers
         /// </summary>
         /// <param name="message">message to update</param>
         /// <returns>http response 200</returns>
-        public virtual HttpResponseMessage Put(T message)
+        public virtual HttpResponseMessage Put(TK message)
         {
             try
             {

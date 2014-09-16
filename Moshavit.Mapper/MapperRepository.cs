@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Moshavit.Entity;
 using Moshavit.Entity.Dto;
 using Moshavit.Entity.Dto.messages;
+using Moshavit.Entity.EntityTable;
 using Moshavit.Entity.TableEntity;
 
 namespace Moshavit.Mapper
@@ -30,34 +31,9 @@ namespace Moshavit.Mapper
 
             _mapperRepository.Add(typeof(BabySitterTable), new Func<BabySitterTable, BabySitterMessageDto>(ConvertUserBabysiterToDto));
             _mapperRepository.Add(typeof(BabySitterMessageDto), new Func<BabySitterMessageDto, BabySitterTable>(ConvertUserBabysiterToTable));
-        }
 
-        private BabySitterTable ConvertUserBabysiterToTable(BabySitterMessageDto message)
-        {
-            return new BabySitterTable
-            {
-                IdMessage = message.IdMessage,
-                IdUser = message.IdUser,
-                Title = message.Title,
-                Content = message.Content,
-                StartTime = message.StarTime,
-                EndTime = message.EndTime,
-                Rate = message.Rate
-            };
-        }
-
-        private BabySitterMessageDto ConvertUserBabysiterToDto(BabySitterTable message)
-        {
-            return new BabySitterMessageDto
-            {
-                IdMessage = message.IdMessage,
-                IdUser = message.IdUser,
-                Title = message.Title,
-                Content = message.Content,
-                StarTime = message.StartTime,
-                EndTime = message.EndTime,
-                Rate = message.Rate
-            };
+            _mapperRepository.Add(typeof(CarpullMessageDto), new Func<CarpullMessageDto, CarPullTable>(ConvertUserCarpullToTable));
+            _mapperRepository.Add(typeof(CarPullTable), new Func<CarPullTable, CarpullMessageDto>(ConvertUserCarpullToDto));
         }
 
         private void RegisterTypes()
@@ -66,6 +42,10 @@ namespace Moshavit.Mapper
             _typeToConverTypes.Add(typeof(UserTable), typeof(UserRegistertionData));
 
             _typeToConverTypes.Add(typeof(BabySitterTable), typeof(BabySitterMessageDto));
+            _typeToConverTypes.Add(typeof(BabySitterMessageDto), typeof(BabySitterTable));
+
+            _typeToConverTypes.Add(typeof(CarpullMessageDto), typeof(CarPullTable));
+            _typeToConverTypes.Add(typeof(CarPullTable), typeof(CarpullMessageDto));
         }
         #endregion
 
@@ -127,6 +107,64 @@ namespace Moshavit.Mapper
                 Password = user.Password,
                 StartTime = user.StartTime,
                 IsActive = user.IsActive
+            };
+        }
+
+        private BabySitterTable ConvertUserBabysiterToTable(BabySitterMessageDto message)
+        {
+            return new BabySitterTable
+            {
+                IdMessage = message.IdMessage,
+                IdUser = message.IdUser,
+                Title = message.Title,
+                Content = message.Content,
+                StartTime = message.StartTime,
+                EndTime = message.EndTime,
+                Rate = message.Rate
+            };
+        }
+
+        private BabySitterMessageDto ConvertUserBabysiterToDto(BabySitterTable message)
+        {
+            return new BabySitterMessageDto
+            {
+                IdMessage = message.IdMessage,
+                IdUser = message.IdUser,
+                Title = message.Title,
+                Content = message.Content,
+                StartTime = message.StartTime,
+                EndTime = message.EndTime,
+                Rate = message.Rate
+            };
+        }
+
+        private CarPullTable ConvertUserCarpullToTable(CarpullMessageDto message)
+        {
+            return new CarPullTable
+            {
+                IdMessage = message.IdMessage,
+                IdUser = message.IdUser,
+                Title = message.Title,
+                Content = message.Content,
+                From = message.From,
+                To = message.To,
+                PickUp = message.PickUp,
+                ReturnTime = message.ReturnTime
+            };
+        }
+
+        private CarpullMessageDto ConvertUserCarpullToDto(CarPullTable message)
+        {
+            return new CarpullMessageDto
+            {
+                IdMessage = message.IdMessage,
+                IdUser = message.IdUser,
+                Title = message.Title,
+                Content = message.Content,
+                From = message.From,
+                To = message.To,
+                PickUp = message.PickUp,
+                ReturnTime = message.ReturnTime
             };
         }
         #endregion

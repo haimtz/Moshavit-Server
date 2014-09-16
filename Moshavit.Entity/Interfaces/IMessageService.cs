@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Moshavit.Entity.EntityTable;
+﻿using System.Collections.Generic;
+using Moshavit.Entity.Dto.messages;
 
 namespace Moshavit.Entity.Interfaces
 {
-    public interface IMessageService<T> where T : MessageTable
+    public interface IMessageService<T, TK> where TK : MessageBaseDto
     {
-        void AddNewMessage(T message);
+        void AddNewMessage(TK message);
 
-        void UpdateMessage(T message);
+        void UpdateMessage(TK message);
 
-        void DeleteMessage(T message);
+        void DeleteMessage(int id);
 
-        T GetMessage(int id);
+        TK GetMessage(int id);
 
-        IEnumerable<T> GetAllMessages();
+        IEnumerable<TK> GetAllMessages();
     }
 }
