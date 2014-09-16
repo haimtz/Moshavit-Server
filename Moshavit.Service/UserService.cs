@@ -75,6 +75,9 @@ namespace Moshavit.Service
 
         public UserData UpdateUser(UserRegistertionData user)
         {
+            if (IsRegister(user))
+                throw new RegistrationException("The user is register");
+
             base.Update(user);
             var updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
 
