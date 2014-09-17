@@ -8,9 +8,10 @@
                 background-color: yellowgreen;
             }
         }
-         table {
-             border-collapse: collapse;
-         }
+
+        table {
+            border-collapse: collapse;
+        }
 
         table, th, td {
             border: 1px solid black;
@@ -33,8 +34,10 @@
 <body>
     <h1>Base Url moshavit.somee.com</h1>
     <h2>API</h2>
-    <h3>Because the host is free for now we are limited with the data base space storage
-so it possibly some data erase</h3>
+    <h3>
+        Because the host is free for now we are limited with the data base space storage
+        so it possibly some data erase
+    </h3>
     <table>
         <thead>
             <tr>
@@ -59,23 +62,24 @@ so it possibly some data erase</h3>
                     "Password": "1234",<span>*</span><br />
                     "Email" : "name@domain.com",<span>*</span><br />
                     "Address" : "address"
-                    }<br/>
-                    <br/>
+                    }<br />
+                    <br />
                     <span>* mandatory</span>
                 </td>
                 <td> http response code 200 </td>
-                <td><ul>
+                <td>
+                    <ul>
                         <li>
-                            The Email is unique in data base if you try to register with the same email you will get error message  
+                            The Email is unique in data base if you try to register with the same email you will get error message
                         </li>
                         <li>
                             There is no validation on this point (will be add later)
                         </li>
                     </ul>
-                    
+
                 </td>
             </tr>
-            
+
             <tr>
                 <td>/api/login</td>
                 <td>login to the system</td>
@@ -86,8 +90,9 @@ so it possibly some data erase</h3>
                     "Email" : "name@domain.com"<br />
                     }
                 </td>
-                <td> http response code 200<br/>
-                    {<br/>
+                <td>
+                    http response code 200<br />
+                    {<br />
                     "IdUser": 1,<br />
                     "FirstName": "username",<br />
                     "LastName": "family name",<br />
@@ -95,19 +100,20 @@ so it possibly some data erase</h3>
                     "Phone": "00000",<br />
                     "Address": ""<br />
                     }
-                
+
                 </td>
-                <td><span>error message</span>
+                <td>
+                    <span>error message</span>
                     { "Message": "User don't exist" }
                 </td>
             </tr>
-            
+
             <tr>
                 <td>/api/BabySitter</td>
                 <td>add message</td>
                 <td>POST</td>
                 <td>
-                    {<br/>
+                    {<br />
                     IdUser: 1,<br />
                     Title: "title",<br />
                     Content: "content",<br />
@@ -120,23 +126,18 @@ so it possibly some data erase</h3>
                 <td>
                     http response code 200<br />
                 </td>
-                <td>
-                </td>
+                <td></td>
             </tr>
 
             <tr>
                 <td>/api/BabySitter</td>
                 <td>get all babySitter messages</td>
                 <td>GET</td>
-                <td>
-
-                    
-
-                </td>
+                <td></td>
                 <td>
                     http response 200<br />
 
-                    [<br/>
+                    [<br />
                     {<br />
                     "IdMessage": 1,<br />
                     "IdUser": 1,<br />
@@ -158,7 +159,7 @@ so it possibly some data erase</h3>
                     "Name": "bob choen",<br />
                     "Phone": "11111111"<br />
                     }
-                    <br/>
+                    <br />
                     ]
                 </td>
                 <td></td>
@@ -169,7 +170,7 @@ so it possibly some data erase</h3>
                 <td>get single message</td>
                 <td>GET</td>
                 <td>
-                    
+
                     message Id
 
                 </td>
@@ -190,7 +191,7 @@ so it possibly some data erase</h3>
                 </td>
                 <td></td>
             </tr>
-            
+
             <tr>
                 <td>/api/BabySitter</td>
                 <td>Update message</td>
@@ -210,12 +211,277 @@ so it possibly some data erase</h3>
                 <td>
                     http response 200<br />
 
-                    
-                   
+
+
                 </td>
                 <td></td>
             </tr>
 
+            <tr>
+                <td>/api/carpull</td>
+                <td>get all carpull messages</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    [{<br />
+                    "From": "rosh hahahaa",<br />
+                    "To": "telaviv",<br />
+                    "PickUp": "2014-10-01T07:00:00",<br />
+                    "ReturnTime": "2014-10-01T07:00:00",<br />
+                    "IdMessage": 4,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "first name family name",<br />
+                    "Phone": "00000"<br />
+                    },{<br />
+                    "From": "rosh hahahaa",<br />
+                    "To": "telaviv",<br />
+                    "PickUp": "2014-10-01T07:00:00",<br />
+                    "ReturnTime": "2014-10-01T07:00:00",<br />
+                    "IdMessage": 5,<br />
+                    "IdUser": 5,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "cccc cccc",<br />
+                    "Phone": "ccccc"<br />
+                    }]<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/carpull/{id}</td>
+                <td>get single message</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    {<br />
+                    "From": "rosh hahahaa",<br />
+                    "To": "telaviv",<br />
+                    "PickUp": "2014-10-01T07:00:00",<br />
+                    "ReturnTime": "2014-10-01T07:00:00",<br />
+                    "IdMessage": 4,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "first name family name",<br />
+                    "Phone": "00000"<br />
+                    }
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/carpull</td>
+                <td>Add message</td>
+                <td>Post</td>
+                <td>
+                    {<br />
+                    "From": "rosh hahahaa",<br />
+                    "To": "telaviv",<br />
+                    "PickUp": "2014-10-01T07:00:00",<br />
+                    "ReturnTime": "2014-10-01T07:00:00",<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    }
+                </td>
+                <td>
+                    http response 200<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/carpull</td>
+                <td>Update message</td>
+                <td>PUT</td>
+                <td>
+                    {<br />
+                    "From": "rosh hahahaa",<br />
+                    "To": "telaviv",<br />
+                    "PickUp": "2014-10-01T07:00:00",<br />
+                    "ReturnTime": "2014-10-01T07:00:00",<br />
+                    "IdMessage": 4,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    }
+                </td>
+                <td>
+                    http response 200<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/bulletinboard</td>
+                <td>get all messages</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    [{<br />
+                    "Description": "this event will be in bla bla",<br />
+                    "Details": "asdasdadasdsadasd",<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "first name family name",<br />
+                    "Phone": "00000"<br />
+                    }, {<br />
+                    "Description": "this event will be in bla bla",<br />
+                    "Details": "asdasdadasdsadasd",<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "first name family name",<br />
+                    "Phone": "00000"<br />
+                    }]
+                </td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>/api/bulletinboard/{id}</td>
+                <td>get single message</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    {<br />
+                    "Description": "this event will be in bla bla",<br />
+                    "Details": "asdasdadasdsadasd",<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "first name family name",<br />
+                    "Phone": "00000"<br />
+                    }
+                </td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>/api/bulletinboard</td>
+                <td>Add Message</td>
+                <td>POST</td>
+                <td>
+                    {<br />
+                    "Description": "this event will be in bla bla",<br />
+                    "Details": "asdasdadasdsadasd",<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    }
+                </td>
+                <td>
+                    http response 200<br />
+                    
+                </td>
+                <td></td>
+            </tr>
+            
+            
+            <tr>
+                <td>/api/bulletinboard</td>
+                <td>update message</td>
+                <td>PUT</td>
+                <td>
+                    {<br />
+                    "Description": "this event will be in bla bla",<br />
+                    "Details": "asdasdadasdsadasd",<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "first name family name",<br />
+                    "Phone": "00000"<br />
+                    }
+                </td>
+                <td>
+                    http response 200<br />
+
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/user</td>
+                <td>get all users</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    [{<br />
+                    "IdUser": 1,<br />
+                    "FirstName": "first name",<br />
+                    "LastName": "family name",<br />
+                    "Email": "nameccds@domain.com",<br />
+                    "Phone": "00000",<br />
+                    "Address": "",<br />
+                    "StartTime": "2014-09-13T23:51:40.97"<br />
+                    },{<br />
+                    "IdUser": 2,<br />
+                    "FirstName": "first name",<br />
+                    "LastName": "family name",<br />
+                    "Email": "namesdsds@domain.com",<br />
+                    "Phone": "00000",<br />
+                    "Address": "",<br />
+                    "StartTime": "2014-09-13T14:10:33.41"<br />
+                    }]
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/user/{id}</td>
+                <td>get single user</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    {<br />
+                    "IdUser": 1,<br />
+                    "FirstName": "first name",<br />
+                    "LastName": "family name",<br />
+                    "Email": "nameccds@domain.com",<br />
+                    "Phone": "00000",<br />
+                    "Address": "",<br />
+                    "StartTime": "2014-09-13T23:51:40.97"<br />
+                    }<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/user</td>
+                <td>get single user</td>
+                <td>PUT</td>
+                <td>
+                    {<br />
+                    "FirstName" : "first name",<span>*</span><br />
+                    "LastName" : "family name",<span>*</span><br />
+                    "Phone" : "00000",<span>*</span><br />
+                    "Password": "1234",<span>*</span><br />
+                    "Email" : "name@domain.com",<span>*</span><br />
+                    "Address" : "address"
+                    }<br />
+                    <br />
+                    <span>* mandatory</span>
+                </td>
+                <td>
+                    http response 200<br />
+
+                </td>
+                <td></td>
+            </tr>
         </tbody>
     </table>
 </body>

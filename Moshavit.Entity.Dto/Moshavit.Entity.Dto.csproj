@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="messages\BabySitterMessageDto.cs" />
+    <Compile Include="messages\BulletinBoardDto.cs" />
     <Compile Include="messages\CarpullMessageDto.cs" />
     <Compile Include="messages\MessageBaseDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

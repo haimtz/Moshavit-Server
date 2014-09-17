@@ -38,23 +38,23 @@ namespace Moshavit.REST
             container.Register<IUserService, UserService>();
             container.Register<IMessageService<BabySitterTable, BabySitterMessageDto>, MessageService<BabySitterTable, BabySitterMessageDto>>();
             container.Register<IMessageService<CarPullTable, CarpullMessageDto>, MessageService<CarPullTable, CarpullMessageDto>>();
+            container.Register<IMessageService<BulletinBoardTable, BulletinBoardDto>, MessageService<BulletinBoardTable, BulletinBoardDto>>();
             #endregion
             
             #region Repositories
             container.Register<IDataBase<UserTable>, DataBase<UserTable>>();
             container.Register<IDataBase<BabySitterTable>, DataBase<BabySitterTable>>();
             container.Register<IDataBase<CarPullTable>, DataBase<CarPullTable>>();
-
-            
+            container.Register<IDataBase<BulletinBoardTable>, DataBase<BulletinBoardTable>>();
             #endregion
 
             #region Controllers
             container.Register<LoginController, LoginController>();
             container.Register<RegisterController, RegisterController>();
             container.Register<UserController, UserController>();
-
             container.Register<BabySitterController, BabySitterController>();
             container.Register<CarpullController, CarpullController>();
+            container.Register<BulletinBoardController, BulletinBoardController>();
             #endregion
         }
     }

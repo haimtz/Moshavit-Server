@@ -138,12 +138,16 @@
     <Compile Include="Controllers\BabySitterController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\BulletinBoardController.cs" />
     <Compile Include="Controllers\CarpullController.cs" />
     <Compile Include="Controllers\CustomAuthenticationMessageHandler.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\SettingsController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WindsorCompositionRoot.cs">
       <SubType>Code</SubType>

@@ -51,13 +51,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BabySitterTable.cs" />
+    <Compile Include="BulletinBoardTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CarPullTable.cs" />
     <Compile Include="GiveAndTakeMessageTable.cs" />
     <Compile Include="MessageTable.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Interfaces\IDependency.cs" />
     <Compile Include="Interfaces\IMessageService.cs" />
-    <Compile Include="MessageResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserTable.cs" />
   </ItemGroup>
