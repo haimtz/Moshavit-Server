@@ -32,11 +32,12 @@ namespace Moshavit.Mapper
             _mapperRepository.Add(typeof(BabySitterMessageDto), new Func<BabySitterMessageDto, BabySitterTable>(ConvertUserBabysiterToTable));
             _mapperRepository.Add(typeof(CarpullMessageDto), new Func<CarpullMessageDto, CarPullTable>(ConvertUserCarpullToTable));
             _mapperRepository.Add(typeof(CarPullTable), new Func<CarPullTable, CarpullMessageDto>(ConvertUserCarpullToDto));
-
             _mapperRepository.Add(typeof(BulletinBoardTable), new Func<BulletinBoardTable, BulletinBoardDto>(ConvertBulltinBoardToDto));
             _mapperRepository.Add(typeof(BulletinBoardDto), new Func<BulletinBoardDto, BulletinBoardTable>(ConvertBulltinBoardToTable));
-
+            _mapperRepository.Add(typeof(SurveyDto), new Func<SurveyDto, SurveyTable>(ConvertSurveyDtoToTable));
+            _mapperRepository.Add(typeof(SurveyTable), new Func<SurveyTable, SurveyDto>(ConvertSurveyTableToDto));
         }
+
         private void RegisterTypes()
         {
             _typeToConverTypes.Add(typeof(UserRegistertionData), typeof(UserTable));
@@ -47,6 +48,8 @@ namespace Moshavit.Mapper
             _typeToConverTypes.Add(typeof(CarPullTable), typeof(CarpullMessageDto));
             _typeToConverTypes.Add(typeof(BulletinBoardTable), typeof(BulletinBoardDto));
             _typeToConverTypes.Add(typeof(BulletinBoardDto), typeof(BulletinBoardTable));
+            _typeToConverTypes.Add(typeof(SurveyDto), typeof(SurveyTable));
+            _typeToConverTypes.Add(typeof(SurveyTable), typeof(SurveyDto));
         }
         #endregion
 
@@ -192,6 +195,36 @@ namespace Moshavit.Mapper
                 Content = message.Content,
                 Description = message.Description,
                 Details = message.Details
+            };
+        }
+
+        private SurveyTable ConvertSurveyDtoToTable(SurveyDto survey)
+        {
+            return new SurveyTable
+            {
+                IdSurvey = survey.IdSurvey,
+                IdUser = survey.IdUser,
+                Question = survey.Question,
+                Yes = survey.Yes,
+                No = survey.No,
+                Avoid = survey.Avoid,
+                End = survey.EndTime,
+                Start = survey.StartTime
+            };
+        }
+
+        private SurveyDto ConvertSurveyTableToDto(SurveyTable survey)
+        {
+            return new SurveyDto
+            {
+                IdSurvey = survey.IdSurvey,
+                IdUser = survey.IdUser,
+                Question = survey.Question,
+                Yes = survey.Yes,
+                No = survey.No,
+                Avoid = survey.Avoid,
+                EndTime = survey.End,
+                StartTime = survey.Start
             };
         }
         #endregion

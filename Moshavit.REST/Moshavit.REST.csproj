@@ -148,6 +148,9 @@
     <Compile Include="Controllers\SettingsController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\SurveyController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WindsorCompositionRoot.cs">
       <SubType>Code</SubType>

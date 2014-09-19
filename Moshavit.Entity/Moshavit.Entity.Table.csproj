@@ -56,12 +56,23 @@
     </Compile>
     <Compile Include="CarPullTable.cs" />
     <Compile Include="GiveAndTakeMessageTable.cs" />
+    <Compile Include="Interfaces\ISurveyService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Interfaces\IVoteService.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MessageTable.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Interfaces\IDependency.cs" />
     <Compile Include="Interfaces\IMessageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SurveyTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="UserTable.cs" />
+    <Compile Include="VotingLIstTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

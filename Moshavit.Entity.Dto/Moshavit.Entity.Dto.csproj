@@ -44,9 +44,12 @@
     <Compile Include="messages\CarpullMessageDto.cs" />
     <Compile Include="messages\MessageBaseDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserData.cs" />
-    <Compile Include="UserLoginDto.cs" />
-    <Compile Include="UserRegistertionData.cs">
+    <Compile Include="Survey\SurveyDto.cs" />
+    <Compile Include="Survey\SurveyResult.cs" />
+    <Compile Include="Survey\UserVote.cs" />
+    <Compile Include="User\UserData.cs" />
+    <Compile Include="User\UserLoginDto.cs" />
+    <Compile Include="User\UserRegistertionData.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

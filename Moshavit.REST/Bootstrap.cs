@@ -39,6 +39,7 @@ namespace Moshavit.REST
             container.Register<IMessageService<BabySitterTable, BabySitterMessageDto>, MessageService<BabySitterTable, BabySitterMessageDto>>();
             container.Register<IMessageService<CarPullTable, CarpullMessageDto>, MessageService<CarPullTable, CarpullMessageDto>>();
             container.Register<IMessageService<BulletinBoardTable, BulletinBoardDto>, MessageService<BulletinBoardTable, BulletinBoardDto>>();
+            container.Register<ISurveyService, SurveyService>();
             #endregion
             
             #region Repositories
@@ -46,6 +47,7 @@ namespace Moshavit.REST
             container.Register<IDataBase<BabySitterTable>, DataBase<BabySitterTable>>();
             container.Register<IDataBase<CarPullTable>, DataBase<CarPullTable>>();
             container.Register<IDataBase<BulletinBoardTable>, DataBase<BulletinBoardTable>>();
+            container.Register<IDataBase<SurveyTable>, DataBase<SurveyTable>>();
             #endregion
 
             #region Controllers
@@ -55,6 +57,7 @@ namespace Moshavit.REST
             container.Register<BabySitterController, BabySitterController>();
             container.Register<CarpullController, CarpullController>();
             container.Register<BulletinBoardController, BulletinBoardController>();
+            container.Register<SurveyController, SurveyController>();
 
 
             container.Register<SettingsController, SettingsController>();

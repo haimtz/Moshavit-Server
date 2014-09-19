@@ -2,7 +2,10 @@
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Moshavit.Entity;
+using Moshavit.Entity.Interfaces;
 using Moshavit.Mapper;
+using Moshavit.DataBase;
+using Moshavit.Service;
 
 namespace Moshavit.Castel
 {
@@ -34,6 +37,8 @@ namespace Moshavit.Castel
         {
             _container.Register(Component.For<IMapperType>().ImplementedBy<TypeMapper>());
             _container.Register(Component.For<IMapperRepository>().ImplementedBy<MapperRepository>());
+            _container.Register(Component.For<IDataBase<VotingLIstTable>>().ImplementedBy<DataBase<VotingLIstTable>>());
+            _container.Register(Component.For<IVoteService>().ImplementedBy<VoteService>());
         }
 
     }

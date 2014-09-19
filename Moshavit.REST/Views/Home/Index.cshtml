@@ -482,6 +482,103 @@
                 </td>
                 <td></td>
             </tr>
+            
+            <tr>
+                <td>/api/Survey</td>
+                <td>get all survey</td>
+                <td>GET</td>
+                <td>
+                   
+                </td>
+                <td>
+                    http response 200<br />
+                    [-{<br />
+                    IdSurvey: 1<br />
+                    IdUser: 1<br />
+                    VadName: "Joe Bob"<br />
+                    Question: "What do you think about"<br />
+                    Yes: 0<br />
+                    No: 0<br />
+                    Avoid: 0<br />
+                    TotalVote: 0<br />
+                    StartTime: "2014-09-01T10:00:00"<br />
+                    EndTime: "2014-09-03T21:00:00"<br />
+                    },{<br />
+                    IdSurvey: 2<br />
+                    IdUser: 3<br />
+                    VadName: "Rotem Levi"<br />
+                    Question: "אנחנו רוצים להוציא "<br />
+                    Yes: 0<br />
+                    No: 0<br />
+                    Avoid: 0<br />
+                    TotalVote: 0<br />
+                    StartTime: "2014-09-01T10:00:00"<br />
+                    EndTime: "2014-09-03T21:00:00"<br />
+                    }]<br />
+                </td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>/api/Survey/{id}</td>
+                <td>get single survey</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    {<br />
+                    IdSurvey: 1<br />
+                    IdUser: 1<br />
+                    VadName: "Joe Bob"<br />
+                    Question: "What do you think about"<br />
+                    Yes: 0<br />
+                    No: 0<br />
+                    Avoid: 0<br />
+                    TotalVote: 0<br />
+                    StartTime: "2014-09-01T10:00:00"<br />
+                    EndTime: "2014-09-03T21:00:00"<br />
+                    }<br/>
+                </td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>/api/Survey</td>
+                <td>Add survey</td>
+                <td>POST</td>
+                <td>
+                    {<br />
+                    IdUser: 1<br />
+                    Question: "What do you think about"<br />
+                    StartTime: "2014-09-01T10:00:00"<br />
+                    EndTime: "2014-09-03T21:00:00"<br />
+                    }<br />
+                </td>
+                <td>
+                    http response 200<br />
+                   
+                </td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>/api/Survey</td>
+                <td>Update survey</td>
+                <td>PUT</td>
+                <td>
+                    {<br />
+                    IdSurvey: 1<br />
+                    Question: "What do you think about"<br />
+                    StartTime: "2014-09-01T10:00:00"<br />
+                    EndTime: "2014-09-03T21:00:00"<br />
+                    }<br />
+                </td>
+                <td>
+                    http response 200<br />
+
+                </td>
+                <td></td>
+            </tr>
         </tbody>
     </table>
 </body>
