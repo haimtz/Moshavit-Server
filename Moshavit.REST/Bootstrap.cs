@@ -58,7 +58,7 @@ namespace Moshavit.REST
             container.Register<CarpullController, CarpullController>();
             container.Register<BulletinBoardController, BulletinBoardController>();
             container.Register<SurveyController, SurveyController>();
-
+            container.Register<VoteController, VoteController>();
 
             container.Register<SettingsController, SettingsController>();
             #endregion

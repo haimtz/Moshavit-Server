@@ -30,7 +30,7 @@ namespace Moshavit.Service
 
         public bool IsUserVote(int surveyId, int userId)
         {
-            var vote = _service.FindBy(v => v.IdSurvey == surveyId && v.IdUser == userId);
+            var vote = _service.FindBy(v => v.IdSurvey == surveyId && v.IdUser == userId).FirstOrDefault();
 
             return vote != null;
         }

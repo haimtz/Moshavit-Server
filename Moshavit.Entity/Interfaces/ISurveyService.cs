@@ -17,7 +17,7 @@ namespace Moshavit.Entity.Interfaces
         /// </summary>
         /// <param name="vote"></param>
         /// <returns>true if vote accepted</returns>
-        bool AddVote(UserVote vote);
+        void AddVote(UserVote vote);
 
         /// <summary>
         /// Update single survey

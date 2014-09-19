@@ -16,6 +16,6 @@ namespace Moshavit.DataBase
         public DbSet<UserTable> Users { get; set; }
         public DbSet<MessageTable> Messages { get; set; }
         public DbSet<SurveyTable> Survey { get; set; }
-        public DbSet<VoteingLIstTable> VoterLIsts { get; set; }
+        public DbSet<VotingLIstTable> VoterLIsts { get; set; }
     }
 }

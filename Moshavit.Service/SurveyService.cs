@@ -29,13 +29,14 @@ namespace Moshavit.Service
             base.Add(survey);
         }
 
-        public bool AddVote(UserVote vote)
+        public void AddVote(UserVote vote)
         {
             if(_voteService.IsUserVote(vote.IdSurvey, vote.IdUser))
                 throw new Exception("This User vote in this Survey");
 
             var survey = GetSurvey(vote.IdSurvey);
             UpdateSurveyVote(survey, vote.Vote);
+            _voteService.AddVote(survey.IdSurvey, vote.IdUser);
         }
 
         public void UpdateSurvey(SurveyDto survey)
