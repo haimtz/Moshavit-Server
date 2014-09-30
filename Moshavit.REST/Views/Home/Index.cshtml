@@ -604,6 +604,112 @@
                     </ul>
                 </td>
             </tr>
+            
+             <tr>
+                <td>/api/GiveAndTake</td>
+                <td>add message</td>
+                <td>POST</td>
+                <td>
+                    {<br />
+                    IdUser: 1,<br />
+                    Title: "title",<br />
+                    Content: "content",<br />
+                    Image1: stringBase64<br/>
+                    Image2: stringBase64<br/>
+                    Image3: stringBase64<br/>
+                    }
+
+                </td>
+                <td>
+                    http response code 200<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/GiveAndTake</td>
+                <td>get all GiveAndTake messages</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+
+                    [<br />
+                    {<br />
+                    IdUser: 1,<br />
+                    Title: "title",<br />
+                    Content: "content",<br />
+                    Image1: stringBase64<br />
+                    Image2: stringBase64<br />
+                    Image3: stringBase64<br />
+                    "Name": "bob choen",<br />
+                    "Phone": "11111111"<br />
+                    },
+                    {<br />
+                    IdUser: 1,<br />
+                    Title: "title",<br />
+                    Content: "content",<br />
+                    Image1: stringBase64,<br />
+                    Image2: stringBase64,<br />
+                    Image3: stringBase64,<br />
+                    "Name": "bob choen",<br />
+                    "Phone": "11111111"<br />
+                    }
+                    ]
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/GiveAndTake/{ID}</td>
+                <td>get single message</td>
+                <td>GET</td>
+                <td>
+
+                    message Id
+
+                </td>
+                <td>
+                    http response 200<br />
+
+                    {<br />
+                    IdUser: 1,<br />
+                    Title: "title",<br />
+                    Content: "content",<br />
+                    Image1: stringBase64,<br />
+                    Image2: stringBase64,<br />
+                    Image3: stringBase64,<br />
+                    "Name": "bob choen",<br />
+                    "Phone": "11111111"<br />
+                    }
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/GiveAndTake</td>
+                <td>Update message</td>
+                <td>PUT</td>
+                <td>
+                    {<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 1,<br />
+                    "Title": "babay sitter",<br />
+                    "Content": "need baby siter",<br />
+                    Image1: stringBase64,<br />
+                    Image2: stringBase64,<br />
+                    Image3: stringBase64,<br />
+                    }
+
+                </td>
+                <td>
+                    http response 200<br />
+
+
+
+                </td>
+                <td></td>
+            </tr>
         </tbody>
     </table>
 </body>
