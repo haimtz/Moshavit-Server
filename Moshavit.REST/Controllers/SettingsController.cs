@@ -68,7 +68,7 @@ namespace Moshavit.REST.Controllers
                 {
                     _userService.Register(data);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     num++;
                 }

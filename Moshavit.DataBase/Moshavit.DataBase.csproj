@@ -54,6 +54,11 @@
     <Compile Include="Context.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="IDataBase.cs" />
+    <Compile Include="Migrations\201409302002345_add.cs" />
+    <Compile Include="Migrations\201409302002345_add.Designer.cs">
+      <DependentUpon>201409302002345_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +74,11 @@
       <Project>{7c1d8755-2c8f-43b4-a7c4-5870d063d12b}</Project>
       <Name>Moshavit.Mapper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201409302002345_add.resx">
+      <DependentUpon>201409302002345_add.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

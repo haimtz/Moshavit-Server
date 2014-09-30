@@ -27,7 +27,7 @@ namespace Moshavit.Service
         /// <returns>true if succeed</returns>
         public bool Register(UserRegistertionData user)
         {
-            if (IsRegister(user))
+            if (IsRegister(user.Email))
                 throw new RegistrationException("The user is register");
 
             user.IsActive = false;
@@ -75,7 +75,7 @@ namespace Moshavit.Service
 
         public UserData UpdateUser(UserRegistertionData user)
         {
-            if (IsRegister(user))
+            if (IsRegister(user.Email))
                 throw new RegistrationException("The user is register");
 
             base.Update(user);
@@ -100,14 +100,14 @@ namespace Moshavit.Service
             // TODO: return only active users
             return userList.Where(x => !x.IsActive).Select(user => new UserData
             {
-                IdUser = user.IdUser, 
-                FirstName = user.FirstName, 
-                LastName = user.LastName, 
-                Address = user.Address ?? string.Empty, 
-                Email = user.Email, 
+                IdUser = user.IdUser,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Address = user.Address ?? string.Empty,
+                Email = user.Email,
                 Phone = user.Phone,
                 StartTime = user.StartTime
-            }).ToList();
+            }).ToList().OrderByDescending(x => x.StartTime);
         }
 
         public void DeleteUser(int id)
@@ -120,9 +120,9 @@ namespace Moshavit.Service
         #endregion
 
         #region Private Method
-        private bool IsRegister(UserRegistertionData user)
+        private bool IsRegister(string email)
         {
-            var result = base.SelectFirst(x => x.Email == user.Email);
+            var result = base.SelectFirst(x => x.Email == email);
             if (result != null)
                 return true;
 

@@ -7,13 +7,13 @@ namespace Moshavit.DataBase.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.2-21211")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class add : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(add));
         
         string IMigrationMetadata.Id
         {
-            get { return "201409190015141_InitialCreate"; }
+            get { return "201409302002345_add"; }
         }
         
         string IMigrationMetadata.Source

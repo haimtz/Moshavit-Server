@@ -30,6 +30,7 @@ namespace Moshavit.Service
 
         public void AddNewMessage(TK message)
         {
+            message.ModifiedMessage = DateTime.Now;
             base.Add(message);
         }
 
@@ -46,6 +47,7 @@ namespace Moshavit.Service
 
         public void UpdateMessage(TK message)
         {
+            message.ModifiedMessage = DateTime.Now;
             base.Update(message);
         }
 
@@ -65,7 +67,7 @@ namespace Moshavit.Service
                 message.Phone = user.Phone;
             }
 
-            return list;
+            return list.OrderByDescending(x => x.ModifiedMessage);
         }
     }
 }

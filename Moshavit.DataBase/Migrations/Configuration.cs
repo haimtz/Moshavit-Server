@@ -10,7 +10,6 @@ namespace Moshavit.DataBase.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Moshavit.DataBase.Context";
         }
 
         protected override void Seed(Moshavit.DataBase.Context context)

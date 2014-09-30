@@ -6,7 +6,6 @@ using Moshavit.Entity.Dto.messages;
 using Moshavit.Entity.EntityTable;
 using Moshavit.Entity.Interfaces;
 using Moshavit.Entity.TableEntity;
-using Moshavit.Mapper;
 using Moshavit.REST.Controllers;
 using Moshavit.DataBase;
 using Moshavit.REST.Service.Settings;
@@ -48,6 +47,7 @@ namespace Moshavit.REST
             container.Register<IDataBase<CarPullTable>, DataBase<CarPullTable>>();
             container.Register<IDataBase<BulletinBoardTable>, DataBase<BulletinBoardTable>>();
             container.Register<IDataBase<SurveyTable>, DataBase<SurveyTable>>();
+            container.Register<IDataBase<GiveAndTakeController>, DataBase<GiveAndTakeController>>();
             #endregion
 
             #region Controllers
@@ -59,6 +59,7 @@ namespace Moshavit.REST
             container.Register<BulletinBoardController, BulletinBoardController>();
             container.Register<SurveyController, SurveyController>();
             container.Register<VoteController, VoteController>();
+            container.Register<GiveAndTakeController, GiveAndTakeController>();
 
             container.Register<SettingsController, SettingsController>();
             #endregion

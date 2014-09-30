@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Moshavit.Entity.EntityTable
 {
     [Table("GiveAndTake")]
-    public class GiveAndTakeMessageTable : MessageTable
+    public class GiveAndTakeTable : MessageTable
     {
         public string Description { get; set; }
         public string Image1 { get; set; }

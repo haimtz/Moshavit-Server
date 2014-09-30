@@ -36,6 +36,8 @@ namespace Moshavit.Mapper
             _mapperRepository.Add(typeof(BulletinBoardDto), new Func<BulletinBoardDto, BulletinBoardTable>(ConvertBulltinBoardToTable));
             _mapperRepository.Add(typeof(SurveyDto), new Func<SurveyDto, SurveyTable>(ConvertSurveyDtoToTable));
             _mapperRepository.Add(typeof(SurveyTable), new Func<SurveyTable, SurveyDto>(ConvertSurveyTableToDto));
+            _mapperRepository.Add(typeof(GiveAndTakeTable), new Func<GiveAndTakeTable, GiveAndTakeDto>(ConvertGiveAndTakeTableToDto));
+            _mapperRepository.Add(typeof(GiveAndTakeDto), new Func<GiveAndTakeDto, GiveAndTakeTable>(ConvertGiveAndTakeDtoToTable));
         }
 
         private void RegisterTypes()
@@ -50,6 +52,8 @@ namespace Moshavit.Mapper
             _typeToConverTypes.Add(typeof(BulletinBoardDto), typeof(BulletinBoardTable));
             _typeToConverTypes.Add(typeof(SurveyDto), typeof(SurveyTable));
             _typeToConverTypes.Add(typeof(SurveyTable), typeof(SurveyDto));
+            _typeToConverTypes.Add(typeof(GiveAndTakeTable), typeof(GiveAndTakeDto));
+            _typeToConverTypes.Add(typeof(GiveAndTakeDto), typeof(GiveAndTakeTable));
         }
         #endregion
 
@@ -98,6 +102,7 @@ namespace Moshavit.Mapper
                 Token = ""
             };
         }
+
         private UserRegistertionData ConvertUserTableToUserRegistration(UserTable user)
         {
             return new UserRegistertionData
@@ -122,6 +127,7 @@ namespace Moshavit.Mapper
                 IdUser = message.IdUser,
                 Title = message.Title,
                 Content = message.Content,
+                ModifiedMessage = message.ModifiedMessage,
                 StartTime = message.StartTime,
                 EndTime = message.EndTime,
                 Rate = message.Rate
@@ -136,6 +142,7 @@ namespace Moshavit.Mapper
                 IdUser = message.IdUser,
                 Title = message.Title,
                 Content = message.Content,
+                ModifiedMessage = message.ModifiedMessage,
                 StartTime = message.StartTime,
                 EndTime = message.EndTime,
                 Rate = message.Rate
@@ -150,6 +157,7 @@ namespace Moshavit.Mapper
                 IdUser = message.IdUser,
                 Title = message.Title,
                 Content = message.Content,
+                ModifiedMessage = message.ModifiedMessage,
                 From = message.From,
                 To = message.To,
                 PickUp = message.PickUp,
@@ -165,6 +173,7 @@ namespace Moshavit.Mapper
                 IdUser = message.IdUser,
                 Title = message.Title,
                 Content = message.Content,
+                ModifiedMessage = message.ModifiedMessage,
                 From = message.From,
                 To = message.To,
                 PickUp = message.PickUp,
@@ -180,6 +189,7 @@ namespace Moshavit.Mapper
                 IdUser = message.IdUser,
                 Title = message.Title,
                 Content = message.Content,
+                ModifiedMessage = message.ModifiedMessage,
                 Description = message.Description,
                 Details = message.Details
             };
@@ -193,6 +203,7 @@ namespace Moshavit.Mapper
                 IdUser = message.IdUser,
                 Title = message.Title,
                 Content = message.Content,
+                ModifiedMessage = message.ModifiedMessage,
                 Description = message.Description,
                 Details = message.Details
             };
@@ -227,7 +238,36 @@ namespace Moshavit.Mapper
                 StartTime = survey.Start
             };
         }
-        #endregion
 
+        private GiveAndTakeDto ConvertGiveAndTakeTableToDto(GiveAndTakeTable message)
+        {
+            return new GiveAndTakeDto
+            {
+                IdMessage = message.IdMessage,
+                IdUser = message.IdUser,
+                Title = message.Title,
+                Content = message.Content,
+                ModifiedMessage = message.ModifiedMessage,
+                Image1 = message.Image1,
+                Image2 = message.Image2,
+                Image3 = message.Image3
+            };
+        }
+
+        private GiveAndTakeTable ConvertGiveAndTakeDtoToTable(GiveAndTakeDto message)
+        {
+            return new GiveAndTakeTable
+            {
+                IdMessage = message.IdMessage,
+                IdUser = message.IdUser,
+                Title = message.Title,
+                Content = message.Content,
+                ModifiedMessage = message.ModifiedMessage,
+                Image1 = message.Image1,
+                Image2 = message.Image2,
+                Image3 = message.Image3
+            };
+        }
+        #endregion
     }
 }

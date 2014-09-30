@@ -3,7 +3,7 @@ namespace Moshavit.DataBase.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class add : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,7 @@ namespace Moshavit.DataBase.Migrations
                         IdUser = c.Int(nullable: false),
                         Title = c.String(),
                         Content = c.String(),
+                        ModifiedMessage = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.IdMessage);
             

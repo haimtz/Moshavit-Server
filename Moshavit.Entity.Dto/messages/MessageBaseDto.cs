@@ -1,4 +1,6 @@
-﻿namespace Moshavit.Entity.Dto.messages
+﻿using System;
+
+namespace Moshavit.Entity.Dto.messages
 {
     public class MessageBaseDto
     {
@@ -8,5 +10,6 @@
         public string Content { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
+        public DateTime ModifiedMessage { get; set; }
     }
 }
