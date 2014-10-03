@@ -99,6 +99,7 @@ namespace Moshavit.Mapper
                 IsResident = user.IsResident,
                 IsActive = user.IsActive,
                 StartTime = user.StartTime,
+                Type = user.Type,
                 Token = ""
             };
         }
@@ -115,7 +116,8 @@ namespace Moshavit.Mapper
                 Phone = user.Phone,
                 Password = user.Password,
                 StartTime = user.StartTime,
-                IsActive = user.IsActive
+                IsActive = user.IsActive,
+                Type = user.Type
             };
         }
 
@@ -219,8 +221,8 @@ namespace Moshavit.Mapper
                 Yes = survey.Yes,
                 No = survey.No,
                 Avoid = survey.Avoid,
-                End = survey.EndTime,
-                Start = survey.StartTime
+                EndTime = survey.EndTime,
+                StartTime = survey.StartTime
             };
         }
 
@@ -234,8 +236,8 @@ namespace Moshavit.Mapper
                 Yes = survey.Yes,
                 No = survey.No,
                 Avoid = survey.Avoid,
-                EndTime = survey.End,
-                StartTime = survey.Start
+                EndTime = survey.EndTime,
+                StartTime = survey.StartTime
             };
         }
 

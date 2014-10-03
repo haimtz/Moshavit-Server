@@ -58,6 +58,20 @@
     <Compile Include="Migrations\201409302002345_add.Designer.cs">
       <DependentUpon>201409302002345_add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410030833168_AddUserType.cs" />
+    <Compile Include="Migrations\201410030833168_AddUserType.Designer.cs">
+      <DependentUpon>201410030833168_AddUserType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410030856464_ChangeTypeStringToInt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201410030856464_ChangeTypeStringToInt.Designer.cs">
+      <DependentUpon>201410030856464_ChangeTypeStringToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410030934568_ChngeSurveyStartDate.cs" />
+    <Compile Include="Migrations\201410030934568_ChngeSurveyStartDate.Designer.cs">
+      <DependentUpon>201410030934568_ChngeSurveyStartDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +92,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201409302002345_add.resx">
       <DependentUpon>201409302002345_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410030833168_AddUserType.resx">
+      <DependentUpon>201410030833168_AddUserType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410030856464_ChangeTypeStringToInt.resx">
+      <DependentUpon>201410030856464_ChangeTypeStringToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410030934568_ChngeSurveyStartDate.resx">
+      <DependentUpon>201410030934568_ChngeSurveyStartDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -141,6 +141,7 @@
     <Compile Include="Controllers\BulletinBoardController.cs" />
     <Compile Include="Controllers\CarpullController.cs" />
     <Compile Include="Controllers\CustomAuthenticationMessageHandler.cs" />
+    <Compile Include="Controllers\GiveAndTakeController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />

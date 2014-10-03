@@ -18,11 +18,11 @@ namespace Moshavit.Entity
         public int Yes { get; set; }
         public int No { get; set; }
         public int Avoid { get; set; }
-        public DateTime Start { get; set; }
-        public DateTime End { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
         public bool IsActive
         {
-            get { return Start < End; }
+            get { return StartTime < EndTime; }
         }
     }
 }

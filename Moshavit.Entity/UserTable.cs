@@ -68,6 +68,8 @@ namespace Moshavit.Entity.TableEntity
         /// </summary>
         public string Token { get; set; }
 
+        public int Type { get; set; }
+
         /// <summary>
         /// if user approved by the system manager
         /// </summary>

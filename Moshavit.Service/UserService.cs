@@ -32,6 +32,7 @@ namespace Moshavit.Service
 
             user.IsActive = false;
             user.StartTime = DateTime.Now;
+            user.Type = 3;
             base.Add(user);
 
             return true;
@@ -89,6 +90,7 @@ namespace Moshavit.Service
                 Address = updateUser.Address ?? string.Empty,
                 Email = updateUser.Email,
                 Phone = updateUser.Phone,
+                Type = user.Type,
                 StartTime = updateUser.StartTime
             };
         }
@@ -106,7 +108,8 @@ namespace Moshavit.Service
                 Address = user.Address ?? string.Empty,
                 Email = user.Email,
                 Phone = user.Phone,
-                StartTime = user.StartTime
+                StartTime = user.StartTime,
+                Type = user.Type
             }).ToList().OrderByDescending(x => x.StartTime);
         }
 
