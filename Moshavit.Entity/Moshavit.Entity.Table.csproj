@@ -55,7 +55,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CarPullTable.cs" />
-    <Compile Include="GiveAndTakeMessageTable.cs" />
+    <Compile Include="GiveAndTakeTable.cs" />
     <Compile Include="Interfaces\ISurveyService.cs">
       <SubType>Code</SubType>
     </Compile>
