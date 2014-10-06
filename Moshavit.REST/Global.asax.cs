@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Moshavit.REST.App_Start;
 using Moshavit.REST.Controllers;
 
 namespace Moshavit.REST
@@ -23,6 +24,7 @@ namespace Moshavit.REST
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             GlobalConfiguration.Configuration.MessageHandlers.Add(new CustomAuthenticationMessageHandler());
+            GlobalConfiguration.Configuration.MessageHandlers.Add(new CorsHandler());
             Bootstrap.Initialized();
         }
     }

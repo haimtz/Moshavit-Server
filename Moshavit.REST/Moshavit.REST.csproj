@@ -134,6 +134,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\CorsHandler.cs" />
     <Compile Include="Bootstrap.cs" />
     <Compile Include="Controllers\BabySitterController.cs">
       <SubType>Code</SubType>

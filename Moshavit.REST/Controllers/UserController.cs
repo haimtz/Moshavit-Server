@@ -48,7 +48,7 @@ namespace Moshavit.REST.Controllers
         }
 
         // PUT api/<controller>/5
-        public HttpResponseMessage Put([FromBody]UserRegistertionData user)
+        public HttpResponseMessage Put(UserRegistertionData user)
         {
             UserData updateUser;
             try

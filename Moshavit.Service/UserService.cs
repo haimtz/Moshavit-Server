@@ -47,52 +47,27 @@ namespace Moshavit.Service
             if(user == null)
                 throw new Exception("User don't exist");
 
-            return new UserData
-            {
-                IdUser = user.IdUser,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Address = user.Address ?? string.Empty,
-                Email = user.Email,
-                Phone = user.Phone
-            };
+            return ConvertToUserData(user);
         }
 
         public UserData GetUser(int id)
         {
             var user = base.SelectFirst(x => x.IdUser == id);
 
-            return new UserData
-            {
-                IdUser = user.IdUser,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Address = user.Address ?? string.Empty,
-                Email = user.Email,
-                Phone = user.Phone,
-                StartTime = user.StartTime
-            };
+            return ConvertToUserData(user);
         }
 
         public UserData UpdateUser(UserRegistertionData user)
         {
-            if (IsRegister(user.Email))
-                throw new RegistrationException("The user is register");
-
-            base.Update(user);
             var updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
 
-            return new UserData
-            {
-                IdUser = updateUser.IdUser,
-                FirstName = updateUser.FirstName,
-                LastName = updateUser.LastName,
-                Address = updateUser.Address ?? string.Empty,
-                Email = updateUser.Email,
-                Phone = updateUser.Phone,
-                Type = user.Type,
-                StartTime = updateUser.StartTime
-            };
+            if(user.Email != updateUser.Email && IsRegister(user.Email))
+                throw new Exception("This Email is Exist in the system");
+
+            base.Update(user);
+            updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
+
+            return ConvertToUserData(updateUser);
         }
 
         public IEnumerable<UserData> GetAllUsers()
@@ -100,17 +75,10 @@ namespace Moshavit.Service
             var userList = base.GetAll();
 
             // TODO: return only active users
-            return userList.Where(x => !x.IsActive).Select(user => new UserData
-            {
-                IdUser = user.IdUser,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Address = user.Address ?? string.Empty,
-                Email = user.Email,
-                Phone = user.Phone,
-                StartTime = user.StartTime,
-                Type = user.Type
-            }).ToList().OrderByDescending(x => x.StartTime);
+            return userList.Where(x => !x.IsActive)
+                .Select(ConvertToUserData)
+                .ToList()
+                .OrderByDescending(x => x.StartTime);
         }
 
         public void DeleteUser(int id)
@@ -131,6 +99,22 @@ namespace Moshavit.Service
 
             return false;
         }
+
+        private UserData ConvertToUserData(UserRegistertionData user)
+        {
+            return new UserData
+            {
+                IdUser = user.IdUser,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Address = user.Address ?? string.Empty,
+                Email = user.Email,
+                Phone = user.Phone,
+                StartTime = user.StartTime,
+                Type = user.Type
+            };
+        }
+
         #endregion
     }
 }
