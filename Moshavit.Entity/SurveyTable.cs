@@ -18,6 +18,7 @@ namespace Moshavit.Entity
         public int Yes { get; set; }
         public int No { get; set; }
         public int Avoid { get; set; }
+        public int TypeMember { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public bool IsActive

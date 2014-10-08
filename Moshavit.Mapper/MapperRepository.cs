@@ -221,6 +221,7 @@ namespace Moshavit.Mapper
                 Yes = survey.Yes,
                 No = survey.No,
                 Avoid = survey.Avoid,
+                TypeMember = survey.TypeMember,
                 EndTime = survey.EndTime,
                 StartTime = survey.StartTime
             };
@@ -236,6 +237,7 @@ namespace Moshavit.Mapper
                 Yes = survey.Yes,
                 No = survey.No,
                 Avoid = survey.Avoid,
+                TypeMember = survey.TypeMember,
                 EndTime = survey.EndTime,
                 StartTime = survey.StartTime
             };

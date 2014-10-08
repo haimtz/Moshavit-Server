@@ -59,7 +59,7 @@ namespace Moshavit.Service
                 surveyDto.VadName = user.FirstName + " " + user.LastName;
             }
 
-            return surveyList;
+            return surveyList.OrderByDescending(s => s.StartTime);
         }
 
         public SurveyDto GetSurvey(int id)

@@ -72,6 +72,10 @@
     <Compile Include="Migrations\201410030934568_ChngeSurveyStartDate.Designer.cs">
       <DependentUpon>201410030934568_ChngeSurveyStartDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410080656083_add_TypeMember_To_Survey.cs" />
+    <Compile Include="Migrations\201410080656083_add_TypeMember_To_Survey.Designer.cs">
+      <DependentUpon>201410080656083_add_TypeMember_To_Survey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -101,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201410030934568_ChngeSurveyStartDate.resx">
       <DependentUpon>201410030934568_ChngeSurveyStartDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410080656083_add_TypeMember_To_Survey.resx">
+      <DependentUpon>201410080656083_add_TypeMember_To_Survey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

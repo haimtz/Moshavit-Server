@@ -1,24 +1,718 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
-    </div>
-</div>
+﻿
+<html>
+<head>
+    <title>Administrator</title>
+    <style>
+        @@media (max-width: 1024px) {
+            body {
+                background-color: yellowgreen;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 14px;
+        }
+
+        td {
+            max-width: 400px;
+        }
+
+        tbody tr td:first-child {
+            font-weight: bold;
+        }
+
+        tbody tr td span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Base Url moshavit.somee.com</h1>
+    <h2>API</h2>
+    <h3>
+        Because the host is free for now we are limited with the data base space storage
+        so it possibly some data erase
+    </h3>
+    <table>
+        <thead>
+            <tr>
+                <td>URL</td>
+                <td>Service</td>
+                <td>Method</td>
+                <td>expected Data</td>
+                <td>Response</td>
+                <td>Comments</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>/api/register</td>
+                <td>Registretion</td>
+                <td>POST</td>
+                <td>
+                    {<br />
+                    "FirstName" : "first name",<span>*</span><br />
+                    "LastName" : "family name",<span>*</span><br />
+                    "Phone" : "00000",<span>*</span><br />
+                    "Password": "1234",<span>*</span><br />
+                    "Email" : "name@domain.com",<span>*</span><br />
+                    "Address" : "address"
+                    }<br />
+                    <br />
+                    <span>* mandatory</span>
+                </td>
+                <td> http response code 200 </td>
+                <td>
+                    <ul>
+                        <li>
+                            The Email is unique in data base if you try to register with the same email you will get error message
+                        </li>
+                        <li>
+                            There is no validation on this point (will be add later)
+                        </li>
+                    </ul>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>/api/login</td>
+                <td>login to the system</td>
+                <td>POST</td>
+                <td>
+                    {<br />
+                    "Password": "1234",<br />
+                    "Email" : "name@domain.com"<br />
+                    }
+                </td>
+                <td>
+                    http response code 200<br />
+                    {<br />
+                    "IdUser": 1,<br />
+                    "FirstName": "username",<br />
+                    "LastName": "family name",<br />
+                    "Email": "name@domain.com",<br />
+                    "Phone": "00000",<br />
+                    "Address": ""<br />
+                    }
+
+                </td>
+                <td>
+                    <span>error message</span>
+                    { "Message": "User don't exist" }
+                </td>
+            </tr>
+
+            <tr>
+                <td>/api/BabySitter</td>
+                <td>add message</td>
+                <td>POST</td>
+                <td>
+                    {<br />
+                    IdUser: 1,<br />
+                    Title: "title",<br />
+                    Content: "content",<br />
+                    Rate: 1.0,<br />
+                    StartTime: "yyyy-mm-dd hh:MM:ss",<br />
+                    EndTime:  "yyyy-mm-dd hh:MM:ss"<br />
+                    }
+
+                </td>
+                <td>
+                    http response code 200<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/BabySitter</td>
+                <td>get all babySitter messages</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+
+                    [<br />
+                    {<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 1,<br />
+                    "Title": "babay sitter",<br />
+                    "Content": "need baby siter",<br />
+                    "Rate": 30,<br />
+                    "StarTime": "2014-09-12T18:00:00",<br />
+                    "EndTime": "2014-09-12T18:00:00",<br />
+                    "Name": "bob choen",<br />
+                    "Phone": "11111111"<br />
+                    },{<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 1,<br />
+                    "Title": "babay sitter",<br />
+                    "Content": "need baby siter",<br />
+                    "Rate": 30,<br />
+                    "StarTime": "2014-09-12T18:00:00",<br />
+                    "EndTime": "2014-09-12T18:00:00",<br />
+                    "Name": "bob choen",<br />
+                    "Phone": "11111111"<br />
+                    }
+                    <br />
+                    ]
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/BabySitter/{ID}</td>
+                <td>get single message</td>
+                <td>GET</td>
+                <td>
+
+                    message Id
+
+                </td>
+                <td>
+                    http response 200<br />
+
+                    {<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 1,<br />
+                    "Title": "babay sitter",<br />
+                    "Content": "need baby siter",<br />
+                    "Rate": 30,<br />
+                    "StarTime": "2014-09-12T18:00:00",<br />
+                    "EndTime": "2014-09-12T18:00:00",<br />
+                    "Name": "bob choen",<br />
+                    "Phone": "11111111"<br />
+                    }
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/BabySitter</td>
+                <td>Update message</td>
+                <td>PUT</td>
+                <td>
+                    {<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 1,<br />
+                    "Title": "babay sitter",<br />
+                    "Content": "need baby siter",<br />
+                    "Rate": 30,<br />
+                    "StarTime": "2014-09-12T18:00:00",<br />
+                    "EndTime": "2014-09-12T18:00:00",<br />
+                    }
+
+                </td>
+                <td>
+                    http response 200<br />
+
+
+
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/carpull</td>
+                <td>get all carpull messages</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    [{<br />
+                    "From": "rosh hahahaa",<br />
+                    "To": "telaviv",<br />
+                    "PickUp": "2014-10-01T07:00:00",<br />
+                    "ReturnTime": "2014-10-01T07:00:00",<br />
+                    "IdMessage": 4,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "first name family name",<br />
+                    "Phone": "00000"<br />
+                    },{<br />
+                    "From": "rosh hahahaa",<br />
+                    "To": "telaviv",<br />
+                    "PickUp": "2014-10-01T07:00:00",<br />
+                    "ReturnTime": "2014-10-01T07:00:00",<br />
+                    "IdMessage": 5,<br />
+                    "IdUser": 5,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "cccc cccc",<br />
+                    "Phone": "ccccc"<br />
+                    }]<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/carpull/{id}</td>
+                <td>get single message</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    {<br />
+                    "From": "rosh hahahaa",<br />
+                    "To": "telaviv",<br />
+                    "PickUp": "2014-10-01T07:00:00",<br />
+                    "ReturnTime": "2014-10-01T07:00:00",<br />
+                    "IdMessage": 4,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "first name family name",<br />
+                    "Phone": "00000"<br />
+                    }
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/carpull</td>
+                <td>Add message</td>
+                <td>Post</td>
+                <td>
+                    {<br />
+                    "From": "rosh hahahaa",<br />
+                    "To": "telaviv",<br />
+                    "PickUp": "2014-10-01T07:00:00",<br />
+                    "ReturnTime": "2014-10-01T07:00:00",<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    }
+                </td>
+                <td>
+                    http response 200<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/carpull</td>
+                <td>Update message</td>
+                <td>PUT</td>
+                <td>
+                    {<br />
+                    "From": "rosh hahahaa",<br />
+                    "To": "telaviv",<br />
+                    "PickUp": "2014-10-01T07:00:00",<br />
+                    "ReturnTime": "2014-10-01T07:00:00",<br />
+                    "IdMessage": 4,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    }
+                </td>
+                <td>
+                    http response 200<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/bulletinboard</td>
+                <td>get all messages</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    [{<br />
+                    "Description": "this event will be in bla bla",<br />
+                    "Details": "asdasdadasdsadasd",<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "first name family name",<br />
+                    "Phone": "00000"<br />
+                    }, {<br />
+                    "Description": "this event will be in bla bla",<br />
+                    "Details": "asdasdadasdsadasd",<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "first name family name",<br />
+                    "Phone": "00000"<br />
+                    }]
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/bulletinboard/{id}</td>
+                <td>get single message</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    {<br />
+                    "Description": "this event will be in bla bla",<br />
+                    "Details": "asdasdadasdsadasd",<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "first name family name",<br />
+                    "Phone": "00000"<br />
+                    }
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/bulletinboard</td>
+                <td>Add Message</td>
+                <td>POST</td>
+                <td>
+                    {<br />
+                    "Description": "this event will be in bla bla",<br />
+                    "Details": "asdasdadasdsadasd",<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    }
+                </td>
+                <td>
+                    http response 200<br />
+
+                </td>
+                <td></td>
+            </tr>
+
+
+            <tr>
+                <td>/api/bulletinboard</td>
+                <td>update message</td>
+                <td>PUT</td>
+                <td>
+                    {<br />
+                    "Description": "this event will be in bla bla",<br />
+                    "Details": "asdasdadasdsadasd",<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 2,<br />
+                    "Title": "lets go",<br />
+                    "Content": "fff",<br />
+                    "Name": "first name family name",<br />
+                    "Phone": "00000"<br />
+                    }
+                </td>
+                <td>
+                    http response 200<br />
+
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/user</td>
+                <td>get all users</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    [{<br />
+                    "IdUser": 1,<br />
+                    "FirstName": "first name",<br />
+                    "LastName": "family name",<br />
+                    "Email": "nameccds@domain.com",<br />
+                    "Phone": "00000",<br />
+                    "Address": "",<br />
+                    "StartTime": "2014-09-13T23:51:40.97"<br />
+                    },{<br />
+                    "IdUser": 2,<br />
+                    "FirstName": "first name",<br />
+                    "LastName": "family name",<br />
+                    "Email": "namesdsds@domain.com",<br />
+                    "Phone": "00000",<br />
+                    "Address": "",<br />
+                    "StartTime": "2014-09-13T14:10:33.41"<br />
+                    }]
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/user/{id}</td>
+                <td>get single user</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    {<br />
+                    "IdUser": 1,<br />
+                    "FirstName": "first name",<br />
+                    "LastName": "family name",<br />
+                    "Email": "nameccds@domain.com",<br />
+                    "Phone": "00000",<br />
+                    "Address": "",<br />
+                    "StartTime": "2014-09-13T23:51:40.97"<br />
+                    }<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/user</td>
+                <td>get single user</td>
+                <td>PUT</td>
+                <td>
+                    {<br />
+                    "FirstName" : "first name",<span>*</span><br />
+                    "LastName" : "family name",<span>*</span><br />
+                    "Phone" : "00000",<span>*</span><br />
+                    "Password": "1234",<span>*</span><br />
+                    "Email" : "name@domain.com",<span>*</span><br />
+                    "Address" : "address"
+                    }<br />
+                    <br />
+                    <span>* mandatory</span>
+                </td>
+                <td>
+                    http response 200<br />
+
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/Survey</td>
+                <td>get all survey</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    [-{<br />
+                    IdSurvey: 1<br />
+                    IdUser: 1<br />
+                    VadName: "Joe Bob"<br />
+                    Question: "What do you think about"<br />
+                    Yes: 0<br />
+                    No: 0<br />
+                    Avoid: 0<br /> 
+                    TypeMember: 0<br />
+                    TotalVote: 0<br />
+                    StartTime: "2014-09-01T10:00:00"<br />
+                    EndTime: "2014-09-03T21:00:00"<br />
+                    },{<br />
+                    IdSurvey: 2<br />
+                    IdUser: 3<br />
+                    VadName: "Rotem Levi"<br />
+                    Question: "אנחנו רוצים להוציא "<br />
+                    Yes: 0<br />
+                    No: 0<br />
+                    Avoid: 0<br />
+                    TypeMember: 2<br />
+                    TotalVote: 0<br />
+                    StartTime: "2014-09-01T10:00:00"<br />
+                    EndTime: "2014-09-03T21:00:00"<br />
+                    }]<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/Survey/{id}</td>
+                <td>get single survey</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    {<br />
+                    IdSurvey: 1<br />
+                    IdUser: 1<br />
+                    VadName: "Joe Bob"<br />
+                    Question: "What do you think about"<br />
+                    Yes: 0<br />
+                    No: 0<br />
+                    Avoid: 0<br />
+                    TypeMember: 2<br />
+                    TotalVote: 0<br />
+                    StartTime: "2014-09-01T10:00:00"<br />
+                    EndTime: "2014-09-03T21:00:00"<br />
+                    }<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/Survey</td>
+                <td>Add survey</td>
+                <td>POST</td>
+                <td>
+                    {<br />
+                    IdUser: 1<br />
+                    TypeMember: 2<br />
+                    Question: "What do you think about"<br />
+                    StartTime: "2014-09-01T10:00:00"<br />
+                    EndTime: "2014-09-03T21:00:00"<br />
+                    }<br />
+                </td>
+                <td>
+                    http response 200<br />
+
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/Survey</td>
+                <td>Update survey</td>
+                <td>PUT</td>
+                <td>
+                    {<br />
+                    IdSurvey: 1<br />
+                    Question: "What do you think about"<br />
+                    StartTime: "2014-09-01T10:00:00"<br />
+                    EndTime: "2014-09-03T21:00:00"<br />
+                    }<br />
+                </td>
+                <td>
+                    http response 200<br />
+
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/vote</td>
+                <td>Add vote</td>
+                <td>post</td>
+                <td>
+                    {<br />
+                    "IdSurvey" : 1,<br />
+                    "IdUser" : 3,<br />
+                    "Vote" : 2<span>*</span><br />
+                    }
+                </td>
+                <td>
+                    http response 200<br />
+
+                </td>
+                <td>
+                    Vote values: <br />
+                    <ul>
+                        <li>Yes = 1</li>
+                        <li>No = 2</li>
+                        <li>Avoid = 3</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td>/api/GiveAndTake</td>
+                <td>add message</td>
+                <td>POST</td>
+                <td>
+                    {<br />
+                    IdUser: 1,<br />
+                    Title: "title",<br />
+                    Content: "content",<br />
+                    Image1: stringBase64<br />
+                    Image2: stringBase64<br />
+                    Image3: stringBase64<br />
+                    }
+
+                </td>
+                <td>
+                    http response code 200<br />
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/GiveAndTake</td>
+                <td>get all GiveAndTake messages</td>
+                <td>GET</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+
+                    [<br />
+                    {<br />
+                    IdUser: 1,<br />
+                    Title: "title",<br />
+                    Content: "content",<br />
+                    Image1: stringBase64<br />
+                    Image2: stringBase64<br />
+                    Image3: stringBase64<br />
+                    "Name": "bob choen",<br />
+                    "Phone": "11111111"<br />
+                    },
+                    {<br />
+                    IdUser: 1,<br />
+                    Title: "title",<br />
+                    Content: "content",<br />
+                    Image1: stringBase64,<br />
+                    Image2: stringBase64,<br />
+                    Image3: stringBase64,<br />
+                    "Name": "bob choen",<br />
+                    "Phone": "11111111"<br />
+                    }
+                    ]
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/GiveAndTake/{ID}</td>
+                <td>get single message</td>
+                <td>GET</td>
+                <td>
+
+                    message Id
+
+                </td>
+                <td>
+                    http response 200<br />
+
+                    {<br />
+                    IdUser: 1,<br />
+                    Title: "title",<br />
+                    Content: "content",<br />
+                    Image1: stringBase64,<br />
+                    Image2: stringBase64,<br />
+                    Image3: stringBase64,<br />
+                    "Name": "bob choen",<br />
+                    "Phone": "11111111"<br />
+                    }
+                </td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>/api/GiveAndTake</td>
+                <td>Update message</td>
+                <td>PUT</td>
+                <td>
+                    {<br />
+                    "IdMessage": 1,<br />
+                    "IdUser": 1,<br />
+                    "Title": "babay sitter",<br />
+                    "Content": "need baby siter",<br />
+                    Image1: stringBase64,<br />
+                    Image2: stringBase64,<br />
+                    Image3: stringBase64,<br />
+                    }
+
+                </td>
+                <td>
+                    http response 200<br />
+
+
+
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

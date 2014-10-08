@@ -11,6 +11,7 @@ namespace Moshavit.Entity.Dto
         public int Yes { get; set; }
         public int No { get; set; }
         public int Avoid { get; set; }
+        public int TypeMember { get; set; }
         public int TotalVote
         {
             get { return Yes + No + Avoid; }
