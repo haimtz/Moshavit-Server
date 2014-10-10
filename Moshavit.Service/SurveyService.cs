@@ -72,6 +72,11 @@ namespace Moshavit.Service
             return survey;
         }
 
+        public void DeleteSurvey(int id)
+        {
+            //DataBase.Delete();
+        }
+
         #region Private
         private void UpdateSurveyVote(SurveyDto survey, int vote)
         {

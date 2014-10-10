@@ -38,6 +38,7 @@ namespace Moshavit.REST
             container.Register<IMessageService<BabySitterTable, BabySitterMessageDto>, MessageService<BabySitterTable, BabySitterMessageDto>>();
             container.Register<IMessageService<CarPullTable, CarpullMessageDto>, MessageService<CarPullTable, CarpullMessageDto>>();
             container.Register<IMessageService<BulletinBoardTable, BulletinBoardDto>, MessageService<BulletinBoardTable, BulletinBoardDto>>();
+            container.Register<IMessageService<GiveAndTakeTable, GiveAndTakeDto>, MessageService<GiveAndTakeTable, GiveAndTakeDto>>();
             container.Register<ISurveyService, SurveyService>();
             #endregion
             
@@ -47,7 +48,7 @@ namespace Moshavit.REST
             container.Register<IDataBase<CarPullTable>, DataBase<CarPullTable>>();
             container.Register<IDataBase<BulletinBoardTable>, DataBase<BulletinBoardTable>>();
             container.Register<IDataBase<SurveyTable>, DataBase<SurveyTable>>();
-            container.Register<IDataBase<GiveAndTakeController>, DataBase<GiveAndTakeController>>();
+            container.Register<IDataBase<GiveAndTakeTable>, DataBase<GiveAndTakeTable>>();
             #endregion
 
             #region Controllers

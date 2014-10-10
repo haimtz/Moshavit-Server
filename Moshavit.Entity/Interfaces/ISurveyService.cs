@@ -26,6 +26,12 @@ namespace Moshavit.Entity.Interfaces
         void UpdateSurvey(SurveyDto survey);
 
         /// <summary>
+        /// delete survey from database
+        /// </summary>
+        /// <param name="id">survey id</param>
+        void DeleteSurvey(int id);
+
+        /// <summary>
         /// Get single survey
         /// </summary>
         /// <param name="id">survey id</param>
