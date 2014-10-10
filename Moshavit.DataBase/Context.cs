@@ -10,7 +10,7 @@ namespace Moshavit.DataBase
         public Context()
             : base("MoshavitDb")
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
         }
 
         public DbSet<UserTable> Users { get; set; }

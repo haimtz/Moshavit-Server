@@ -52,6 +52,9 @@
   <ItemGroup>
     <Compile Include="MessageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendMail.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SurveyService.cs">
       <SubType>Code</SubType>
     </Compile>
