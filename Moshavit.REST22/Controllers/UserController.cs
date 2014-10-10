@@ -43,26 +43,35 @@ namespace Moshavit.REST.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]UserData user)
         {
+            UserData updateUser = null;
+            try
+            {
+                updateUser = _userService.UpdateUser(user);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK, updateUser);
         }
 
         // PUT api/<controller>/5
         public HttpResponseMessage Put(UserRegistertionData user)
         {
-            UserData updateUser;
+            UserData updatedUser;
             try
             {
-                var oldDetails = _userService.GetUser(user.IdUser);
-                user.StartTime = oldDetails.StartTime;
-                updateUser = _userService.UpdateUser(user);
+                updatedUser = _userService.UpdateUser(user);
             }
             catch (Exception exception)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, exception.Message);
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK, updateUser);
+            return Request.CreateResponse(HttpStatusCode.OK, updatedUser);
         }
 
         // DELETE api/<controller>/5

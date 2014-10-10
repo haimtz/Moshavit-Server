@@ -59,7 +59,10 @@ namespace Moshavit.DataBase
             {
                 using (var ctx = DbContext())
                 {
+                    if(ctx.Entry(entity).State == EntityState.Detached)
+                        ctx.Set<T>().Attach(entity);
                     ctx.Set<T>().Remove(entity);
+                    ctx.SaveChanges();
                 }
             }
         }

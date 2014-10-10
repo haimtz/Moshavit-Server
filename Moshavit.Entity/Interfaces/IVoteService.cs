@@ -17,6 +17,12 @@ namespace Moshavit.Entity.Interfaces
         void AddVote(int survey, int user);
 
         /// <summary>
+        /// Delete survey votes
+        /// </summary>
+        /// <param name="survey">survey votes to delete</param>
+        void DeleteVotes(int survey);
+
+        /// <summary>
         /// Check if user voted already
         /// </summary>
         /// <param name="survey">survey id</param>

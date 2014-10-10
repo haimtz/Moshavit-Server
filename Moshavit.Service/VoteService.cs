@@ -28,6 +28,16 @@ namespace Moshavit.Service
             _service.Add(userVote);
         }
 
+        public void DeleteVotes(int survey)
+        {
+            var votes = _service.GetAll().ToList();
+
+            foreach (var votingLIstTable in votes)
+            {
+                _service.Delete(votingLIstTable);
+            }
+        }
+
         public bool IsUserVote(int surveyId, int userId)
         {
             var vote = _service.FindBy(v => v.IdSurvey == surveyId && v.IdUser == userId).FirstOrDefault();

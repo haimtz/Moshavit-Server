@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201410080656083_add_TypeMember_To_Survey.Designer.cs">
       <DependentUpon>201410080656083_add_TypeMember_To_Survey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410100906311_Remove_IsResident_user.cs" />
+    <Compile Include="Migrations\201410100906311_Remove_IsResident_user.Designer.cs">
+      <DependentUpon>201410100906311_Remove_IsResident_user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201410080656083_add_TypeMember_To_Survey.resx">
       <DependentUpon>201410080656083_add_TypeMember_To_Survey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410100906311_Remove_IsResident_user.resx">
+      <DependentUpon>201410100906311_Remove_IsResident_user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

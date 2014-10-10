@@ -87,12 +87,14 @@ namespace Moshavit.REST.Controllers
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK);
+                _service.DeleteSurvey(id);
             }
             catch (Exception ex)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
             }
+
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
         #endregion
     }

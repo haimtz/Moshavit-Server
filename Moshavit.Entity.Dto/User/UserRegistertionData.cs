@@ -19,7 +19,6 @@ namespace Moshavit.Entity.Dto
         public string Phone { get; set; }
         public string Address { get; set; }
         public DateTime StartTime { get; set; }
-        public bool IsResident { get; set; }
         public int Type { get; set; }
         public bool IsActive { get; set; }
     }

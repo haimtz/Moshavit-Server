@@ -53,7 +53,7 @@ namespace Moshavit.Service
 
         public void DeleteMessage(int id)
         {
-            base.Delete(id);
+            //base.Delete(id);
         }
 
         public IEnumerable<TK> GetAllMessages()

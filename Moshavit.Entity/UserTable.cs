@@ -53,12 +53,6 @@ namespace Moshavit.Entity.TableEntity
         public string Address { get; set; }
 
         /// <summary>
-        /// is user owner of the in the moshav or renting
-        /// </summary>
-        public bool IsResident { get; set; }
-
-
-        /// <summary>
         /// When user register to system
         /// </summary>
         public DateTime StartTime { get; set; }
@@ -74,11 +68,5 @@ namespace Moshavit.Entity.TableEntity
         /// if user approved by the system manager
         /// </summary>
         public bool IsActive { get; set; }
-
-
-        ///// <summary>
-        ///// Messages connection db
-        ///// </summary>
-        //public virtual ICollection<MessageTable> Messages { get; set; }
     }
 }

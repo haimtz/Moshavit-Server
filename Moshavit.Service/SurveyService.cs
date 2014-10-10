@@ -74,7 +74,9 @@ namespace Moshavit.Service
 
         public void DeleteSurvey(int id)
         {
-            //DataBase.Delete();
+            var survey = GetSurvey(id);
+            base.Delete(survey);
+            _voteService.DeleteVotes(id);
         }
 
         #region Private

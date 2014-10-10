@@ -96,7 +96,6 @@ namespace Moshavit.Mapper
                 Email = user.Email,
                 Phone = user.Phone,
                 Password = user.Password,
-                IsResident = user.IsResident,
                 IsActive = user.IsActive,
                 StartTime = user.StartTime,
                 Type = user.Type,

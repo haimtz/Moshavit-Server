@@ -44,7 +44,7 @@ namespace Moshavit.Service
                 && x.Password == userlogin.Password);
 
             // TODO: Check if user is active
-            if(user == null)
+            if (user == null)
                 throw new Exception("User don't exist");
 
             return ConvertToUserData(user);
@@ -57,13 +57,28 @@ namespace Moshavit.Service
             return ConvertToUserData(user);
         }
 
+        public UserData UpdateUser(UserData user)
+        {
+            var updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
+
+            updateUser.FirstName = user.FirstName;
+            updateUser.LastName = user.LastName;
+            updateUser.Email = user.Email;
+            updateUser.Phone = user.Phone;
+            updateUser.Address = user.Address;
+            updateUser.Type = user.Type;
+            
+            return UpdateUser(updateUser);
+        }
+
         public UserData UpdateUser(UserRegistertionData user)
         {
             var updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
 
-            if(user.Email != updateUser.Email && IsRegister(user.Email))
+            if (user.Email != updateUser.Email && IsRegister(user.Email))
                 throw new Exception("This Email is Exist in the system");
 
+            user.StartTime = updateUser.StartTime;
             base.Update(user);
             updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
 
@@ -84,7 +99,7 @@ namespace Moshavit.Service
         public void DeleteUser(int id)
         {
             var userToDelete = base.SelectFirst(x => x.IdUser == id);
-            
+
             userToDelete.IsActive = false;
             base.Update(userToDelete);
         }

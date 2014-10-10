@@ -462,6 +462,28 @@
 
             <tr>
                 <td>/api/user</td>
+                <td>update single user with no password</td>
+                <td>POST</td>
+                <td>
+                    {<br />
+                    "FirstName" : "first name",<br />
+                    "LastName" : "family name",<br />
+                    "Phone" : "00000",<br />
+                    "Email" : "name@domain.com",<br />
+                    "Address" : "address"
+                    }<br />
+                    <br />
+                </td>
+                <td>
+                    http response 200<br />
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td>/api/user</td>
                 <td>get single user</td>
                 <td>PUT</td>
                 <td>
@@ -578,6 +600,18 @@
                 <td>
                     http response 200<br />
 
+                </td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>/api/Survey/{ID}</td>
+                <td>Delete Survey</td>
+                <td>DELETE</td>
+                <td></td>
+                <td>
+                    http response 200<br />
+                    
                 </td>
                 <td></td>
             </tr>

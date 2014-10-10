@@ -43,9 +43,10 @@ namespace Moshavit.DataBase
             DataBase.Update(mapper);
         }
 
-        virtual protected void Delete(int id)
+        virtual protected void Delete(TDto entity)
         {
-            throw new Exception("Not Implement yet");
+            var mapper = Mapper.Map(entity) as TTable;
+            DataBase.Delete(mapper);
         }
 
         virtual protected IEnumerable<TDto> GetAll()
