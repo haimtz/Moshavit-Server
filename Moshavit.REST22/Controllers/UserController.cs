@@ -42,22 +42,6 @@ namespace Moshavit.REST.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, userData);
         }
 
-        // POST api/<controller>
-        public HttpResponseMessage Post([FromBody]UserData user)
-        {
-            UserData updateUser = null;
-            try
-            {
-                updateUser = _userService.UpdateUser(user);
-            }
-            catch (Exception ex)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
-            }
-
-            return Request.CreateResponse(HttpStatusCode.OK, updateUser);
-        }
-
         // PUT api/<controller>/5
         public HttpResponseMessage Put(UserRegistertionData user)
         {

@@ -28,13 +28,6 @@ namespace Moshavit.Service
         UserData GetUser(int id);
 
         /// <summary>
-        /// Update User details without Password
-        /// </summary>
-        /// <param name="user">new user details</param>
-        /// <returns>UserData</returns>
-        UserData UpdateUser(UserData user);
-
-        /// <summary>
         /// Update User details and Password
         /// </summary>
         /// <param name="user">new user details</param>

@@ -56,24 +56,13 @@ namespace Moshavit.Service
 
             return ConvertToUserData(user);
         }
-
-        public UserData UpdateUser(UserData user)
-        {
-            var updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
-
-            updateUser.FirstName = user.FirstName;
-            updateUser.LastName = user.LastName;
-            updateUser.Email = user.Email;
-            updateUser.Phone = user.Phone;
-            updateUser.Address = user.Address;
-            updateUser.Type = user.Type;
-            
-            return UpdateUser(updateUser);
-        }
-
+        
         public UserData UpdateUser(UserRegistertionData user)
         {
             var updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
+
+            if (user.Password == null || user.Password.Trim() == string.Empty)
+                user.Password = updateUser.Password;
 
             if (user.Email != updateUser.Email && IsRegister(user.Email))
                 throw new Exception("This Email is Exist in the system");
