@@ -64,6 +64,10 @@
       <Project>{6413b4bf-0f34-4675-961d-b4a6e6662d19}</Project>
       <Name>Moshavit.Entity.Table</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Moshavit.MailService\Moshavit.MailService.csproj">
+      <Project>{3856c35b-1db9-4c80-852c-165ed788067b}</Project>
+      <Name>Moshavit.MailService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Moshavit.Mapper\Moshavit.Mapper.csproj">
       <Project>{7c1d8755-2c8f-43b4-a7c4-5870d063d12b}</Project>
       <Name>Moshavit.Mapper</Name>

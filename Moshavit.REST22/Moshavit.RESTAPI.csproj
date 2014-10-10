@@ -224,6 +224,7 @@
     <Compile Include="Controllers\BulletinBoardController.cs" />
     <Compile Include="Controllers\CarpullController.cs" />
     <Compile Include="Controllers\CustomAuthenticationMessageHandler.cs" />
+    <Compile Include="Controllers\ForgotPasswordController.cs" />
     <Compile Include="Controllers\GiveAndTakeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -278,6 +279,8 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="images\background.png" />
+    <Content Include="images\icon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />

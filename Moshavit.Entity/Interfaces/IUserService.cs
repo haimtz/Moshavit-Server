@@ -28,6 +28,13 @@ namespace Moshavit.Service
         UserData GetUser(int id);
 
         /// <summary>
+        /// Get user by the email
+        /// </summary>
+        /// <param name="email">user email</param>
+        /// <returns>UserRegistertionData</returns>
+        UserRegistertionData GetUser(string email);
+
+        /// <summary>
         /// Update User details and Password
         /// </summary>
         /// <param name="user">new user details</param>

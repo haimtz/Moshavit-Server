@@ -105,7 +105,16 @@ namespace Moshavit.REST.Controllers
         /// <returns>http response 200</returns>
         public virtual HttpResponseMessage Delete(int id)
         {
-            throw new Exception();
+            try
+            {
+                Service.DeleteMessage(id);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
         #endregion
     }

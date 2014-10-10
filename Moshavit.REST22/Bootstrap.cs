@@ -9,6 +9,7 @@ using Moshavit.Entity.TableEntity;
 using Moshavit.REST.Controllers;
 using Moshavit.DataBase;
 using Moshavit.REST.Service.Settings;
+using Moshavit.REST22.Controllers;
 using Moshavit.Service;
 
 namespace Moshavit.REST
@@ -61,6 +62,7 @@ namespace Moshavit.REST
             container.Register<SurveyController, SurveyController>();
             container.Register<VoteController, VoteController>();
             container.Register<GiveAndTakeController, GiveAndTakeController>();
+            container.Register<ForgotPasswordController, ForgotPasswordController>();
 
             container.Register<SettingsController, SettingsController>();
             #endregion

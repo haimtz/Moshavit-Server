@@ -3,6 +3,7 @@ using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Moshavit.Entity;
 using Moshavit.Entity.Interfaces;
+using Moshavit.MailService;
 using Moshavit.Mapper;
 using Moshavit.DataBase;
 using Moshavit.Service;
@@ -39,6 +40,9 @@ namespace Moshavit.Castel
             _container.Register(Component.For<IMapperRepository>().ImplementedBy<MapperRepository>());
             _container.Register(Component.For<IDataBase<VotingLIstTable>>().ImplementedBy<DataBase<VotingLIstTable>>());
             _container.Register(Component.For<IVoteService>().ImplementedBy<VoteService>());
+            _container.Register(Component.For<ISendMail>().ImplementedBy<SendMail>());
+            _container.Register(Component.For<IForgotPasswordService>().ImplementedBy<ForgotPasswordService>());
+            _container.Register(Component.For<IForgotPasswordMailService>().ImplementedBy<ForgotPasswordMailService>());
         }
 
     }

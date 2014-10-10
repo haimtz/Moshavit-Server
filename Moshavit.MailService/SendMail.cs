@@ -1,34 +1,22 @@
 ﻿using System.Net;
 using System.Net.Mail;
 using Moshavit.Const;
+using Moshavit.Entity.Interfaces;
 
 namespace Moshavit.Service
 {
-    public class SendMail
+    public class SendMail : ISendMail
     {
-        private readonly string _sendEmail;
-        private readonly string _subject;
-        private readonly string _body;
-        private readonly bool _isHtml;
-
-        public SendMail(string sendEmail, string subject, string body, bool isHtml)
-        {
-            _sendEmail = sendEmail;
-            _subject = subject;
-            _body = body;
-            _isHtml = isHtml;
-        }
-
-        public void Send()
+        public void Send(string sendEmail, string subject, string body, bool isHtml)
         {
             var from = MailAddress(MailConst.From.EMAIL, MailConst.From.DO_NOT_REPLAY);
-            var to = MailAddress(_sendEmail);
+            var to = MailAddress(sendEmail);
 
             using (var message = new MailMessage(from, to))
             {
-                message.Subject = _subject;
-                message.IsBodyHtml = _isHtml;
-                message.Body = _body;
+                message.Subject = subject;
+                message.IsBodyHtml = isHtml;
+                message.Body = body;
 
                 Smtp.Send(message);
             }

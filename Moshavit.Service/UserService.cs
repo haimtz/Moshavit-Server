@@ -56,7 +56,17 @@ namespace Moshavit.Service
 
             return ConvertToUserData(user);
         }
-        
+
+        public UserRegistertionData GetUser(string email)
+        {
+            var user = base.SelectFirst(u => u.Email == email);
+
+            if(user == null)
+                throw new Exception("User do not exist");
+
+            return user;
+        }
+
         public UserData UpdateUser(UserRegistertionData user)
         {
             var updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
