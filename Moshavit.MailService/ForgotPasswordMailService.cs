@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Moshavit.Const;
 using Moshavit.Entity.Interfaces;
 
 namespace Moshavit.MailService
@@ -6,9 +7,11 @@ namespace Moshavit.MailService
     public class ForgotPasswordMailService :IForgotPasswordMailService
     {
         private readonly ISendMail _sendMail;
-        public ForgotPasswordMailService(ISendMail sendMail)
+        private readonly ITemplateService _templateService;
+        public ForgotPasswordMailService(ISendMail sendMail, ITemplateService templateService)
         {
             _sendMail = sendMail;
+            _templateService = templateService;
         }
         public void SendMail(string username, string password, string email)
         {
@@ -27,10 +30,7 @@ namespace Moshavit.MailService
 
         private string GetHtmlTemplate()
         {
-            var path = System.AppDomain.CurrentDomain.RelativeSearchPath ?? System.AppDomain.CurrentDomain.BaseDirectory;
-            return File.ReadAllText(Path.Combine(path, "forgotmail.html"));
+            return _templateService.EmailContent(MailConst.Template.FORGOT_PASSWORD);
         }
-
-        
     }
 }

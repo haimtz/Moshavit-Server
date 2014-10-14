@@ -55,6 +55,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CarPullTable.cs" />
+    <Compile Include="EmailTemplate.cs" />
     <Compile Include="GiveAndTakeTable.cs" />
     <Compile Include="Interfaces\IForgotPasswordMailService.cs" />
     <Compile Include="Interfaces\IForgotPasswordService.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Interfaces\ISurveyService.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Interfaces\ITemplateService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Interfaces\IVoteService.cs">
       <SubType>Code</SubType>

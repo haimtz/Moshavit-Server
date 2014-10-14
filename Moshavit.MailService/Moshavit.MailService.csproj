@@ -44,21 +44,23 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendMail.cs" />
+    <Compile Include="TemplateService.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Moshavit.Const\Moshavit.Const.csproj">
       <Project>{b608433d-1e3f-4198-99c4-6237287c8852}</Project>
       <Name>Moshavit.Const</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Moshavit.DataBase\Moshavit.DataBase.csproj">
+      <Project>{f921762c-3b84-47b1-b8e1-a772ea9f111b}</Project>
+      <Name>Moshavit.DataBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Moshavit.Entity\Moshavit.Entity.Table.csproj">
       <Project>{6413b4bf-0f34-4675-961d-b4a6e6662d19}</Project>
       <Name>Moshavit.Entity.Table</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="forgotmail.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

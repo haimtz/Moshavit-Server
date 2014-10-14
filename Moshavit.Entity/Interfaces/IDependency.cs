@@ -9,5 +9,7 @@ namespace Moshavit.Entity
             where TImp : T;
 
         object Resolver(Type type);
+
+        T Resolver<T>();
     }
 }

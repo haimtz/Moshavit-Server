@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201410100906311_Remove_IsResident_user.Designer.cs">
       <DependentUpon>201410100906311_Remove_IsResident_user.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410142128231_add_Email_Template.cs" />
+    <Compile Include="Migrations\201410142128231_add_Email_Template.Designer.cs">
+      <DependentUpon>201410142128231_add_Email_Template.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -115,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201410100906311_Remove_IsResident_user.resx">
       <DependentUpon>201410100906311_Remove_IsResident_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410142128231_add_Email_Template.resx">
+      <DependentUpon>201410142128231_add_Email_Template.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

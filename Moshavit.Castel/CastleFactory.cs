@@ -34,15 +34,22 @@ namespace Moshavit.Castel
             return _container.Resolve(type);
         }
 
+        public T Resolver<T>()
+        {
+            return _container.Resolve<T>();
+        }
+
         private void RegisterInfrastructure()
         {
             _container.Register(Component.For<IMapperType>().ImplementedBy<TypeMapper>());
             _container.Register(Component.For<IMapperRepository>().ImplementedBy<MapperRepository>());
             _container.Register(Component.For<IDataBase<VotingLIstTable>>().ImplementedBy<DataBase<VotingLIstTable>>());
+            _container.Register(Component.For<IDataBase<EmailTemplate>>().ImplementedBy<DataBase<EmailTemplate>>());
             _container.Register(Component.For<IVoteService>().ImplementedBy<VoteService>());
             _container.Register(Component.For<ISendMail>().ImplementedBy<SendMail>());
             _container.Register(Component.For<IForgotPasswordService>().ImplementedBy<ForgotPasswordService>());
             _container.Register(Component.For<IForgotPasswordMailService>().ImplementedBy<ForgotPasswordMailService>());
+            _container.Register(Component.For<ITemplateService>().ImplementedBy<TemplateService>());
         }
 
     }
