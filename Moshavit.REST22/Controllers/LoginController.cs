@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Moshavit.Entity.Dto;
+using Moshavit.Exceptions;
 using Moshavit.Service;
 
 namespace Moshavit.REST.Controllers
@@ -25,7 +26,7 @@ namespace Moshavit.REST.Controllers
             {
                login = _userRepository.Login(user);
             }
-            catch (Exception ex)
+            catch (UserException ex)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
             }

@@ -27,12 +27,22 @@ namespace Moshavit.Service
         /// <returns>true if succeed</returns>
         public bool Register(UserRegistertionData user)
         {
-            if (IsRegister(user.Email))
-                throw new RegistrationException("The user is register");
+            var checkUser = base.SelectFirst(u => u.Email == user.Email);
 
-            user.IsActive = false;
+            if (checkUser != null && checkUser.IsActive)
+                throw new RegistrationException("User is exist");
+
+            user.IsActive = true;
             user.StartTime = DateTime.Now;
             user.Type = 3;
+
+            if (checkUser != null && !checkUser.IsActive)
+            {
+                user.IdUser = checkUser.IdUser;
+                UpdateUser(user);
+                return true;
+            }
+
             base.Add(user);
 
             return true;
@@ -43,26 +53,26 @@ namespace Moshavit.Service
             var user = base.SelectFirst(x => x.Email == userlogin.Email
                 && x.Password == userlogin.Password);
 
-            // TODO: Check if user is active
-            if (user == null)
-                throw new Exception("User don't exist");
+            
+            if (user == null || !user.IsActive)
+                throw new UserException("User don't exist");
 
             return ConvertToUserData(user);
         }
 
         public UserData GetUser(int id)
         {
-            var user = base.SelectFirst(x => x.IdUser == id);
+            var user = base.SelectFirst(x => x.IdUser == id && x.IsActive);
 
             return ConvertToUserData(user);
         }
 
         public UserRegistertionData GetUser(string email)
         {
-            var user = base.SelectFirst(u => u.Email == email);
+            var user = base.SelectFirst(u => u.Email == email && u.IsActive);
 
-            if(user == null)
-                throw new Exception("User do not exist");
+            if (user == null)
+                throw new UserException("User do not exist");
 
             return user;
         }
@@ -74,8 +84,8 @@ namespace Moshavit.Service
             if (user.Password == null || user.Password.Trim() == string.Empty)
                 user.Password = updateUser.Password;
 
-            if (user.Email != updateUser.Email && IsRegister(user.Email))
-                throw new Exception("This Email is Exist in the system");
+            if (user.Email != updateUser.Email && GetUser(user.Email) != null)
+                throw new UserException("This Email is Exist in the system");
 
             user.StartTime = updateUser.StartTime;
             base.Update(user);
@@ -88,8 +98,7 @@ namespace Moshavit.Service
         {
             var userList = base.GetAll();
 
-            // TODO: return only active users
-            return userList.Where(x => !x.IsActive)
+            return userList.Where(x => x.IsActive)
                 .Select(ConvertToUserData)
                 .ToList()
                 .OrderByDescending(x => x.StartTime);
@@ -105,14 +114,6 @@ namespace Moshavit.Service
         #endregion
 
         #region Private Method
-        private bool IsRegister(string email)
-        {
-            var result = base.SelectFirst(x => x.Email == email);
-            if (result != null)
-                return true;
-
-            return false;
-        }
 
         private UserData ConvertToUserData(UserRegistertionData user)
         {

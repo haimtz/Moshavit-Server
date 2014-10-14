@@ -61,7 +61,16 @@ namespace Moshavit.REST.Controllers
         // DELETE api/<controller>/5
         public HttpResponseMessage Delete(int id)
         {
-            throw new Exception();
+            try
+            {
+                _userService.DeleteUser(id);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }
