@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Moshavit.Entity.Dto.User;
 using Moshavit.Entity.Interfaces;
+using Moshavit.Exceptions;
 
 namespace Moshavit.REST22.Controllers
 {
@@ -23,9 +24,9 @@ namespace Moshavit.REST22.Controllers
             {
                 _service.SendPassword(value.Email);
             }
-            catch (Exception ex)
+            catch (UserException ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+                return Request.CreateResponse(HttpStatusCode.OK);
             }
             return Request.CreateResponse(HttpStatusCode.OK);
         }
