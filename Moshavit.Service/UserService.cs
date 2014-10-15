@@ -71,9 +71,6 @@ namespace Moshavit.Service
         {
             var user = base.SelectFirst(u => u.Email == email && u.IsActive);
 
-            if (user == null)
-                throw new UserException("User do not exist");
-
             return user;
         }
 
@@ -88,6 +85,8 @@ namespace Moshavit.Service
                 throw new UserException("This Email is Exist in the system");
 
             user.StartTime = updateUser.StartTime;
+            user.IsActive = updateUser.IsActive;
+
             base.Update(user);
             updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
 

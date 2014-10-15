@@ -21,6 +21,9 @@ namespace Moshavit.Service
         public void SendPassword(string email)
         {
             var user = _userService.GetUser(email);
+            if (user == null)
+                return;
+
             var name = user.FirstName + " " + user.LastName;
             _sendMail.SendMail(name, user.Password, user.Email);
         }

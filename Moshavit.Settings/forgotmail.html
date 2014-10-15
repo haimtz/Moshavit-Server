@@ -1,20 +1,74 @@
-﻿<meta charset="utf-8" />
-<div style="width: 100%; height: 250px;">
-	<div style="background-image: url('http://moshavit.somee.com/images/background.png');background-repeat: repeat-x;border-radius: 9px; border: 1px black solid;position: inherit;margin-left: auto;margin-right: auto;width: 80%;">
-		<div style="width: 100%; background-image: url('http://moshavit.somee.com/images/icon.png');background-repeat: no-repeat;background-size: 50px 50px;background-position: 20px;height: 59px;">
-		<span style="font-family: sans-serif; font-size: 20px; font-style: italic; position: relative; top: 15px; left: 90px;">Moshavit - שחזור סיסמא</span>
-		</div>
-	</div>
-	<div dir="rtl">
-		<table dir="rtl" style="position: relative; margin-left: auto; margin-right: auto; width: 40%; margin-top: 10px;">
-			<tr>
-				<td style="font-family: sans-serif; font-size: 20px;">שלום</td>
-				<td style="font-family: sans-serif; font-size: 20px;">{USER}</td>
-			<tr>
-			<tr>
-				<td style="font-family: sans-serif; font-size: 20px;">סיסמתך</td>
-				<td style="font-family: sans-serif; font-size: 20px;">{PASSWORD}</td>
-			<tr>
-		</table>
-	</div>
-</div>
+﻿<html lang="he">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table {
+            width: 90%;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #A4A4A4;
+        }
+
+        thead {
+            background-color: #BDBDBD;
+            width: 100%;
+        }
+
+        tbody {
+            background-color: #D8D8D8;
+            width: 100%;
+        }
+
+        table thead tr td {
+            font-family: sans-serif, serif;
+            font-size: 17px;
+            font-style: italic;
+            font-weight: bolder;
+        }
+
+        table tbody tr td {
+            font-family: sans-serif, serif;
+            font-size: 17px;
+            height: 40px;
+            text-align: center;
+        }
+
+        tbody tr td[colspan]:last-child {
+            text-align: left;
+        }
+
+        tbody tr td span {
+            position: relative;
+            top: -10px;
+            margin-left: 13px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table dir="rtl">
+            <thead>
+                <tr>
+                    <td colspan=2>אם שכחת את הסיסמא אנחנו כאן להזכיר לך</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>שם משתמש</td>
+                    <td>{USER}</td>
+                </tr>
+                <tr>
+                    <td>סיסמא</td>
+                    <td>{PASSWORD}</td>
+                </tr>
+                <tr dir="ltr">
+                    <td dir="ltr" colspan="2">  <img src="http://moshavit.somee.com/images/icon.png" width="30px" /><span>צוות מושבית</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
