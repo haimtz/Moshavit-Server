@@ -74,6 +74,12 @@ namespace Moshavit.Service
             return user;
         }
 
+        public UserData GetUserArchive(int id)
+        {
+            var user = base.SelectFirst(u => u.IdUser == id);
+            return ConvertToUserData(user);
+        }
+
         public UserData UpdateUser(UserRegistertionData user)
         {
             var updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
@@ -85,7 +91,7 @@ namespace Moshavit.Service
                 throw new UserException("This Email is Exist in the system");
 
             user.StartTime = updateUser.StartTime;
-            user.IsActive = updateUser.IsActive;
+            user.IsActive = true;
 
             base.Update(user);
             updateUser = base.SelectFirst(x => x.IdUser == user.IdUser);
@@ -116,6 +122,9 @@ namespace Moshavit.Service
 
         private UserData ConvertToUserData(UserRegistertionData user)
         {
+            if (user == null)
+                return null;
+
             return new UserData
             {
                 IdUser = user.IdUser,

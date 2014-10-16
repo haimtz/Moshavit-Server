@@ -13,24 +13,37 @@ namespace Moshavit.Settings
         private static IDependency _resolver;
         static void Main(string[] args)
         {
+            Console.WriteLine("Start run settings.....");
             _resolver = new CastleFactory();
             LoadTemplateMail();
+
+            Console.WriteLine("Finish settings");
+            Console.ReadLine();
         }
 
         private static void LoadTemplateMail()
         {
+            Console.WriteLine("Load Forgot password email template....");
+            var service = _resolver.Resolver<ITemplateService>();
             var path = Path.Combine(Environment.CurrentDirectory, "forgotmail.html");
             var content = File.ReadAllText(path);
 
-            var emailTemplate = new EmailTemplate
+            var emaiTemplate = new EmailTemplate
             {
                 Name = MailConst.Template.FORGOT_PASSWORD,
                 Content = content
             };
 
-            var service = _resolver.Resolver<ITemplateService>();
-            
-            service.AddTempalte(emailTemplate);
+            service.AddTempalte(emaiTemplate);
+
+            Console.WriteLine("Load welcome email template....");
+            path = Path.Combine(Environment.CurrentDirectory, "welcome.html");
+            content = File.ReadAllText(path);
+
+            emaiTemplate.Name = MailConst.Template.WELCOM_MAIL;
+            emaiTemplate.Content = content;
+
+            service.AddTempalte(emaiTemplate);
         }
     }
 }

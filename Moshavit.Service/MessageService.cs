@@ -63,7 +63,7 @@ namespace Moshavit.Service
 
             foreach (var message in list)
             {
-                var user = _userService.GetUser(message.IdUser);
+                var user = _userService.GetUser(message.IdUser) ?? _userService.GetUserArchive(message.IdUser);
                 message.Name = user.FirstName + " " + user.LastName;
                 message.Phone = user.Phone;
             }

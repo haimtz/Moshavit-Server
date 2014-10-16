@@ -50,6 +50,7 @@ namespace Moshavit.Castel
             _container.Register(Component.For<IForgotPasswordService>().ImplementedBy<ForgotPasswordService>());
             _container.Register(Component.For<IForgotPasswordMailService>().ImplementedBy<ForgotPasswordMailService>());
             _container.Register(Component.For<ITemplateService>().ImplementedBy<TemplateService>());
+            _container.Register(Component.For<IWelcomeMailService>().ImplementedBy<WelcomeMailService>());
         }
 
     }

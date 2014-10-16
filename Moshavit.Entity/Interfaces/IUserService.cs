@@ -28,6 +28,12 @@ namespace Moshavit.Service
         UserData GetUser(int id);
 
         /// <summary>
+        /// Get unactivated users 
+        /// </summary>
+        /// <param name="id">user id</param>
+        /// <returns>user data</returns>
+        UserData GetUserArchive(int id);
+        /// <summary>
         /// Get user by the email
         /// </summary>
         /// <param name="email">user email</param>
@@ -52,5 +58,7 @@ namespace Moshavit.Service
         /// </summary>
         /// <returns>UserData</returns>
         IEnumerable<UserData> GetAllUsers();
+
+        
     }
 }

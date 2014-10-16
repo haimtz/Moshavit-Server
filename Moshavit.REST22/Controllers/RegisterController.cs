@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Helpers;
 using System.Web.Http;
 using Moshavit.Entity.Dto;
+using Moshavit.Entity.Interfaces;
 using Moshavit.Entity.TableEntity;
 using Moshavit.Exceptions;
 using Moshavit.Service;
@@ -15,11 +16,12 @@ namespace Moshavit.REST.Controllers
     public class RegisterController : ApiController
     {
         private readonly IUserService _db;
-
+        private readonly IWelcomeMailService _mailService;
         #region Constructor
-        public RegisterController(IUserService dbRepository)
+        public RegisterController(IUserService dbRepository, IWelcomeMailService mailService)
         {
             _db = dbRepository;
+            _mailService = mailService;
         }
         #endregion
 
@@ -30,6 +32,8 @@ namespace Moshavit.REST.Controllers
             try
             {
                 _db.Register(user);
+                var userName = user.FirstName + " " + user.LastName;
+                _mailService.SendWelcome(user.Email, userName);
             }
             catch(DbEntityValidationException dbEx)
             {

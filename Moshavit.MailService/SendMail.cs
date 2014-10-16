@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Mail;
+using System.Security;
 using Moshavit.Const;
 using Moshavit.Entity.Interfaces;
 

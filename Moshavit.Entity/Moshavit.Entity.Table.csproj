@@ -68,6 +68,7 @@
     <Compile Include="Interfaces\IVoteService.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Interfaces\IWelcomeMailService.cs" />
     <Compile Include="MessageTable.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Interfaces\IDependency.cs" />

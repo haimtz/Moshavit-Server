@@ -47,6 +47,7 @@
     <Compile Include="TemplateService.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="WelcomeMailService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Moshavit.Const\Moshavit.Const.csproj">
