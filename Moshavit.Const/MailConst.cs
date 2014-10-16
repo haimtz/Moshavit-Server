@@ -17,14 +17,16 @@ namespace Moshavit.Const
         public class Account
         {
             public const string HOST = "smtp.gmail.com";
-            public const string MAIL_ACCOUNT = "***********";
-            public const string PASSWORD = "*****************";
+            public const string MAIL_ACCOUNT = "****";
+            public const string PASSWORD = "****";
             public const int PORT = 587;
         }
 
         public class Template
         {
             public const string FORGOT_PASSWORD = "Forgot Password";
+
+            public const string WELCOM_MAIL = "Welcome Mail";
         }
     }
 }
