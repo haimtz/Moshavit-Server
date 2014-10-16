@@ -37,7 +37,7 @@ namespace Moshavit.Settings
             service.AddTempalte(emaiTemplate);
 
             Console.WriteLine("Load welcome email template....");
-            path = Path.Combine(Environment.CurrentDirectory, "welcome.html");
+            path = Path.Combine(Environment.CurrentDirectory, "welcomemail.html");
             content = File.ReadAllText(path);
 
             emaiTemplate.Name = MailConst.Template.WELCOM_MAIL;
