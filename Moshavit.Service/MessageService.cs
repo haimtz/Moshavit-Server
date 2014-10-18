@@ -37,7 +37,7 @@ namespace Moshavit.Service
         public TK GetMessage(int id)
         {
             var message = base.SelectFirst(x => x.IdMessage == id);
-            var user = _userService.GetUser(message.IdUser);
+            var user = _userService.GetUser(message.IdUser) ?? _userService.GetUserArchive(message.IdUser);
 
             message.Name = user.FirstName + " " + user.LastName;
             message.Phone = user.Phone;

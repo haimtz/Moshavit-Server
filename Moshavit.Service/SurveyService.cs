@@ -6,6 +6,7 @@ using Moshavit.DataBase;
 using Moshavit.Entity;
 using Moshavit.Entity.Dto;
 using Moshavit.Entity.Interfaces;
+using Moshavit.Exceptions;
 using Moshavit.Mapper;
 
 namespace Moshavit.Service
@@ -17,7 +18,10 @@ namespace Moshavit.Service
         private readonly IVoteService _voteService;
         #endregion
 
-        public SurveyService(IDataBase<SurveyTable> dataBase, IMapperType mapper, IUserService userService, IVoteService voteService)
+        public SurveyService(IDataBase<SurveyTable> dataBase, 
+            IMapperType mapper, 
+            IUserService userService, 
+            IVoteService voteService)
             : base(dataBase, mapper)
         {
             _userService = userService;
@@ -26,13 +30,16 @@ namespace Moshavit.Service
 
         public void AddSurvey(SurveyDto survey)
         {
+            var user = _userService.GetUser(survey.IdUser);
+            if (user.Type != (int) UserType.Admin)
+                throw new SurveyException("Only administrator allow to add Survey");
+
             base.Add(survey);
         }
 
         public void AddVote(UserVote vote)
         {
-            if(_voteService.IsUserVote(vote.IdSurvey, vote.IdUser))
-                throw new Exception("This User vote in this Survey");
+            IsVoteLegal(vote);
 
             var survey = GetSurvey(vote.IdSurvey);
             UpdateSurveyVote(survey, vote.Vote);
@@ -58,7 +65,7 @@ namespace Moshavit.Service
 
             foreach (var surveyDto in surveyList)
             {
-                var user = _userService.GetUser(surveyDto.IdUser);
+                var user = _userService.GetUser(surveyDto.IdUser) ?? _userService.GetUserArchive(surveyDto.IdUser);
                 surveyDto.VadName = user.FirstName + " " + user.LastName;
             }
 
@@ -101,6 +108,14 @@ namespace Moshavit.Service
             }
 
             base.Update(survey);
+        }
+
+        private bool IsVoteLegal(UserVote vote)
+        {
+            if (_voteService.IsUserVote(vote.IdSurvey, vote.IdUser))
+                throw new VoteException("This User vote in this Survey");
+
+            return true;
         }
         #endregion
     }
