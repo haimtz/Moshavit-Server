@@ -46,6 +46,9 @@ namespace Moshavit.Service
             survey.No = oldSurvey.No;
             survey.Avoid = oldSurvey.Avoid;
 
+            if (survey.TypeMember == 0)
+                survey.TypeMember = oldSurvey.TypeMember;
+
             base.Update(survey);
         }
 
