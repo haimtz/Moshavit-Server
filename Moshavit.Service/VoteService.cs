@@ -22,7 +22,7 @@ namespace Moshavit.Service
             {
                 IdSurvey = surveyId,
                 IdUser = userId,
-                VoteTime = DateTime.Now
+                VoteTime = IsraelTimeZone.Now()
             };
 
             _service.Add(userVote);

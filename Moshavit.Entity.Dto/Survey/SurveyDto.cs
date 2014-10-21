@@ -1,4 +1,5 @@
 ﻿using System;
+using Moshavit.Service;
 
 namespace Moshavit.Entity.Dto
 {
@@ -15,6 +16,10 @@ namespace Moshavit.Entity.Dto
         public int TotalVote
         {
             get { return Yes + No + Avoid; }
+        }
+        public bool IsActive
+        {
+            get { return EndTime > IsraelTimeZone.Now(); }
         }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }

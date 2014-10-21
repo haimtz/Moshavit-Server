@@ -11,8 +11,11 @@ namespace Moshavit.REST22.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
+            var myZoneTime = TimeZoneInfo.FindSystemTimeZoneById("Israel Standard Time");
+            var serverTime = DateTime.UtcNow;
+            var israelTime = TimeZoneInfo.ConvertTimeFromUtc(serverTime, myZoneTime);
 
-            return View();
+            return View(israelTime);
         }
     }
 }

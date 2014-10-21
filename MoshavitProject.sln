@@ -47,6 +47,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Settings", "Settings", "{B6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moshavit.Settings", "Moshavit.Settings\Moshavit.Settings.csproj", "{F633551B-DE73-4837-8C61-4A73771B4EE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moshavit.IsraelTime", "Moshavit.IsraelTime\Moshavit.IsraelTime.csproj", "{62185B75-5BE1-4DB5-A1B9-DC03BB74A459}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +111,10 @@ Global
 		{F633551B-DE73-4837-8C61-4A73771B4EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F633551B-DE73-4837-8C61-4A73771B4EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F633551B-DE73-4837-8C61-4A73771B4EE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62185B75-5BE1-4DB5-A1B9-DC03BB74A459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62185B75-5BE1-4DB5-A1B9-DC03BB74A459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62185B75-5BE1-4DB5-A1B9-DC03BB74A459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62185B75-5BE1-4DB5-A1B9-DC03BB74A459}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -128,5 +134,6 @@ Global
 		{158B620A-6318-4D7A-9EC3-513102523F57} = {348E3805-C68A-4955-8382-B27AF70B7031}
 		{3856C35B-1DB9-4C80-852C-165ED788067B} = {8F0EA4B0-FB7E-4B58-8AC9-DCB6F4437B24}
 		{F633551B-DE73-4837-8C61-4A73771B4EE5} = {B6D1406C-9C86-4A23-B5B5-7FD9EA776EE3}
+		{62185B75-5BE1-4DB5-A1B9-DC03BB74A459} = {2CC3FCEE-8532-47E7-B425-06C5F1F14B91}
 	EndGlobalSection
 EndGlobal

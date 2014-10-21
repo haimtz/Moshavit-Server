@@ -80,6 +80,10 @@
       <Project>{106c1494-2141-4093-828c-afa399c637ce}</Project>
       <Name>Moshavit.Exceptions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Moshavit.IsraelTime\Moshavit.IsraelTime.csproj">
+      <Project>{62185B75-5BE1-4DB5-A1B9-DC03BB74A459}</Project>
+      <Name>Moshavit.IsraelTime</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Moshavit.Mapper\Moshavit.Mapper.csproj">
       <Project>{7c1d8755-2c8f-43b4-a7c4-5870d063d12b}</Project>
       <Name>Moshavit.Mapper</Name>

@@ -30,7 +30,7 @@ namespace Moshavit.Service
 
         public void AddNewMessage(TK message)
         {
-            message.ModifiedMessage = DateTime.Now;
+            message.ModifiedMessage = IsraelTimeZone.Now();
             base.Add(message);
         }
 
@@ -47,7 +47,7 @@ namespace Moshavit.Service
 
         public void UpdateMessage(TK message)
         {
-            message.ModifiedMessage = DateTime.Now;
+            message.ModifiedMessage = IsraelTimeZone.Now();
             base.Update(message);
         }
 

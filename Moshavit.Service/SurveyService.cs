@@ -11,16 +11,16 @@ using Moshavit.Mapper;
 
 namespace Moshavit.Service
 {
-    public class SurveyService :BaseRepository<SurveyTable, SurveyDto>, ISurveyService
+    public class SurveyService : BaseRepository<SurveyTable, SurveyDto>, ISurveyService
     {
         #region Members
         private readonly IUserService _userService;
         private readonly IVoteService _voteService;
         #endregion
 
-        public SurveyService(IDataBase<SurveyTable> dataBase, 
-            IMapperType mapper, 
-            IUserService userService, 
+        public SurveyService(IDataBase<SurveyTable> dataBase,
+            IMapperType mapper,
+            IUserService userService,
             IVoteService voteService)
             : base(dataBase, mapper)
         {
@@ -31,17 +31,31 @@ namespace Moshavit.Service
         public void AddSurvey(SurveyDto survey)
         {
             var user = _userService.GetUser(survey.IdUser);
-            if (user.Type != (int) UserType.Admin)
+            if (user.Type != (int)UserType.Admin)
                 throw new SurveyException("Only administrator allow to add Survey");
+
+            if (survey.StartTime > survey.EndTime)
+                throw new SurveyException("End time is earlier then Start time");
+
+            if (IsraelTimeZone.Now() > survey.StartTime)
+                throw new SurveyException("Start Time have pass already");
 
             base.Add(survey);
         }
 
         public void AddVote(UserVote vote)
         {
+            var user = _userService.GetUser(vote.IdUser);
+            var survey = GetSurvey(vote.IdSurvey);
+
+            if(survey.EndTime < IsraelTimeZone.Now())
+                throw new SurveyException("Voting has ended");
+
+            if(user.Type > survey.TypeMember)
+                throw new SurveyException("You not Allow to vote on this Survey");
+
             IsVoteLegal(vote);
 
-            var survey = GetSurvey(vote.IdSurvey);
             UpdateSurveyVote(survey, vote.Vote);
             _voteService.AddVote(survey.IdSurvey, vote.IdUser);
         }

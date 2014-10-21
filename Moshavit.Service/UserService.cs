@@ -33,7 +33,7 @@ namespace Moshavit.Service
                 throw new RegistrationException("User is exist");
 
             user.IsActive = true;
-            user.StartTime = DateTime.Now;
+            user.StartTime = IsraelTimeZone.Now();
             user.Type = 3;
 
             if (checkUser != null && !checkUser.IsActive)

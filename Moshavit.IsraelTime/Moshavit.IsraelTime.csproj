@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B681B2B3-E4A6-496C-94D8-841766EF63BC}</ProjectGuid>
+    <ProjectGuid>{62185B75-5BE1-4DB5-A1B9-DC03BB74A459}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Moshavit.Entity.Dto</RootNamespace>
-    <AssemblyName>Moshavit.Entity.Dto</AssemblyName>
+    <RootNamespace>Moshavit.IsraelTime</RootNamespace>
+    <AssemblyName>Moshavit.IsraelTime</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,27 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="messages\BabySitterMessageDto.cs" />
-    <Compile Include="messages\BulletinBoardDto.cs" />
-    <Compile Include="messages\CarpullMessageDto.cs" />
-    <Compile Include="messages\GiveAndTakeDto.cs" />
-    <Compile Include="messages\MessageBaseDto.cs" />
+    <Compile Include="IsraelTimeZone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Survey\SurveyDto.cs" />
-    <Compile Include="Survey\SurveyResult.cs" />
-    <Compile Include="Survey\UserVote.cs" />
-    <Compile Include="User\ForgotPasswordDto.cs" />
-    <Compile Include="User\UserData.cs" />
-    <Compile Include="User\UserLoginDto.cs" />
-    <Compile Include="User\UserRegistertionData.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Moshavit.IsraelTime\Moshavit.IsraelTime.csproj">
-      <Project>{62185b75-5be1-4db5-a1b9-dc03bb74a459}</Project>
-      <Name>Moshavit.IsraelTime</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
