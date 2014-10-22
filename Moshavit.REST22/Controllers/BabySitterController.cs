@@ -17,10 +17,43 @@ namespace Moshavit.REST.Controllers
     /// </summary>
     public class BabySitterController : MessagesController<BabySitterTable, BabySitterMessageDto>
     {
-        public BabySitterController(IMessageService<BabySitterTable, BabySitterMessageDto> service)
+        public BabySitterController(BabySitterMessageService service)
             : base(service)
         {
 
+        }
+
+        public override HttpResponseMessage Post(BabySitterMessageDto message)
+        {
+            try
+            {
+                BabySitterService.AddBabySitterMesage(message);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        public override HttpResponseMessage Put(BabySitterMessageDto message)
+        {
+            try
+            {
+                BabySitterService.UpdateBabySitterMessage(message);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        private BabySitterMessageService BabySitterService
+        {
+            get { return ((BabySitterMessageService)Service); }
         }
     }
 }

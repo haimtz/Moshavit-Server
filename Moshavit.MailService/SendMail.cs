@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Mail;
 using System.Security;
 using Moshavit.Const;
@@ -12,14 +13,20 @@ namespace Moshavit.Service
         {
             var from = MailAddress(MailConst.From.EMAIL, MailConst.From.DO_NOT_REPLAY);
             var to = MailAddress(sendEmail);
-
-            using (var message = new MailMessage(from, to))
+            try
             {
-                message.Subject = subject;
-                message.IsBodyHtml = isHtml;
-                message.Body = body;
+                using (var message = new MailMessage(from, to))
+                {
+                    message.Subject = subject;
+                    message.IsBodyHtml = isHtml;
+                    message.Body = body;
 
-                Smtp.Send(message);
+                    Smtp.Send(message);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
 
         }

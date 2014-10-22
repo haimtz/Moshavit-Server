@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BabySitterMessageService.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ForgotPasswordService.cs" />
     <Compile Include="MessageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
