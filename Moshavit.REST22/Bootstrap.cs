@@ -37,7 +37,7 @@ namespace Moshavit.REST
             #region Services
             container.Register<IUserService, UserService>();
             container.Register<BabySitterMessageService, BabySitterMessageService>();
-            container.Register<IMessageService<CarPullTable, CarpullMessageDto>, MessageService<CarPullTable, CarpullMessageDto>>();
+            container.Register<CarPullMessageService, CarPullMessageService>();
             container.Register<IMessageService<BulletinBoardTable, BulletinBoardDto>, MessageService<BulletinBoardTable, BulletinBoardDto>>();
             container.Register<IMessageService<GiveAndTakeTable, GiveAndTakeDto>, MessageService<GiveAndTakeTable, GiveAndTakeDto>>();
             container.Register<ISurveyService, SurveyService>();
